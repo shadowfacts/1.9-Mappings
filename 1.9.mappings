@@ -52,3 +52,24 @@ CLASS none/c net/minecraft/util/crash/CrashReportGroup
 		ARG 0 name
 	METHOD a add (Ljava/lang/String;Ljava/util/concurrent/Callable;)V
 		ARG 0 name
+CLASS none/cj
+	CLASS none/cj$a
+		METHOD n getX ()I
+		METHOD o getY ()I
+		METHOD p getZ ()I
+CLASS none/df net/minecraft/util/BlockCoord
+	FIELD a x I
+	FIELD b origin Lnone/df;
+	FIELD c y I
+	FIELD d z I
+	METHOD <init> (DDD)V
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD <init> (III)V
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD n getX ()I
+	METHOD o getY ()I
+	METHOD p getZ ()I
