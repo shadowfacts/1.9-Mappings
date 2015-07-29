@@ -22,3 +22,33 @@ CLASS none/a net/minecraft/chat/EnumChatFormatting
 	FIELD u ITALIC Lnone/a;
 	FIELD v RESET Lnone/a;
 	FIELD x formattingPattern Ljava/util/regex/Pattern;
+CLASS none/b net/minecraft/util/crash/CrashReportBuilder
+	FIELD a logger Lorg/apache/logging/log4j/Logger;
+	FIELD c cause Ljava/lang/Throwable;
+	FIELD f file Ljava/io/File;
+	FIELD h stackTrace [Ljava/lang/StackTraceElement;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 1 cause
+CLASS none/c net/minecraft/util/crash/CrashReportGroup
+	CLASS none/c$a CrashReportItem
+		FIELD a name Ljava/lang/String;
+		FIELD b value Ljava/lang/String;
+		METHOD <init> (Ljava/lang/String;Ljava/lang/Object;)V
+			ARG 0 name
+			ARG 1 value
+		METHOD a getName ()Ljava/lang/String;
+		METHOD b getValue ()Ljava/lang/String;
+	FIELD a builder Lnone/b;
+	FIELD b name Ljava/lang/String;
+	FIELD c items Ljava/util/List;
+	FIELD d stackTrace [Ljava/lang/StackTraceElement;
+	METHOD <init> (Lnone/b;Ljava/lang/String;)V
+		ARG 0 builder
+		ARG 1 name
+	METHOD a getStackTrace ()[Ljava/lang/StackTraceElement;
+	METHOD a add (Ljava/lang/String;Ljava/lang/Object;)V
+		ARG 0 name
+	METHOD a add (Ljava/lang/String;Ljava/lang/Throwable;)V
+		ARG 0 name
+	METHOD a add (Ljava/lang/String;Ljava/util/concurrent/Callable;)V
+		ARG 0 name
