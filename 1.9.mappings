@@ -73,3 +73,8 @@ CLASS none/df net/minecraft/util/BlockCoord
 	METHOD n getX ()I
 	METHOD o getY ()I
 	METHOD p getZ ()I
+CLASS none/nu net/minecraft/util/MathUtils
+	FIELD c random Ljava/util/Random;
+	METHOD a sqrt (D)F
+	METHOD c sqrt (F)F
+	METHOD c hsvToRgb (FFF)I
