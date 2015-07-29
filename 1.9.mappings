@@ -52,6 +52,14 @@ CLASS none/c net/minecraft/util/crash/CrashReportGroup
 		ARG 0 name
 	METHOD a add (Ljava/lang/String;Ljava/util/concurrent/Callable;)V
 		ARG 0 name
+CLASS none/g net/minecraft/util/MiscUtils
+	CLASS none/g$a EnumOS
+		FIELD a LINUX Lnone/g$a;
+		FIELD b SOLARIS Lnone/g$a;
+		FIELD c WINDOWS Lnone/g$a;
+		FIELD d MACOSX Lnone/g$a;
+		FIELD e OTHER Lnone/g$a;
+	METHOD a getOS ()Lnone/g$a;
 CLASS none/cj
 	CLASS none/cj$a
 		METHOD n getX ()I
