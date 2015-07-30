@@ -65,14 +65,137 @@ CLASS none/g net/minecraft/util/MiscUtils
 	METHOD a runFutureTask (Ljava/util/concurrent/FutureTask;Lorg/apache/logging/log4j/Logger;)Ljava/lang/Object;
 		ARG 0 task
 		ARG 1 logger
-CLASS none/cj
+CLASS none/i net/minecraft/command/base/CommandBase
+CLASS none/k net/minecraft/command/base/ICommand
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/p
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/q
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/r
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/s
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/t
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/u
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/v
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/w
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/x
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/y
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/z net/minecraft/command/CommandEffect
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aa
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ab
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ac
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ad
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ae
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/af
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ag
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ah
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ai
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aj
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ak
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/al
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/am
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/an
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ao
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ap
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aq
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ar
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/as
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/at
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/au
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/av
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/aw
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ax
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ay
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/az
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/ba
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bb
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bc
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/be
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bf
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bg
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bh
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bi
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bj
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bk
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bl
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bm
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bn
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bp
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bq
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/br
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bs
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bt
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bu
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bv
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bw
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/bx
+	METHOD c getName ()Ljava/lang/String;
+CLASS none/cj net/minecraft/util/BlockCoord
 	CLASS none/cj$a
 		METHOD n getX ()I
 		METHOD o getY ()I
 		METHOD p getZ ()I
-CLASS none/df net/minecraft/util/BlockCoord
+	METHOD <init> (Lnone/df;)V
+		ARG 0 vec
+CLASS none/df net/minecraft/util/Vec3i
 	FIELD a x I
-	FIELD b origin Lnone/df;
+	FIELD b NULL_VECTOR Lnone/df;
 	FIELD c y I
 	FIELD d z I
 	METHOD <init> (DDD)V
@@ -91,3 +214,29 @@ CLASS none/nu net/minecraft/util/MathUtils
 	METHOD a sqrt (D)F
 	METHOD c sqrt (F)F
 	METHOD c hsvToRgb (FFF)I
+CLASS none/awh net/minecraft/util/Vec3d
+	FIELD a x D
+	FIELD b y D
+	FIELD c z D
+	METHOD <init> (DDD)V
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD <init> (Lnone/df;)V
+		ARG 0 vec
+	METHOD a invert (DDD)Lnone/awh;
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD a subtract (Lnone/awh;)Lnone/awh;
+		ARG 0 vec
+	METHOD b add (DDD)Lnone/awh;
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
+	METHOD b multiply (Lnone/awh;)D
+		ARG 0 vec
+	METHOD d invert (Lnone/awh;)Lnone/awh;
+		ARG 0 vec
+	METHOD e add (Lnone/awh;)Lnone/awh;
+		ARG 0 vec
