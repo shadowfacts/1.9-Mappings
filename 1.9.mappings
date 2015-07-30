@@ -68,124 +68,191 @@ CLASS none/g net/minecraft/util/MiscUtils
 CLASS none/i net/minecraft/command/base/CommandBase
 CLASS none/k net/minecraft/command/base/ICommand
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/p
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/m net/minecraft/command/base/ICommandSender
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/n
+	CLASS none/n$1
+		METHOD a sendMessage (Lnone/eu;)V
+CLASS none/p net/minecraft/command/CommandAchievement
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/q
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/q net/minecraft/command/server/CommandBanIP
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/r
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/r net/minecraft/command/server/CommandBan
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/s
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/s net/minecraft/command/CommandBlockData
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/t
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/t net/minecraft/command/CommandClear
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/u
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/u net/minecraft/command/CommandClone
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/v
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/v net/minecraft/command/CommandTestForBlocks
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/w
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/w net/minecraft/command/server/CommandDeop
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/x
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/x net/minecraft/command/CommandDebug
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/y
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/y net/minecraft/command/CommandDefaultGameMode
 	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
 CLASS none/z net/minecraft/command/CommandEffect
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/aa
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aa net/minecraft/command/CommandMe
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ab
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ab net/minecraft/command/CommandEnchant
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ac
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ac net/minecraft/command/CommandEntityData
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ad
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ad net/minecraft/command/CommandExecute
+	CLASS none/ad$1
+		METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ae
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ae net/minecraft/command/CommandXP
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/af
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/af net/minecraft/command/CommandFill
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ag
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ag net/minecraft/command/CommandDifficulty
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ah
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ah net/minecraft/command/CommandGameMode
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ai
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ai net/minecraft/command/CommandGameRule
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/aj
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aj net/minecraft/command/CommandGive
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ak
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ak net/minecraft/command/CommandHelp
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/al
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/al net/minecraft/command/server/CommandKick
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/am
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/am net/minecraft/command/CommandKill
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/an
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/an net/minecraft/command/server/CommandBanList
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ao
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ao net/minecraft/command/server/CommandList
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ap
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ap net/minecraft/command/CommandTell
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/aq
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aq net/minecraft/command/CommandTellRaw
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ar
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ar net/minecraft/command/server/CommandOp
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/as
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/as net/minecraft/command/server/CommandPardonIP
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/at
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/at net/minecraft/command/server/CommandPardon
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/au
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/au net/minecraft/command/CommandParticle
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/av
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/av net/minecraft/command/CommandPlaySound
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/aw
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aw net/minecraft/command/CommandPublish
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ax
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ax net/minecraft/command/CommandReplaceItem
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ay
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ay net/minecraft/command/server/CommandSaveAll
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/az
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/az net/minecraft/command/server/CommandSaveOff
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/ba
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ba net/minecraft/command/server/CommandSaveOn
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bb
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bb net/minecraft/command/CommandSay
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bc
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bc net/minecraft/command/CommandScoreBoard
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/be
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/be net/minecraft/command/CommandSetBlock
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bf
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bf net/minecraft/command/CommandSetWorldSpawn
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bg
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bg net/minecraft/command/server/CommandSetIdleTimeOut
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bh
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bh net/minecraft/command/CommandSpawnPoint
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bi
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bi net/minecraft/command/CommandSeed
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bj
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bj net/minecraft/command/CommandSpreadPlayers
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bk
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bk net/minecraft/command/CommandStats
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bl
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bl net/minecraft/command/server/CommandStop
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bm
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bm net/minecraft/command/CommandSummon
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bn
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bn net/minecraft/command/CommandTP
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bp
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bp net/minecraft/command/CommandTestForBlock
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bq
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bq net/minecraft/command/CommandTestFor
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/br
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/br net/minecraft/command/CommandTime
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bs
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bs net/minecraft/command/CommandTitle
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bt
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bt net/minecraft/command/CommandToggleDownfall
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bu
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bu net/minecraft/command/CommandTrigger
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bv
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bv net/minecraft/command/CommandWeather
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bw
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bw net/minecraft/command/server/CommandWhitelist
 	METHOD c getName ()Ljava/lang/String;
-CLASS none/bx
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bx net/minecraft/command/CommandWorldBorder
 	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
 CLASS none/cj net/minecraft/util/BlockCoord
 	CLASS none/cj$a
 		METHOD n getX ()I
@@ -209,11 +276,27 @@ CLASS none/df net/minecraft/util/Vec3i
 	METHOD n getX ()I
 	METHOD o getY ()I
 	METHOD p getZ ()I
+CLASS none/eu net/minecraft/chat/IChatComponent
+	CLASS none/eu$a
+		FIELD a gson Lcom/google/gson/Gson;
+CLASS none/lh
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/ml
+	METHOD a sendMessage (Lnone/eu;)V
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
 	METHOD c sqrt (F)F
 	METHOD c hsvToRgb (FFF)I
+CLASS none/pr
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/aed
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/amx
+	CLASS none/amx$1
+		METHOD a sendMessage (Lnone/eu;)V
+	CLASS none/amx$2
+		METHOD a sendMessage (Lnone/eu;)V
 CLASS none/awh net/minecraft/util/Vec3d
 	FIELD a x D
 	FIELD b y D
@@ -240,3 +323,9 @@ CLASS none/awh net/minecraft/util/Vec3d
 		ARG 0 vec
 	METHOD e add (Lnone/awh;)Lnone/awh;
 		ARG 0 vec
+CLASS none/bgz
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/bha
+	METHOD a sendMessage (Lnone/eu;)V
+CLASS net/minecraft/server/MinecraftServer
+	METHOD a sendMessage (Lnone/eu;)V
