@@ -60,6 +60,11 @@ CLASS none/g net/minecraft/util/MiscUtils
 		FIELD d MACOSX Lnone/g$a;
 		FIELD e OTHER Lnone/g$a;
 	METHOD a getOS ()Lnone/g$a;
+	METHOD a getLast (Ljava/util/List;)Ljava/lang/Object;
+		ARG 0 list
+	METHOD a runFutureTask (Ljava/util/concurrent/FutureTask;Lorg/apache/logging/log4j/Logger;)Ljava/lang/Object;
+		ARG 0 task
+		ARG 1 logger
 CLASS none/cj
 	CLASS none/cj$a
 		METHOD n getX ()I
