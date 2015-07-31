@@ -483,6 +483,8 @@ CLASS none/agk net/minecraft/block/Block
 		METHOD c stepSound ()Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
 	METHOD a boundingBox (FFFFFF)V
+	METHOD a getblock (Lnone/aas;)Lnone/agk;
+		ARG 0 item
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
@@ -497,14 +499,18 @@ CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
 	FIELD L mojangLogo Lnone/jz;
-CLASS none/axo
-	FIELD b options_background Lnone/jz;
-	FIELD c stats_icons Lnone/jz;
+CLASS none/axo net/minecraft/gui/base/Gui
+	FIELD b optionsBackground Lnone/jz;
+	FIELD c statsIcon Lnone/jz;
 	FIELD d icons Lnone/jz;
-CLASS none/azg
+CLASS none/ayy net/minecraft/gui/base/GuiYNCallback
+CLASS none/azg net/minecraft/client/gui/GuiDemo
 	FIELD a logger Lorg/apache/logging/log4j/Logger;
-	FIELD f demo_background Lnone/jz;
-CLASS none/azu net/minecraft/client/gui/GuiScreen
+	FIELD f demoBackground Lnone/jz;
+CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
+CLASS none/azv net/minecraft/gui/base/GuiScreen
+	FIELD a logger Lorg/apache/logging/log4j/Logger;
+	FIELD j minecraft Lnone/axd;
 CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
 CLASS none/bgz
 CLASS none/bha
