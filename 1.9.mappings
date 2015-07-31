@@ -469,7 +469,20 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/world/World
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
-	METHOD a getBlockItem (Lnone/aas;)Lnone/agk;
+	CLASS none/agk$1
+		METHOD a digSound ()Ljava/lang/String;
+	CLASS none/agk$2
+		METHOD a digSound ()Ljava/lang/String;
+	CLASS none/agk$3
+		METHOD a digSound ()Ljava/lang/String;
+	CLASS none/agk$4
+		METHOD a digSound ()Ljava/lang/String;
+		METHOD c stepSound ()Ljava/lang/String;
+	CLASS none/agk$d Sound
+		METHOD a digSound ()Ljava/lang/String;
+		METHOD c stepSound ()Ljava/lang/String;
+	FIELD a airTexture Lnone/jz;
+	METHOD a boundingBox (FFFFFF)V
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
