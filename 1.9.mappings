@@ -483,10 +483,14 @@ CLASS none/agk net/minecraft/block/Block
 		METHOD c stepSound ()Ljava/lang/String;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
+	FIELD w hardness F
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
+	METHOD c setHardness (F)Lnone/agk;
+		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 name
+CLASS none/aho net/minecraft/block/DragonEgg
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/ajw net/minecraft/block/PackedIce
 CLASS none/amk
