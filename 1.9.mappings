@@ -493,6 +493,7 @@ CLASS none/agk net/minecraft/block/Block
 CLASS none/aho net/minecraft/block/DragonEgg
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/ajw net/minecraft/block/PackedIce
+CLASS none/ale net/minecraft/block/Stairs
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
