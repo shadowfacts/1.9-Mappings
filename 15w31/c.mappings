@@ -383,10 +383,22 @@ CLASS none/bx net/minecraft/command/CommandWorldBorder
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
 CLASS none/cj net/minecraft/util/BlockPos
-	CLASS none/cj$a
+	CLASS none/cj$a MutableBlockPos
+		FIELD c x I
+		FIELD d y I
+		FIELD e z I
+		METHOD <init> (III)V
+			ARG 0 x
+			ARG 1 y
+			ARG 2 z
+		METHOD c set (III)Lnone/cj$a;
+			ARG 0 x
+			ARG 1 y
+			ARG 2 z
 		METHOD n getX ()I
 		METHOD o getY ()I
 		METHOD p getZ ()I
+	FIELD a origin Lnone/cj;
 	METHOD <init> (III)V
 		ARG 0 x
 		ARG 1 y
@@ -414,6 +426,8 @@ CLASS none/dl net/minecraft/nbt/TagByteArray
 	METHOD <init> ([B)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c get ()[B
 CLASS none/dm net/minecraft/nbt/TagByte
@@ -421,6 +435,8 @@ CLASS none/dm net/minecraft/nbt/TagByte
 	METHOD <init> (B)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -437,6 +453,11 @@ CLASS none/dn net/minecraft/nbt/TagCompound
 		ARG 0 type
 		ARG 1 key
 		ARG 2 input
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+		ARG 0 input
+		ARG 1 depth
+	METHOD a write (Ljava/io/DataOutput;)V
+		ARG 0 output
 	METHOD a getUUID (Ljava/lang/String;)Ljava/util/UUID;
 		ARG 0 key
 	METHOD a setByte (Ljava/lang/String;B)V
@@ -480,13 +501,20 @@ CLASS none/dn net/minecraft/nbt/TagCompound
 		ARG 0 key
 	METHOD c getByte (Ljava/lang/String;)B
 		ARG 0 key
+	METHOD c_ zeroTags ()Z
 	METHOD d hasKey (Ljava/lang/String;)Z
+		ARG 0 key
+	METHOD g getInt (Ljava/lang/String;)I
+		ARG 0 key
+	METHOD k getString (Ljava/lang/String;)Ljava/lang/String;
 		ARG 0 key
 CLASS none/dp net/minecraft/nbt/TagDouble
 	FIELD b val D
 	METHOD <init> (D)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -494,14 +522,18 @@ CLASS none/dp net/minecraft/nbt/TagDouble
 	METHOD f getByte ()B
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
-CLASS none/dq
+CLASS none/dq net/minecraft/nbt/TagEnd
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 CLASS none/dr net/minecraft/nbt/TagFloat
 	FIELD b val F
 	METHOD <init> (F)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -514,6 +546,8 @@ CLASS none/ds net/minecraft/nbt/TagIntArray
 	METHOD <init> ([I)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c get ()[I
 CLASS none/dt net/minecraft/nbt/TagInt
@@ -521,6 +555,8 @@ CLASS none/dt net/minecraft/nbt/TagInt
 	METHOD <init> (I)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -528,14 +564,22 @@ CLASS none/dt net/minecraft/nbt/TagInt
 	METHOD f getByte ()B
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
-CLASS none/du
+CLASS none/du net/minecraft/nbt/TagList
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+		ARG 0 input
+		ARG 1 depth
+	METHOD a write (Ljava/io/DataOutput;)V
+		ARG 0 output
 	METHOD b copy ()Lnone/eb;
+	METHOD c_ zeroTags ()Z
 CLASS none/dv net/minecraft/nbt/TagLong
 	FIELD b val J
 	METHOD <init> (J)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -543,9 +587,13 @@ CLASS none/dv net/minecraft/nbt/TagLong
 	METHOD f getByte ()B
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
+CLASS none/dw net/minecraft/nbt/SizeTracker
+	FIELD a instance Lnone/dw;
 CLASS none/dz net/minecraft/nbt/TagShort
 	FIELD b val S
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
 	METHOD c getLong ()J
 	METHOD d getInt ()I
@@ -560,8 +608,11 @@ CLASS none/ea net/minecraft/nbt/TagString
 	METHOD <init> (Ljava/lang/String;)V
 		ARG 0 val
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD a_ get ()Ljava/lang/String;
 	METHOD b copy ()Lnone/eb;
+	METHOD c_ zeroTags ()Z
 CLASS none/eb net/minecraft/nbt/TagBase
 	CLASS none/eb$a TagPrimitive
 		METHOD c getLong ()J
@@ -570,9 +621,15 @@ CLASS none/eb net/minecraft/nbt/TagBase
 		METHOD f getByte ()B
 		METHOD g getDouble ()D
 		METHOD h getFloat ()F
+	FIELD a TYPES [Ljava/lang/String;
 	METHOD a asByte ()B
+	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
+	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD a_ get ()Ljava/lang/String;
 	METHOD b copy ()Lnone/eb;
+	METHOD c_ zeroTags ()Z
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
 CLASS none/et net/minecraft/chat/ClickEvent
 	CLASS none/et$a Action
 		FIELD a OPEN_URL Lnone/et$a;
@@ -687,6 +744,11 @@ CLASS none/ail net/minecraft/block/Grass
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/aiy net/minecraft/block/Ice
 CLASS none/aiz net/minecraft/block/JukeBox
+	CLASS none/aiz$a TileEntityJukeBox
+		FIELD a record Lnone/aat;
+		METHOD a getRecord ()Lnone/aat;
+		METHOD a readFromNBT (Lnone/dn;)V
+		METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/ajr net/minecraft/block/NoteBlock
 CLASS none/ajw net/minecraft/block/PackedIce
 CLASS none/ako net/minecraft/block/Reeds
@@ -694,29 +756,113 @@ CLASS none/akt net/minecraft/block/Sapling
 CLASS none/aky net/minecraft/block/Snow
 CLASS none/ale net/minecraft/block/Stairs
 CLASS none/ali net/minecraft/block/Stone
-CLASS none/amh net/minecraft/tileentity/TileEntity
+CLASS none/amf net/minecraft/tileentity/TileEntityBanner
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amg net/minecraft/tileentity/TileEntityBeacon
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amh net/minecraft/tileentity/base/TileEntity
+	FIELD a logger Lorg/apache/logging/log4j/Logger;
 	FIELD b level Lnone/aeo;
 	FIELD c pos Lnone/cj;
-	FIELD f idMap Ljava/util/Map;
-	METHOD a (Ljava/lang/Class;Ljava/lang/String;)V
+	FIELD d invalid Z
+	FIELD e block Lnone/agk;
+	FIELD f nameClassMap Ljava/util/Map;
+	FIELD g classNameMap Ljava/util/Map;
+	FIELD h blockMeta I
+	METHOD D validate ()V
+	METHOD E removeBlock ()V
+	METHOD a register (Ljava/lang/Class;Ljava/lang/String;)V
 		ARG 0 teClass
 		ARG 1 id
+	METHOD a setLevel (Lnone/aeo;)V
+		ARG 0 level
+	METHOD a generateCrashReport (Lnone/c;)V
+		ARG 0 group
+	METHOD a setPos (Lnone/cj;)V
+		ARG 0 pos
+	METHOD a readFromNBT (Lnone/dn;)V
+		ARG 0 tag
+	METHOD b writeToNBT (Lnone/dn;)V
+		ARG 0 tag
+	METHOD c getFromNBT (Lnone/dn;)Lnone/amh;
+		ARG 0 tag
+	METHOD t hasLevel ()Z
+	METHOD v getPos ()Lnone/cj;
+	METHOD x isInvalid ()Z
+	METHOD y invalidate ()V
 	METHOD z getLevel ()Lnone/aeo;
-CLASS none/amk
+CLASS none/ami net/minecraft/tileentity/TileEntityCauldron
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amj net/minecraft/tileentity/TileEntityChest
+	METHOD E removeBlock ()V
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+	METHOD y invalidate ()V
+CLASS none/amk net/minecraft/tileentity/TileEntityControl
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/aml net/minecraft/tileentity/TileEntityComparator
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amm net/minecraft/tileentity/TileEntityDLDetector
+CLASS none/amn net/minecraft/tileentity/TileEntityTrap
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amo net/minecraft/tileentity/TileEntityDropper
+CLASS none/amp net/minecraft/tileentity/TileEntityEnchantTable
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amq net/minecraft/tileentity/TileEntityEnderChest
+	METHOD y invalidate ()V
+CLASS none/amr net/minecraft/tileentity/TileEntityFlowerPot
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/ams net/minecraft/tileentity/TileEntityFurnace
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/amt
 	METHOD z getLevel ()Lnone/aeo;
-CLASS none/amx
-CLASS none/amy
+CLASS none/amu net/minecraft/tileentity/TileEntityHopper
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amv
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amw net/minecraft/tileentity/TileEntityMobSpawner
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amx net/minecraft/tileentity/TileEntityMusic
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amy net/minecraft/tileentity/TileEntitySign
 	CLASS none/amy$1
 		METHOD c getPosition ()Lnone/cj;
 	CLASS none/amy$2
 		METHOD c getPosition ()Lnone/cj;
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/amz net/minecraft/tileentity/TileEntitySkull
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/ana net/minecraft/tileentity/TileEntityStructure
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/anb net/minecraft/tileentity/TileEntityEndGateway
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/anc net/minecraft/tileentity/TileEntityAirPortal
 CLASS none/anf net/minecraft/block/Piston
 	FIELD N isSticky Z
 	METHOD <init> (Z)V
 		ARG 0 isSticky
+CLASS none/anh net/minecraft/tileentity/TileEntityPiston
+	METHOD a readFromNBT (Lnone/dn;)V
+	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
