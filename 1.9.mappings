@@ -469,6 +469,7 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/world/World
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
+	METHOD a getBlockItem (Lnone/aas;)Lnone/agk;
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
