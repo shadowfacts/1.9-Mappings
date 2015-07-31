@@ -445,6 +445,9 @@ CLASS none/lh
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+CLASS none/ms net/minecraft/achievement/Achievement
+CLASS none/mt net/minecraft/achievement/AchievementRegistry
+	FIELD e achievements Ljava/util/List;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
@@ -469,6 +472,11 @@ CLASS none/xa net/minecraft/entity/player/EntityPlayer
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
+CLASS none/ace net/minecraft/potion/Potion
+	FIELD b defaultPotionTexture Lnone/jz;
+	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
+		ARG 0 potionName
+	METHOD a registerPotion (Ljava/lang/String;Lnone/ace;)V
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
