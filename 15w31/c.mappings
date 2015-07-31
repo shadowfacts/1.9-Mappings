@@ -409,8 +409,170 @@ CLASS none/df net/minecraft/util/Vec3i
 	METHOD n getX ()I
 	METHOD o getY ()I
 	METHOD p getZ ()I
+CLASS none/dl net/minecraft/nbt/TagByteArray
+	FIELD b val [B
+	METHOD <init> ([B)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c get ()[B
+CLASS none/dm net/minecraft/nbt/TagByte
+	FIELD b val B
+	METHOD <init> (B)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
 CLASS none/dn net/minecraft/nbt/TagCompound
+	FIELD b values Ljava/util/Map;
+	METHOD a asByte ()B
+	METHOD a load (BLjava/lang/String;Ljava/io/DataInput;ILnone/dw;)Lnone/eb;
+		ARG 0 type
+		ARG 1 key
+		ARG 2 input
+	METHOD a getUUID (Ljava/lang/String;)Ljava/util/UUID;
+		ARG 0 key
+	METHOD a setByte (Ljava/lang/String;B)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setDouble (Ljava/lang/String;D)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setFloat (Ljava/lang/String;F)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setInt (Ljava/lang/String;I)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setLong (Ljava/lang/String;J)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setTag (Ljava/lang/String;Lnone/eb;)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setShort (Ljava/lang/String;S)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setBoolean (Ljava/lang/String;Z)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setByteArray (Ljava/lang/String;[B)V
+		ARG 0 key
+		ARG 1 val
+	METHOD a setIntArray (Ljava/lang/String;[I)V
+		ARG 0 key
+		ARG 1 val
+	METHOD b copy ()Lnone/eb;
+	METHOD b getTag (Ljava/lang/String;)Lnone/eb;
+		ARG 0 key
+	METHOD c getByte (Ljava/lang/String;)B
+		ARG 0 key
+	METHOD d hasKey (Ljava/lang/String;)Z
+		ARG 0 key
+CLASS none/dp net/minecraft/nbt/TagDouble
+	FIELD b val D
+	METHOD <init> (D)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
+CLASS none/dq
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+CLASS none/dr net/minecraft/nbt/TagFloat
+	FIELD b val F
+	METHOD <init> (F)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
+CLASS none/ds net/minecraft/nbt/TagIntArray
+	FIELD b val [I
+	METHOD <init> ([I)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c get ()[I
+CLASS none/dt net/minecraft/nbt/TagInt
+	FIELD b val I
+	METHOD <init> (I)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
+CLASS none/du
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+CLASS none/dv net/minecraft/nbt/TagLong
+	FIELD b val J
+	METHOD <init> (J)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
+CLASS none/dz net/minecraft/nbt/TagShort
+	FIELD b val S
+	METHOD a asByte ()B
+	METHOD b copy ()Lnone/eb;
+	METHOD c getLong ()J
+	METHOD d getInt ()I
+	METHOD e getShort ()S
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
+	METHOD f getByte ()B
+	METHOD g getDouble ()D
+	METHOD h getFloat ()F
+CLASS none/ea net/minecraft/nbt/TagString
+	FIELD b val Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 0 val
+	METHOD a asByte ()B
+	METHOD a_ get ()Ljava/lang/String;
+	METHOD b copy ()Lnone/eb;
 CLASS none/eb net/minecraft/nbt/TagBase
+	CLASS none/eb$a TagPrimitive
+		METHOD c getLong ()J
+		METHOD d getInt ()I
+		METHOD e getShort ()S
+		METHOD f getByte ()B
+		METHOD g getDouble ()D
+		METHOD h getFloat ()F
+	METHOD a asByte ()B
+	METHOD a_ get ()Ljava/lang/String;
+	METHOD b copy ()Lnone/eb;
 CLASS none/et net/minecraft/chat/ClickEvent
 	CLASS none/et$a Action
 		FIELD a OPEN_URL Lnone/et$a;
@@ -445,14 +607,14 @@ CLASS none/lh
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
-CLASS none/ms net/minecraft/achievement/Achievement
-CLASS none/mt net/minecraft/achievement/AchievementRegistry
-	FIELD e achievements Ljava/util/List;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
+	METHOD c roundDown (D)I
 	METHOD c sqrt (F)F
 	METHOD c hsvToRgb (FFF)I
+	METHOD d roundDown (D)J
+	METHOD d roundDown (F)I
 CLASS none/pr net/minecraft/entity/Entity
 	FIELD V rand Ljava/util/Random;
 	FIELD b nextId I
@@ -472,11 +634,6 @@ CLASS none/xa net/minecraft/entity/player/EntityPlayer
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
-CLASS none/ace net/minecraft/potion/Potion
-	FIELD b defaultPotionTexture Lnone/jz;
-	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
-		ARG 0 potionName
-	METHOD a registerPotion (Ljava/lang/String;Lnone/ace;)V
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
@@ -498,7 +655,6 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD a airTexture Lnone/jz;
 	FIELD w hardness F
 	FIELD x blastResistance F
-	METHOD U initBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
