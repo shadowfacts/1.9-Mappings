@@ -713,6 +713,10 @@ CLASS none/amy
 		METHOD c getPosition ()Lnone/cj;
 	CLASS none/amy$2
 		METHOD c getPosition ()Lnone/cj;
+CLASS none/anf net/minecraft/block/Piston
+	FIELD N isSticky Z
+	METHOD <init> (Z)V
+		ARG 0 isSticky
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
