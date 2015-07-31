@@ -489,10 +489,21 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
 	FIELD w hardness F
+	FIELD x blastResistance F
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+	METHOD b setBlastResistance (F)Lnone/agk;
+		ARG 0 blastResistance
+	METHOD c setHardness (F)Lnone/agk;
+		ARG 0 hardness
+	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
+		ARG 0 unlocalizedName
+CLASS none/aho net/minecraft/block/DragonEgg
+CLASS none/aiv net/minecraft/block/Hopper
+CLASS none/ajw net/minecraft/block/PackedIce
+CLASS none/ale net/minecraft/block/Stairs
 CLASS none/amh net/minecraft/tileentity/TileEntity
 	FIELD b level Lnone/aeo;
 	FIELD c pos Lnone/cj;
@@ -501,14 +512,6 @@ CLASS none/amh net/minecraft/tileentity/TileEntity
 		ARG 0 teClass
 		ARG 1 id
 	METHOD z getLevel ()Lnone/aeo;
-	METHOD c setHardness (F)Lnone/agk;
-		ARG 0 hardness
-	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
-		ARG 0 name
-CLASS none/aho net/minecraft/block/DragonEgg
-CLASS none/aiv net/minecraft/block/Hopper
-CLASS none/ajw net/minecraft/block/PackedIce
-CLASS none/ale net/minecraft/block/Stairs
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
