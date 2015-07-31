@@ -1,6 +1,8 @@
 # 1.9 Mappings
 Mappings for Minecraft 1.9 (current snapshot 15w31c).
 
+Talk in #19deobf on irc.esper.net ([WebChat](http://webchat.esper.net/?channels=#19deobf))
+
 Made using [Enigma](http://www.cuchazinteractive.com/enigma/) by [Cuchaz](http://www.cuchazinteractive.com/).
 
 ## Contributing
