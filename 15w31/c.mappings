@@ -507,15 +507,20 @@ CLASS none/agk net/minecraft/block/Block
 		ARG 0 unlocalizedName
 CLASS none/agr net/minecraft/block/Cactus
 CLASS none/agy net/minecraft/block/Clay
+CLASS none/ahk net/minecraft/block/Dirt
 CLASS none/aho net/minecraft/block/DragonEgg
 CLASS none/aia net/minecraft/block/Fence
+CLASS none/ail net/minecraft/block/Grass
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/aiy net/minecraft/block/Ice
 CLASS none/aiz net/minecraft/block/JukeBox
+CLASS none/ajr net/minecraft/block/NoteBlock
 CLASS none/ajw net/minecraft/block/PackedIce
 CLASS none/ako net/minecraft/block/Reeds
+CLASS none/akt net/minecraft/block/Sapling
 CLASS none/aky net/minecraft/block/Snow
 CLASS none/ale net/minecraft/block/Stairs
+CLASS none/ali net/minecraft/block/Stone
 CLASS none/amh net/minecraft/tileentity/TileEntity
 	FIELD b level Lnone/aeo;
 	FIELD c pos Lnone/cj;
