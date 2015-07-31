@@ -466,7 +466,7 @@ CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
 CLASS none/aen net/minecraft/util/MathHelper
-CLASS none/aeo net/minecraft/world/World
+CLASS none/aeo net/minecraft/level/Level
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$1
