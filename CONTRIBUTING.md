@@ -16,6 +16,6 @@ TODO, this needs to be figured out more :P
 **How to pull without losing anyone's changes:**
 
 1. Save your changes in Enigma (Ctrl+S)
-2. Close Enigma
+2. Close the mappings in Enigma (`File->Close Mappings`)
 3. `git pull`
-4. Re-open Enigma
+4. Re-open the mappings (`File->Open Mappings...`)
