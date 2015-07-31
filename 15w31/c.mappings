@@ -702,6 +702,7 @@ CLASS none/ace net/minecraft/potion/Potion
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
+CLASS none/aga net/minecraft/block/BlockAir
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$1
@@ -722,7 +723,7 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD f woodSound Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
-	METHOD U initBlocks ()V
+	METHOD U registerBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
@@ -738,9 +739,13 @@ CLASS none/agk net/minecraft/block/Block
 CLASS none/agr net/minecraft/block/BlockCactus
 CLASS none/agy net/minecraft/block/BlockClay
 CLASS none/ahk net/minecraft/block/BlockDirt
+CLASS none/ahl net/minecraft/block/BlockDispenser
 CLASS none/aho net/minecraft/block/BlockDragonEgg
+CLASS none/ahq net/minecraft/block/BlockDynamicLiquid
 CLASS none/aia net/minecraft/block/BlockFence
+CLASS none/aij net/minecraft/block/BlockGlass
 CLASS none/ail net/minecraft/block/BlockGrass
+CLASS none/ain net/minecraft/block/BlockGravel
 CLASS none/aiv net/minecraft/block/BlockHopper
 CLASS none/aiy net/minecraft/block/BlockIce
 CLASS none/aiz net/minecraft/block/BlockJukebox
@@ -750,11 +755,19 @@ CLASS none/aiz net/minecraft/block/BlockJukebox
 		METHOD a readFromNBT (Lnone/dn;)V
 		METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/ajr net/minecraft/block/BlockNote
+CLASS none/ajt net/minecraft/block/BlockLeaves
+CLASS none/aju net/minecraft/block/BlockOldLog
+CLASS none/ajv net/minecraft/block/BlockOre
 CLASS none/ajw net/minecraft/block/BlockPackedIce
+CLASS none/ajx net/minecraft/block/BlockWood
 CLASS none/ako net/minecraft/block/BlockReeds
+CLASS none/akr net/minecraft/block/BlockSand
+CLASS none/aks net/minecraft/block/BlockSandstone
 CLASS none/akt net/minecraft/block/BlockSapling
 CLASS none/aky net/minecraft/block/BlockSnow
+CLASS none/alb net/minecraft/block/BlockSponge
 CLASS none/ale net/minecraft/block/BlockStairs
+CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/ali net/minecraft/block/BlockStone
 CLASS none/amf net/minecraft/tileentity/TileEntityBanner
 	METHOD a readFromNBT (Lnone/dn;)V
@@ -863,6 +876,11 @@ CLASS none/anf net/minecraft/block/BlockPiston
 CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/atl net/minecraft/block/material/Material
+	FIELD e rock Lnone/atl;
+	FIELD h water Lnone/atl;
+	FIELD i lava Lnone/atl;
+	FIELD s glass Lnone/atl;
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
