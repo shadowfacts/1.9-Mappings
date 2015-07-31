@@ -469,7 +469,7 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/world/World
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
-	METHOD a getBlockItem (Lnone/aas;)Lnone/agk;
+	METHOD a getBlock (Lnone/aas;)Lnone/agk;
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
@@ -484,7 +484,13 @@ CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
 	FIELD L mojangLogo Lnone/jz;
-CLASS none/azu net/minecraft/client/gui/GuiScreen
+CLASS none/axn net/minecraft/client/gui/GuiIngame
+CLASS none/axo net/minecraft/client/gui/Gui
+CLASS none/axq net/minecraft/util/ScaledResolution
+CLASS none/azf net/minecraft/client/gui/GuiRespawn
+CLASS none/azo net/minecraft/client/gui/GuiOptions
+CLASS none/azu net/minecraft/client/gui/GuiCreateWorld
+CLASS none/azv net/minecraft/client/gui/GuiScreen
 CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
 CLASS none/bgz
 CLASS none/bha
