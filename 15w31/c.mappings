@@ -720,15 +720,22 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD H sound Lnone/agk$d;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
-	FIELD f woodSound Lnone/agk$d;
+	FIELD e soundTypeStone Lnone/agk$d;
+	FIELD f soundTypeWood Lnone/agk$d;
+	FIELD g soundTypeGravel Lnone/agk$d;
+	FIELD h soundTypeGrass Lnone/agk$d;
+	FIELD i soundTypePiston Lnone/agk$d;
+	FIELD j soundTypeMetal Lnone/agk$d;
+	FIELD k soundTypeGlass Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
+	METHOD M disableStats ()Lnone/agk;
 	METHOD U registerBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
-	METHOD a setSound (Lnone/agk$d;)Lnone/agk;
+	METHOD a setStepSound (Lnone/agk$d;)Lnone/agk;
 		ARG 0 sound
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
