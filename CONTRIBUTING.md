@@ -13,5 +13,9 @@ For each major snapshot (i.e. 15w31) there is to be a folder. For each subsequen
 TODO, this needs to be figured out more :P
 
 #### Pulling ####
+**How to pull without losing anyone's changes:**
 
-Before making any changes pull the current mappings. When you pull, make sure to re-open the mappings in Enigma, otherwise you will just delete the other person's changes when you save
+1. Save your changes in Enigma (Ctrl+S)
+2. Close Enigma
+3. `git pull`
+4. Re-open Enigma
