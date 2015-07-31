@@ -665,6 +665,7 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD f woodSound Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
+	METHOD U initBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
