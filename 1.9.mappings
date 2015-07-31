@@ -491,7 +491,6 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD w hardness F
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
-<<<<<<< HEAD
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
 CLASS none/amh net/minecraft/tileentity/TileEntity
@@ -502,7 +501,6 @@ CLASS none/amh net/minecraft/tileentity/TileEntity
 		ARG 0 teClass
 		ARG 1 id
 	METHOD z getLevel ()Lnone/aeo;
-=======
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
@@ -510,7 +508,7 @@ CLASS none/amh net/minecraft/tileentity/TileEntity
 CLASS none/aho net/minecraft/block/DragonEgg
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/ajw net/minecraft/block/PackedIce
->>>>>>> f497b886ae05b2112d359a5fcf755cecb3a0516f
+CLASS none/ale net/minecraft/block/Stairs
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
