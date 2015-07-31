@@ -494,10 +494,8 @@ CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$d Sound
 		METHOD a digSound ()Ljava/lang/String;
 		METHOD c stepSound ()Ljava/lang/String;
-	FIELD H sound Lnone/agk$d;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
-	FIELD f woodSound Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
 	METHOD U initBlocks ()V
@@ -505,30 +503,16 @@ CLASS none/agk net/minecraft/block/Block
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
-	METHOD a setSound (Lnone/agk$d;)Lnone/agk;
-		ARG 0 sound
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 unlocalizedName
-CLASS none/agr net/minecraft/block/Cactus
-CLASS none/agy net/minecraft/block/Clay
-CLASS none/ahk net/minecraft/block/Dirt
 CLASS none/aho net/minecraft/block/DragonEgg
-CLASS none/aia net/minecraft/block/Fence
-CLASS none/ail net/minecraft/block/Grass
 CLASS none/aiv net/minecraft/block/Hopper
-CLASS none/aiy net/minecraft/block/Ice
-CLASS none/aiz net/minecraft/block/JukeBox
-CLASS none/ajr net/minecraft/block/NoteBlock
 CLASS none/ajw net/minecraft/block/PackedIce
-CLASS none/ako net/minecraft/block/Reeds
-CLASS none/akt net/minecraft/block/Sapling
-CLASS none/aky net/minecraft/block/Snow
 CLASS none/ale net/minecraft/block/Stairs
-CLASS none/ali net/minecraft/block/Stone
 CLASS none/amh net/minecraft/tileentity/TileEntity
 	FIELD b level Lnone/aeo;
 	FIELD c pos Lnone/cj;
@@ -553,6 +537,9 @@ CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
 	FIELD L mojangLogo Lnone/jz;
+	FIELD S instance Lnone/axd;
+	METHOD A getMinecraft ()Lnone/axd;
+	METHOD at ()V
 CLASS none/axo
 	FIELD b options_background Lnone/jz;
 	FIELD c stats_icons Lnone/jz;
@@ -581,3 +568,5 @@ CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
 	METHOD c getPosition ()Lnone/cj;
 	METHOD run run ()V
 	METHOD x ()V
+CLASS net/minecraft/client/ClientBrandRetriever net/minecraft/client/ClientBrandRetriever
+	METHOD getClientModName getClientModName ()Ljava/lang/String;
