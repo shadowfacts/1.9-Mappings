@@ -607,6 +607,9 @@ CLASS none/lh
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+CLASS none/ms net/minecraft/achievement/Achievement
+CLASS none/mt net/minecraft/achievement/AchievementRegistry
+	FIELD e achievements Ljava/util/List;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
@@ -634,6 +637,11 @@ CLASS none/xa net/minecraft/entity/player/EntityPlayer
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
+CLASS none/ace net/minecraft/potion/Potion
+	FIELD b defaultPotionTexture Lnone/jz;
+	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
+		ARG 0 potionName
+	METHOD a registerPotion (Ljava/lang/String;Lnone/ace;)V
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
@@ -651,24 +659,40 @@ CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$d Sound
 		METHOD a digSound ()Ljava/lang/String;
 		METHOD c stepSound ()Ljava/lang/String;
+	FIELD H sound Lnone/agk$d;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
+	FIELD f woodSound Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+	METHOD a setSound (Lnone/agk$d;)Lnone/agk;
+		ARG 0 sound
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 unlocalizedName
+CLASS none/agr net/minecraft/block/Cactus
+CLASS none/agy net/minecraft/block/Clay
+CLASS none/ahk net/minecraft/block/Dirt
 CLASS none/aho net/minecraft/block/DragonEgg
+CLASS none/aia net/minecraft/block/Fence
+CLASS none/ail net/minecraft/block/Grass
 CLASS none/aiv net/minecraft/block/Hopper
+CLASS none/aiy net/minecraft/block/Ice
+CLASS none/aiz net/minecraft/block/JukeBox
+CLASS none/ajr net/minecraft/block/NoteBlock
 CLASS none/ajw net/minecraft/block/PackedIce
+CLASS none/ako net/minecraft/block/Reeds
+CLASS none/akt net/minecraft/block/Sapling
+CLASS none/aky net/minecraft/block/Snow
 CLASS none/ale net/minecraft/block/Stairs
+CLASS none/ali net/minecraft/block/Stone
 CLASS none/amh net/minecraft/tileentity/TileEntity
 	FIELD b level Lnone/aeo;
 	FIELD c pos Lnone/cj;
