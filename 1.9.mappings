@@ -253,11 +253,15 @@ CLASS none/bw net/minecraft/command/server/CommandWhitelist
 CLASS none/bx net/minecraft/command/CommandWorldBorder
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
-CLASS none/cj net/minecraft/util/BlockCoord
+CLASS none/cj net/minecraft/util/BlockPos
 	CLASS none/cj$a
 		METHOD n getX ()I
 		METHOD o getY ()I
 		METHOD p getZ ()I
+	METHOD <init> (III)V
+		ARG 0 x
+		ARG 1 y
+		ARG 2 z
 	METHOD <init> (Lnone/df;)V
 		ARG 0 vec
 CLASS none/df net/minecraft/util/Vec3i
@@ -279,6 +283,7 @@ CLASS none/df net/minecraft/util/Vec3i
 CLASS none/eu net/minecraft/chat/IChatComponent
 	CLASS none/eu$a
 		FIELD a gson Lcom/google/gson/Gson;
+CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lh
 	METHOD a sendMessage (Lnone/eu;)V
 CLASS none/ml
@@ -288,10 +293,37 @@ CLASS none/nu net/minecraft/util/MathUtils
 	METHOD a sqrt (D)F
 	METHOD c sqrt (F)F
 	METHOD c hsvToRgb (FFF)I
-CLASS none/pr
+CLASS none/pr net/minecraft/entity/Entity
 	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/qa net/minecraft/entity/EntityLivingBase
+CLASS none/xa net/minecraft/entity/player/EntityPlayer
+CLASS none/aar net/minecraft/item/Item
+CLASS none/aas net/minecraft/item/ItemStack
+CLASS none/aau net/minecraft/init/Items
 CLASS none/aed
 	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/aen net/minecraft/world/World
+	FIELD D isRemote Z
+CLASS none/agj net/minecraft/block/Block
+CLASS none/agk net/minecraft/init/Blocks
+	FIELD a air Lnone/agj;
+	FIELD b stone Lnone/agj;
+	FIELD c grass Lnone/aik;
+	FIELD d dirt Lnone/agj;
+	FIELD e cobblestone Lnone/agj;
+	FIELD f planks Lnone/agj;
+	FIELD g sapling Lnone/agj;
+	FIELD h bedrock Lnone/agj;
+	FIELD i flowing_water Lnone/ahp;
+	FIELD j water Lnone/alf;
+	FIELD k flowing_lava Lnone/ahp;
+	FIELD l lava Lnone/alf;
+	FIELD m sand Lnone/akq;
+	FIELD n gravel Lnone/agj;
+	FIELD o gold_ore Lnone/agj;
+	FIELD p iron_ore Lnone/agj;
+	FIELD q coal_ore Lnone/agj;
+	METHOD a getRegisteredBlock (Ljava/lang/String;)Lnone/agj;
 CLASS none/amx
 	CLASS none/amx$1
 		METHOD a sendMessage (Lnone/eu;)V
@@ -323,9 +355,17 @@ CLASS none/awh net/minecraft/util/Vec3d
 		ARG 0 vec
 	METHOD e add (Lnone/awh;)Lnone/awh;
 		ARG 0 vec
+CLASS none/axc net/minecraft/client/Minecraft
+CLASS none/azu net/minecraft/client/gui/GuiScreen
+CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
 CLASS none/bgz
 	METHOD a sendMessage (Lnone/eu;)V
 CLASS none/bha
 	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
+CLASS none/bht net/minecraft/client/renderer/RenderGlobal
+CLASS none/blx net/minecraft/client/renderer/entity/RenderItem
+CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
+	METHOD main main ([Ljava/lang/String;)V
 CLASS net/minecraft/server/MinecraftServer
 	METHOD a sendMessage (Lnone/eu;)V
