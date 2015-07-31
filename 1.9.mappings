@@ -485,6 +485,8 @@ CLASS none/agk net/minecraft/block/Block
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+CLASS none/aiv net/minecraft/block/Hopper
+CLASS none/ajw net/minecraft/block/PackedIce
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
