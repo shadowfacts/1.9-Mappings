@@ -486,8 +486,10 @@ CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$d Sound
 		METHOD a digSound ()Ljava/lang/String;
 		METHOD c stepSound ()Ljava/lang/String;
+	FIELD H sound Lnone/agk$d;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
+	FIELD f woodSound Lnone/agk$d;
 	FIELD w hardness F
 	FIELD x blastResistance F
 	METHOD U initBlocks ()V
@@ -495,6 +497,8 @@ CLASS none/agk net/minecraft/block/Block
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+	METHOD a setSound (Lnone/agk$d;)Lnone/agk;
+		ARG 0 sound
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
 	METHOD c setHardness (F)Lnone/agk;
