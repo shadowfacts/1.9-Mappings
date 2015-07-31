@@ -409,6 +409,8 @@ CLASS none/df net/minecraft/util/Vec3i
 	METHOD n getX ()I
 	METHOD o getY ()I
 	METHOD p getZ ()I
+CLASS none/dn net/minecraft/nbt/TagCompound
+CLASS none/eb net/minecraft/nbt/TagBase
 CLASS none/et net/minecraft/chat/ClickEvent
 	CLASS none/et$a Action
 		FIELD a OPEN_URL Lnone/et$a;
@@ -461,12 +463,15 @@ CLASS none/qa net/minecraft/entity/EntityLivingBase
 CLASS none/vp
 	CLASS none/vp$1
 		METHOD c getPosition ()Lnone/cj;
+CLASS none/vs
+	METHOD z getLevel ()Lnone/aeo;
 CLASS none/xa net/minecraft/entity/player/EntityPlayer
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
+CLASS none/aes net/minecraft/level/BlockAccess
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$1
@@ -485,9 +490,19 @@ CLASS none/agk net/minecraft/block/Block
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+CLASS none/amh net/minecraft/tileentity/TileEntity
+	FIELD b level Lnone/aeo;
+	FIELD c pos Lnone/cj;
+	FIELD f idMap Ljava/util/Map;
+	METHOD a (Ljava/lang/Class;Ljava/lang/String;)V
+		ARG 0 teClass
+		ARG 1 id
+	METHOD z getLevel ()Lnone/aeo;
 CLASS none/amk
 	CLASS none/amk$1
 		METHOD c getPosition ()Lnone/cj;
+CLASS none/amt
+	METHOD z getLevel ()Lnone/aeo;
 CLASS none/amx
 CLASS none/amy
 	CLASS none/amy$1
