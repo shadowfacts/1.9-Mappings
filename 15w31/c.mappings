@@ -610,8 +610,11 @@ CLASS none/ml
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
+	METHOD c roundDown (D)I
 	METHOD c sqrt (F)F
 	METHOD c hsvToRgb (FFF)I
+	METHOD d roundDown (D)J
+	METHOD d roundDown (F)I
 CLASS none/pr net/minecraft/entity/Entity
 	FIELD V rand Ljava/util/Random;
 	FIELD b nextId I
