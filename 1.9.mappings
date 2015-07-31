@@ -466,7 +466,7 @@ CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
 CLASS none/aen net/minecraft/util/MathHelper
-CLASS none/aeo net/minecraft/level/Level
+CLASS none/aeo net/minecraft/world/World
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$1
@@ -481,10 +481,12 @@ CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$d Sound
 		METHOD a digSound ()Ljava/lang/String;
 		METHOD c stepSound ()Ljava/lang/String;
+	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
+	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a boundingBox (FFFFFF)V
-	METHOD a getblock (Lnone/aas;)Lnone/agk;
-		ARG 0 item
+	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
+		ARG 0 name
 CLASS none/aiv net/minecraft/block/Hopper
 CLASS none/ajw net/minecraft/block/PackedIce
 CLASS none/amk
@@ -501,18 +503,14 @@ CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
 	FIELD L mojangLogo Lnone/jz;
-CLASS none/axo net/minecraft/gui/base/Gui
-	FIELD b optionsBackground Lnone/jz;
-	FIELD c statsIcon Lnone/jz;
+CLASS none/axo
+	FIELD b options_background Lnone/jz;
+	FIELD c stats_icons Lnone/jz;
 	FIELD d icons Lnone/jz;
-CLASS none/ayy net/minecraft/gui/base/GuiYNCallback
-CLASS none/azg net/minecraft/client/gui/GuiDemo
+CLASS none/azg
 	FIELD a logger Lorg/apache/logging/log4j/Logger;
-	FIELD f demoBackground Lnone/jz;
-CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
-CLASS none/azv net/minecraft/gui/base/GuiScreen
-	FIELD a logger Lorg/apache/logging/log4j/Logger;
-	FIELD j minecraft Lnone/axd;
+	FIELD f demo_background Lnone/jz;
+CLASS none/azu net/minecraft/client/gui/GuiScreen
 CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
 CLASS none/bgz
 CLASS none/bha
