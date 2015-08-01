@@ -648,9 +648,14 @@ CLASS none/et net/minecraft/chat/ClickEvent
 		METHOD b getName ()Ljava/lang/String;
 		METHOD values values ()[Lnone/et$a;
 	FIELD a action Lnone/et$a;
+	FIELD b value Ljava/lang/String;
 	METHOD <init> (Lnone/et$a;Ljava/lang/String;)V
 		ARG 0 action
+		ARG 1 value
 	METHOD a getAction ()Lnone/et$a;
+	METHOD b getValue ()Ljava/lang/String;
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
 CLASS none/eu net/minecraft/chat/ChatComponent
 	CLASS none/eu$a ChatComponentSerializer
 		FIELD a gson Lcom/google/gson/Gson;
@@ -780,7 +785,7 @@ CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
 CLASS none/ace net/minecraft/potion/Potion
-	FIELD b defaultPotionTexture Lnone/jz;
+	FIELD b defaultTexture Lnone/jz;
 	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
 		ARG 0 potionName
 	METHOD a registerPotion (Ljava/lang/String;Lnone/ace;)V
@@ -838,6 +843,10 @@ CLASS none/aia net/minecraft/block/BlockFence
 CLASS none/aij net/minecraft/block/BlockGlass
 CLASS none/ail net/minecraft/block/BlockGrass
 CLASS none/ain net/minecraft/block/BlockGravel
+CLASS none/air
+	METHOD a (Lnone/aes;Lnone/cj;Lnone/cq;)Z
+		ARG 0 blockAccess
+		ARG 1 pos
 CLASS none/aiv net/minecraft/block/BlockHopper
 CLASS none/aiy net/minecraft/block/BlockIce
 CLASS none/aiz net/minecraft/block/BlockJukebox
@@ -970,10 +979,22 @@ CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/atl net/minecraft/block/material/Material
+	FIELD a air Lnone/atl;
 	FIELD e rock Lnone/atl;
 	FIELD h water Lnone/atl;
 	FIELD i lava Lnone/atl;
 	FIELD s glass Lnone/atl;
+CLASS none/atm net/minecraft/block/material/MapColour
+	FIELD L colour I
+	FIELD M id I
+	FIELD a colours [Lnone/atm;
+	FIELD b invisible Lnone/atm;
+	FIELD f lava Lnone/atm;
+	FIELD m rock Lnone/atm;
+	FIELD n water Lnone/atm;
+	METHOD <init> (II)V
+		ARG 0 id
+		ARG 1 colour
 CLASS none/awg net/minecraft/util/AxisAlignedBB
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
@@ -1063,8 +1084,13 @@ CLASS none/bhb
 	METHOD t_ onUpdate ()V
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
 CLASS none/blx net/minecraft/client/renderer/entity/RenderItem
+	FIELD a textures Lnone/jz;
+	FIELD b minecraft Lnone/axd;
 CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
+	CLASS net/minecraft/client/main/Main$2
+		METHOD run run ()V
 	METHOD main main ([Ljava/lang/String;)V
+		ARG 0 args
 CLASS net/minecraft/server/MinecraftServer net/minecraft/server/MinecraftServer
 	FIELD k logger Lorg/apache/logging/log4j/Logger;
 	FIELD l instance Lnet/minecraft/server/MinecraftServer;
