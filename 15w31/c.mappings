@@ -803,6 +803,8 @@ CLASS none/xr
 	METHOD t_ onUpdate ()V
 CLASS none/xu
 	METHOD t_ onUpdate ()V
+CLASS none/zv net/minecraft/creativetab/CreativeTabs
+	FIELD b tabBlock Lnone/zv;
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
@@ -815,6 +817,7 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
 CLASS none/aga net/minecraft/block/BlockAir
+CLASS none/agi net/minecraft/block/BlockBed
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
 	CLASS none/agk$1
@@ -832,6 +835,7 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD H sound Lnone/agk$d;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
+	FIELD b creativetab Lnone/zv;
 	FIELD e soundTypeStone Lnone/agk$d;
 	FIELD f soundTypeWood Lnone/agk$d;
 	FIELD g soundTypeGravel Lnone/agk$d;
@@ -839,32 +843,50 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD i soundTypePiston Lnone/agk$d;
 	FIELD j soundTypeMetal Lnone/agk$d;
 	FIELD k soundTypeGlass Lnone/agk$d;
+	FIELD l soundTypeCloth Lnone/agk$d;
+	FIELD m soundTypeSand Lnone/agk$d;
+	FIELD s lightOpacity I
+	FIELD u lightValue I
 	FIELD w hardness F
 	FIELD x blastResistance F
 	METHOD M disableStats ()Lnone/agk;
 	METHOD U registerBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
+	METHOD a setLightLevel (F)Lnone/agk;
+		ARG 0 lightValue
 	METHOD a boundingBox (FFFFFF)V
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
 	METHOD a setStepSound (Lnone/agk$d;)Lnone/agk;
 		ARG 0 sound
+	METHOD a setCreativeTab (Lnone/zv;)Lnone/agk;
+		ARG 0 creativetab
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 unlocalizedName
+	METHOD e setLightOpacity (I)Lnone/agk;
+		ARG 0 opacity
+	METHOD z setBlockUnbreakable ()Lnone/agk;
+CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/agr net/minecraft/block/BlockCactus
 CLASS none/agy net/minecraft/block/BlockClay
+CLASS none/aha net/minecraft/block/BlockColored
+CLASS none/ahg net/minecraft/block/BlockDeadBush
+CLASS none/ahh net/minecraft/block/BlockRailDetector
 CLASS none/ahk net/minecraft/block/BlockDirt
 CLASS none/ahl net/minecraft/block/BlockDispenser
 CLASS none/aho net/minecraft/block/BlockDragonEgg
 CLASS none/ahq net/minecraft/block/BlockDynamicLiquid
 CLASS none/aia net/minecraft/block/BlockFence
+CLASS none/aic net/minecraft/block/BlockFire
+CLASS none/aig net/minecraft/block/BlockDoubleStoneSlab
 CLASS none/aij net/minecraft/block/BlockGlass
 CLASS none/ail net/minecraft/block/BlockGrass
 CLASS none/ain net/minecraft/block/BlockGravel
+CLASS none/aiq net/minecraft/block/BlockStoneSlab
 CLASS none/air
 	METHOD a (Lnone/aes;Lnone/cj;Lnone/cq;)Z
 		ARG 0 blockAccess
@@ -877,12 +899,17 @@ CLASS none/aiz net/minecraft/block/BlockJukebox
 		METHOD a getRecord ()Lnone/aat;
 		METHOD a readFromNBT (Lnone/dn;)V
 		METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/ajh net/minecraft/block/BlockMobSpawner
+CLASS none/ajj net/minecraft/block/BlockMushroom
 CLASS none/ajr net/minecraft/block/BlockNote
+CLASS none/ajs net/minecraft/block/BlockObsidian
 CLASS none/ajt net/minecraft/block/BlockLeaves
 CLASS none/aju net/minecraft/block/BlockOldLog
 CLASS none/ajv net/minecraft/block/BlockOre
 CLASS none/ajw net/minecraft/block/BlockPackedIce
 CLASS none/ajx net/minecraft/block/BlockWood
+CLASS none/akb net/minecraft/block/BlockRailPowered
+CLASS none/aki net/minecraft/block/BlockRedFlower
 CLASS none/ako net/minecraft/block/BlockReeds
 CLASS none/akr net/minecraft/block/BlockSand
 CLASS none/aks net/minecraft/block/BlockSandstone
@@ -892,7 +919,12 @@ CLASS none/alb net/minecraft/block/BlockSponge
 CLASS none/ale net/minecraft/block/BlockStairs
 CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/ali net/minecraft/block/BlockStone
+CLASS none/aln net/minecraft/block/BlockTallGrass
+CLASS none/alp net/minecraft/block/BlockTNT
+CLASS none/alq net/minecraft/block/BlockTorch
 CLASS none/alr net/minecraft/block/BlockLeavesBase
+CLASS none/alz net/minecraft/block/BlockWeb
+CLASS none/ame net/minecraft/block/BlockYellowFlower
 CLASS none/amf net/minecraft/tileentity/TileEntityBanner
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
@@ -993,25 +1025,34 @@ CLASS none/anb net/minecraft/tileentity/TileEntityEndGateway
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/anc net/minecraft/tileentity/TileEntityAirPortal
-CLASS none/anf net/minecraft/block/BlockPiston
+CLASS none/anf net/minecraft/block/BlockPistonBase
 	FIELD N isSticky Z
 	METHOD <init> (Z)V
 		ARG 0 isSticky
+CLASS none/ang net/minecraft/block/BlockPistonExtension
 CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/ani net/minecraft/block/BlockPistonMoving
 CLASS none/atl net/minecraft/block/material/Material
 	FIELD a air Lnone/atl;
 	FIELD e rock Lnone/atl;
+	FIELD f iron Lnone/atl;
 	FIELD h water Lnone/atl;
 	FIELD i lava Lnone/atl;
+	FIELD n cloth Lnone/atl;
 	FIELD s glass Lnone/atl;
 CLASS none/atm net/minecraft/block/material/MapColour
+	FIELD D brickColor Lnone/atm;
+	FIELD F goldColor Lnone/atm;
+	FIELD G diamondColor Lnone/atm;
+	FIELD H lapisColor Lnone/atm;
 	FIELD L colour I
 	FIELD M id I
 	FIELD a colours [Lnone/atm;
 	FIELD b invisible Lnone/atm;
 	FIELD f lava Lnone/atm;
+	FIELD h ironColor Lnone/atm;
 	FIELD m rock Lnone/atm;
 	FIELD n water Lnone/atm;
 	METHOD <init> (II)V
