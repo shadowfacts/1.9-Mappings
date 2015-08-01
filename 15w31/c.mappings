@@ -661,6 +661,7 @@ CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lh
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+	METHOD t_ onUpdate ()V
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
@@ -676,21 +677,105 @@ CLASS none/nu net/minecraft/util/MathUtils
 	METHOD d roundDown (D)J
 	METHOD d roundDown (F)I
 CLASS none/pr net/minecraft/entity/Entity
+	FIELD D isCollidedHorizontally Z
 	FIELD V rand Ljava/util/Random;
 	FIELD b nextId I
 	FIELD c id I
 	FIELD k stopSpawning Z
+	FIELD v motionX D
+	FIELD w motionY D
+	FIELD x motionZ D
 	METHOD <init> (Lnone/aeo;)V
 		ARG 0 world
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+	METHOD d moveEntity (DDD)V
+	METHOD t_ onUpdate ()V
+CLASS none/px
+	METHOD t_ onUpdate ()V
 CLASS none/qa net/minecraft/entity/EntityLivingBase
+	METHOD t_ onUpdate ()V
+CLASS none/qb
+	METHOD t_ onUpdate ()V
+CLASS none/tu
+	METHOD t_ onUpdate ()V
+CLASS none/tz
+	METHOD t_ onUpdate ()V
+CLASS none/ug
+	METHOD t_ onUpdate ()V
+CLASS none/ul
+	METHOD t_ onUpdate ()V
+CLASS none/uq
+	METHOD t_ onUpdate ()V
+CLASS none/uy
+	METHOD t_ onUpdate ()V
+CLASS none/uz
+	METHOD d moveEntity (DDD)V
+	METHOD t_ onUpdate ()V
+CLASS none/ve
+	METHOD t_ onUpdate ()V
+CLASS none/vi
+	METHOD t_ onUpdate ()V
+CLASS none/vk net/minecraft/entity/item/EntityBoat
+	METHOD t_ onUpdate ()V
+CLASS none/vl
+	METHOD t_ onUpdate ()V
+CLASS none/vm
+	METHOD t_ onUpdate ()V
+CLASS none/vn
+	METHOD t_ onUpdate ()V
 CLASS none/vp
 	CLASS none/vp$1
 		METHOD c getPosition ()Lnone/cj;
+CLASS none/vr
+	METHOD t_ onUpdate ()V
 CLASS none/vs
+	METHOD t_ onUpdate ()V
 	METHOD z getLevel ()Lnone/aeo;
+CLASS none/vu
+	METHOD t_ onUpdate ()V
+CLASS none/vv
+	METHOD t_ onUpdate ()V
+CLASS none/vw
+	METHOD t_ onUpdate ()V
+CLASS none/wa
+	METHOD t_ onUpdate ()V
+CLASS none/wc
+	METHOD t_ onUpdate ()V
+CLASS none/we
+	METHOD t_ onUpdate ()V
+CLASS none/wi
+	METHOD t_ onUpdate ()V
+CLASS none/wj
+	METHOD t_ onUpdate ()V
+CLASS none/wm
+	METHOD t_ onUpdate ()V
+CLASS none/wo
+	METHOD t_ onUpdate ()V
+CLASS none/wp
+	METHOD t_ onUpdate ()V
+CLASS none/wr
+	METHOD t_ onUpdate ()V
 CLASS none/xa net/minecraft/entity/player/EntityPlayer
+	METHOD t_ onUpdate ()V
+CLASS none/xd
+	METHOD t_ onUpdate ()V
+CLASS none/xf
+	METHOD t_ onUpdate ()V
+CLASS none/xg
+	METHOD t_ onUpdate ()V
+CLASS none/xh
+	METHOD t_ onUpdate ()V
+CLASS none/xl
+	METHOD t_ onUpdate ()V
+CLASS none/xo
+	METHOD t_ onUpdate ()V
+CLASS none/xp
+	METHOD t_ onUpdate ()V
+CLASS none/xr
+	METHOD t_ onUpdate ()V
+CLASS none/xu
+	METHOD t_ onUpdate ()V
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
 CLASS none/aau
@@ -776,6 +861,7 @@ CLASS none/alb net/minecraft/block/BlockSponge
 CLASS none/ale net/minecraft/block/BlockStairs
 CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/ali net/minecraft/block/BlockStone
+CLASS none/alr net/minecraft/block/BlockLeavesBase
 CLASS none/amf net/minecraft/tileentity/TileEntityBanner
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
@@ -888,6 +974,7 @@ CLASS none/atl net/minecraft/block/material/Material
 	FIELD h water Lnone/atl;
 	FIELD i lava Lnone/atl;
 	FIELD s glass Lnone/atl;
+CLASS none/awg net/minecraft/util/AxisAlignedBB
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
@@ -905,12 +992,75 @@ CLASS none/azg
 	FIELD f demo_background Lnone/jz;
 CLASS none/azu net/minecraft/client/gui/GuiScreen
 CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
+CLASS none/bfm
+	METHOD t_ onUpdate ()V
+CLASS none/bfn
+	METHOD t_ onUpdate ()V
+CLASS none/bfo
+	METHOD t_ onUpdate ()V
+CLASS none/bfp
+	METHOD t_ onUpdate ()V
+CLASS none/bfq
+	METHOD t_ onUpdate ()V
+CLASS none/bfs
+	METHOD t_ onUpdate ()V
+CLASS none/bft
+	CLASS none/bft$b
+		METHOD t_ onUpdate ()V
+	CLASS none/bft$c
+		METHOD t_ onUpdate ()V
+CLASS none/bfu
+	METHOD t_ onUpdate ()V
+CLASS none/bfv
+	METHOD t_ onUpdate ()V
+CLASS none/bfw
+	METHOD t_ onUpdate ()V
+CLASS none/bfx
+	METHOD t_ onUpdate ()V
+CLASS none/bfy
+	METHOD t_ onUpdate ()V
+CLASS none/bfz
+	METHOD t_ onUpdate ()V
+CLASS none/bgb
+	METHOD t_ onUpdate ()V
+CLASS none/bgc
+	METHOD t_ onUpdate ()V
+CLASS none/bgd
+	METHOD t_ onUpdate ()V
+CLASS none/bge
+	METHOD t_ onUpdate ()V
+CLASS none/bgh
+	METHOD t_ onUpdate ()V
+CLASS none/bgi
+	METHOD t_ onUpdate ()V
+CLASS none/bgj
+	METHOD t_ onUpdate ()V
+CLASS none/bgk
+	METHOD t_ onUpdate ()V
+CLASS none/bgl
+	METHOD t_ onUpdate ()V
+CLASS none/bgm
+	METHOD t_ onUpdate ()V
+CLASS none/bgn
+	METHOD t_ onUpdate ()V
+CLASS none/bgp
+	METHOD t_ onUpdate ()V
+CLASS none/bgq
+	METHOD t_ onUpdate ()V
+CLASS none/bgt
+	METHOD t_ onUpdate ()V
+CLASS none/bgu
+	METHOD t_ onUpdate ()V
+CLASS none/bgv
+	METHOD t_ onUpdate ()V
 CLASS none/bgz
 CLASS none/bha
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+	METHOD t_ onUpdate ()V
 CLASS none/bhb
 	METHOD c getPosition ()Lnone/cj;
+	METHOD t_ onUpdate ()V
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
 CLASS none/blx net/minecraft/client/renderer/entity/RenderItem
 CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
