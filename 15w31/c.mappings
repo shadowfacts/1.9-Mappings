@@ -1994,15 +1994,40 @@ CLASS none/axd net/minecraft/client/Minecraft
 	FIELD S instance Lnone/axd;
 	METHOD A getMinecraft ()Lnone/axd;
 	METHOD at ()V
-CLASS none/axo
+CLASS none/axo net/minecraft/client/Gui
 	FIELD b options_background Lnone/jz;
 	FIELD c stats_icons Lnone/jz;
 	FIELD d icons Lnone/jz;
+CLASS none/ayr
+	METHOD a confirmClicked (ZI)V
+CLASS none/ayy net/minecraft/client/gui/GuiYesNoCallback
+	METHOD a confirmClicked (ZI)V
+		ARG 0 result
+		ARG 1 id
+CLASS none/azf
+	METHOD a confirmClicked (ZI)V
 CLASS none/azg
 	FIELD a logger Lorg/apache/logging/log4j/Logger;
 	FIELD f demo_background Lnone/jz;
-CLASS none/azu net/minecraft/client/gui/GuiScreen
+CLASS none/azo
+	METHOD a confirmClicked (ZI)V
+CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
+CLASS none/azv net/minecraft/client/gui/GuiScreen
+	METHOD a confirmClicked (ZI)V
+CLASS none/azw
+	METHOD a confirmClicked (ZI)V
+CLASS none/bab
+	METHOD a confirmClicked (ZI)V
+CLASS none/bbj
+	METHOD a confirmClicked (ZI)V
+CLASS none/bbr
+	CLASS none/bbr$1
+		METHOD a confirmClicked (ZI)V
 CLASS none/bey net/minecraft/client/network/NetHandlerPlayClient
+CLASS none/bez
+	CLASS none/bez$3
+		CLASS none/bez$3$1
+			METHOD a confirmClicked (ZI)V
 CLASS none/bfm
 	METHOD t_ onUpdate ()V
 CLASS none/bfn
@@ -2072,10 +2097,16 @@ CLASS none/bha
 CLASS none/bhb
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
+CLASS none/bhg net/minecraft/client/renderer/WorldRenderer
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
+CLASS none/bia net/minecraft/client/renderer/Tessellator
+	FIELD c instance Lnone/bia;
+	METHOD <init> (I)V
+		ARG 0 bufferSize
 CLASS none/blx net/minecraft/client/renderer/entity/RenderItem
 	FIELD a textures Lnone/jz;
 	FIELD b minecraft Lnone/axd;
+CLASS none/bpm net/minecraft/client/renderer/vertex/VertexFormat
 CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
 	CLASS net/minecraft/client/main/Main$2
 		METHOD run run ()V
