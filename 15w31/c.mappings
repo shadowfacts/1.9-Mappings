@@ -691,8 +691,43 @@ CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
 CLASS none/ms net/minecraft/achievement/Achievement
+	METHOD c registerAchievement ()Lnone/ms;
 CLASS none/mt net/minecraft/achievement/AchievementRegistry
+	FIELD A blazeRod Lnone/ms;
+	FIELD B potion Lnone/ms;
+	FIELD C theEnd Lnone/ms;
+	FIELD D theEnd2 Lnone/ms;
+	FIELD E enchantments Lnone/ms;
+	FIELD F overkill Lnone/ms;
+	FIELD G bookcase Lnone/ms;
+	FIELD H breedCow Lnone/ms;
+	FIELD I spawnWither Lnone/ms;
+	FIELD J killWitcher Lnone/ms;
+	FIELD K fullBeacon Lnone/ms;
+	FIELD L exploreAllBiomes Lnone/ms;
+	FIELD M overpowered Lnone/ms;
 	FIELD e achievements Ljava/util/List;
+	FIELD f openInventory Lnone/ms;
+	FIELD g mineWood Lnone/ms;
+	FIELD h buildWorkbench Lnone/ms;
+	FIELD i buildPickaxe Lnone/ms;
+	FIELD j buildFurnace Lnone/ms;
+	FIELD k acquireIron Lnone/ms;
+	FIELD l buildHoe Lnone/ms;
+	FIELD m makeBread Lnone/ms;
+	FIELD n bakeCake Lnone/ms;
+	FIELD o buildBetterPickaxe Lnone/ms;
+	FIELD p cookFish Lnone/ms;
+	FIELD q onARail Lnone/ms;
+	FIELD r buildSword Lnone/ms;
+	FIELD s killEnemy Lnone/ms;
+	FIELD t killCow Lnone/ms;
+	FIELD u flyPig Lnone/ms;
+	FIELD v snipeSkeleton Lnone/ms;
+	FIELD w diamonds Lnone/ms;
+	FIELD x diamondsToYou Lnone/ms;
+	FIELD y portal Lnone/ms;
+	FIELD z ghast Lnone/ms;
 CLASS none/my net/minecraft/stat/Stat
 	FIELD a chatComponent Lnone/eu;
 CLASS none/nu net/minecraft/util/MathUtils
@@ -703,6 +738,7 @@ CLASS none/nu net/minecraft/util/MathUtils
 	METHOD c hsvToRgb (FFF)I
 	METHOD d roundDown (D)J
 	METHOD d roundDown (F)I
+CLASS none/po net/minecraft/entity/EntityAgeable
 CLASS none/pr net/minecraft/entity/Entity
 	FIELD D isCollidedHorizontally Z
 	FIELD V rand Ljava/util/Random;
@@ -718,51 +754,24 @@ CLASS none/pr net/minecraft/entity/Entity
 	METHOD c getPosition ()Lnone/cj;
 	METHOD d moveEntity (DDD)V
 	METHOD t_ onUpdate ()V
-CLASS none/po net/minecraft/entity/EntityAgeable
+CLASS none/px
+	METHOD t_ onUpdate ()V
 CLASS none/py net/minecraft/entity/EntityFlying
+CLASS none/qa net/minecraft/entity/EntityLivingBase
+	METHOD t_ onUpdate ()V
 CLASS none/qb net/minecraft/entity/EntityLiving
 	METHOD t_ onUpdate ()V
 CLASS none/qg net/minecraft/entity/passiveIAnimals
 CLASS none/qh net/minecraft/entity/EntityCreature
 CLASS none/qj net/minecraft/entity/passive/EntityTameable
-CLASS none/tw net/minecraft/entity/passiveEntityAnimal
-CLASS none/ul net/minecraft/entity/passive/EntityWolf
-	METHOD t_ onUpdate ()V
-CLASS none/wa net/minecraft/entity/monster/EntityCreeper
-	METHOD t_ onUpdate ()V
-CLASS none/wb net/minecraft/entity/monster/EntityEnderman
-CLASS none/wc net/minecraft/entity/monster/EntityEndermite
-	METHOD t_ onUpdate ()V
-CLASS none/wd net/minecraft/entity/monster/IMob
-CLASS none/we net/minecraft/entity/monster/EntityGhast
-	METHOD t_ onUpdate ()V
-CLASS none/wh net/minecraft/entity/monster/EntityMagmaCube
-CLASS none/wi net/minecraft/entity/monster/EntityMob
-	METHOD t_ onUpdate ()V
-CLASS none/wj net/minecraft/entity/monster/EntityPigZombie
-	METHOD t_ onUpdate ()V
-CLASS none/wk net/minecraft/entity/IRangedAttackMob
-CLASS none/wm net/minecraft/entity/monster/EntitySilverfish
-	METHOD t_ onUpdate ()V
-CLASS none/wn net/minecraft/entity/monster/EntitySkeleton
-CLASS none/wo net/minecraft/entity/monster/EntitySlime
-	METHOD t_ onUpdate ()V
-CLASS none/wp net/minecraft/entity/monster/EntitySpider
-	METHOD t_ onUpdate ()V
-CLASS none/wr net/minecraft/entity/monster/EntityZombie
-	METHOD t_ onUpdate ()V
-CLASS none/wv net/minecraft/entity/passive/EntityVillager
-CLASS none/xh net/minecraft/entity/item/EntityFireworkRocket
-	METHOD t_ onUpdate ()V
-CLASS none/px
-	METHOD t_ onUpdate ()V
-CLASS none/qa net/minecraft/entity/EntityLivingBase
-	METHOD t_ onUpdate ()V
 CLASS none/tu
 	METHOD t_ onUpdate ()V
+CLASS none/tw net/minecraft/entity/passiveEntityAnimal
 CLASS none/tz
 	METHOD t_ onUpdate ()V
 CLASS none/ug
+	METHOD t_ onUpdate ()V
+CLASS none/ul net/minecraft/entity/passive/EntityWolf
 	METHOD t_ onUpdate ()V
 CLASS none/uq
 	METHOD t_ onUpdate ()V
@@ -797,6 +806,30 @@ CLASS none/vv
 	METHOD t_ onUpdate ()V
 CLASS none/vw
 	METHOD t_ onUpdate ()V
+CLASS none/wa net/minecraft/entity/monster/EntityCreeper
+	METHOD t_ onUpdate ()V
+CLASS none/wb net/minecraft/entity/monster/EntityEnderman
+CLASS none/wc net/minecraft/entity/monster/EntityEndermite
+	METHOD t_ onUpdate ()V
+CLASS none/wd net/minecraft/entity/monster/IMob
+CLASS none/we net/minecraft/entity/monster/EntityGhast
+	METHOD t_ onUpdate ()V
+CLASS none/wh net/minecraft/entity/monster/EntityMagmaCube
+CLASS none/wi net/minecraft/entity/monster/EntityMob
+	METHOD t_ onUpdate ()V
+CLASS none/wj net/minecraft/entity/monster/EntityPigZombie
+	METHOD t_ onUpdate ()V
+CLASS none/wk net/minecraft/entity/IRangedAttackMob
+CLASS none/wm net/minecraft/entity/monster/EntitySilverfish
+	METHOD t_ onUpdate ()V
+CLASS none/wn net/minecraft/entity/monster/EntitySkeleton
+CLASS none/wo net/minecraft/entity/monster/EntitySlime
+	METHOD t_ onUpdate ()V
+CLASS none/wp net/minecraft/entity/monster/EntitySpider
+	METHOD t_ onUpdate ()V
+CLASS none/wr net/minecraft/entity/monster/EntityZombie
+	METHOD t_ onUpdate ()V
+CLASS none/wv net/minecraft/entity/passive/EntityVillager
 CLASS none/xa net/minecraft/entity/player/EntityPlayer
 	METHOD t_ onUpdate ()V
 CLASS none/xd
@@ -804,6 +837,8 @@ CLASS none/xd
 CLASS none/xf
 	METHOD t_ onUpdate ()V
 CLASS none/xg
+	METHOD t_ onUpdate ()V
+CLASS none/xh net/minecraft/entity/item/EntityFireworkRocket
 	METHOD t_ onUpdate ()V
 CLASS none/xl
 	METHOD t_ onUpdate ()V
