@@ -718,19 +718,51 @@ CLASS none/pr net/minecraft/entity/Entity
 	METHOD c getPosition ()Lnone/cj;
 	METHOD d moveEntity (DDD)V
 	METHOD t_ onUpdate ()V
+CLASS none/po net/minecraft/entity/EntityAgeable
+CLASS none/py net/minecraft/entity/EntityFlying
+CLASS none/qb net/minecraft/entity/EntityLiving
+	METHOD t_ onUpdate ()V
+CLASS none/qg net/minecraft/entity/passiveIAnimals
+CLASS none/qh net/minecraft/entity/EntityCreature
+CLASS none/qj net/minecraft/entity/passive/EntityTameable
+CLASS none/tw net/minecraft/entity/passiveEntityAnimal
+CLASS none/ul net/minecraft/entity/passive/EntityWolf
+	METHOD t_ onUpdate ()V
+CLASS none/wa net/minecraft/entity/monster/EntityCreeper
+	METHOD t_ onUpdate ()V
+CLASS none/wb net/minecraft/entity/monster/EntityEnderman
+CLASS none/wc net/minecraft/entity/monster/EntityEndermite
+	METHOD t_ onUpdate ()V
+CLASS none/wd net/minecraft/entity/monster/IMob
+CLASS none/we net/minecraft/entity/monster/EntityGhast
+	METHOD t_ onUpdate ()V
+CLASS none/wh net/minecraft/entity/monster/EntityMagmaCube
+CLASS none/wi net/minecraft/entity/monster/EntityMob
+	METHOD t_ onUpdate ()V
+CLASS none/wj net/minecraft/entity/monster/EntityPigZombie
+	METHOD t_ onUpdate ()V
+CLASS none/wk net/minecraft/entity/IRangedAttackMob
+CLASS none/wm net/minecraft/entity/monster/EntitySilverfish
+	METHOD t_ onUpdate ()V
+CLASS none/wn net/minecraft/entity/monster/EntitySkeleton
+CLASS none/wo net/minecraft/entity/monster/EntitySlime
+	METHOD t_ onUpdate ()V
+CLASS none/wp net/minecraft/entity/monster/EntitySpider
+	METHOD t_ onUpdate ()V
+CLASS none/wr net/minecraft/entity/monster/EntityZombie
+	METHOD t_ onUpdate ()V
+CLASS none/wv net/minecraft/entity/passive/EntityVillager
+CLASS none/xh net/minecraft/entity/item/EntityFireworkRocket
+	METHOD t_ onUpdate ()V
 CLASS none/px
 	METHOD t_ onUpdate ()V
 CLASS none/qa net/minecraft/entity/EntityLivingBase
-	METHOD t_ onUpdate ()V
-CLASS none/qb
 	METHOD t_ onUpdate ()V
 CLASS none/tu
 	METHOD t_ onUpdate ()V
 CLASS none/tz
 	METHOD t_ onUpdate ()V
 CLASS none/ug
-	METHOD t_ onUpdate ()V
-CLASS none/ul
 	METHOD t_ onUpdate ()V
 CLASS none/uq
 	METHOD t_ onUpdate ()V
@@ -765,24 +797,6 @@ CLASS none/vv
 	METHOD t_ onUpdate ()V
 CLASS none/vw
 	METHOD t_ onUpdate ()V
-CLASS none/wa
-	METHOD t_ onUpdate ()V
-CLASS none/wc
-	METHOD t_ onUpdate ()V
-CLASS none/we
-	METHOD t_ onUpdate ()V
-CLASS none/wi
-	METHOD t_ onUpdate ()V
-CLASS none/wj
-	METHOD t_ onUpdate ()V
-CLASS none/wm
-	METHOD t_ onUpdate ()V
-CLASS none/wo
-	METHOD t_ onUpdate ()V
-CLASS none/wp
-	METHOD t_ onUpdate ()V
-CLASS none/wr
-	METHOD t_ onUpdate ()V
 CLASS none/xa net/minecraft/entity/player/EntityPlayer
 	METHOD t_ onUpdate ()V
 CLASS none/xd
@@ -790,8 +804,6 @@ CLASS none/xd
 CLASS none/xf
 	METHOD t_ onUpdate ()V
 CLASS none/xg
-	METHOD t_ onUpdate ()V
-CLASS none/xh
 	METHOD t_ onUpdate ()V
 CLASS none/xl
 	METHOD t_ onUpdate ()V
