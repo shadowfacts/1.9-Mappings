@@ -693,6 +693,8 @@ CLASS none/ml
 CLASS none/ms net/minecraft/achievement/Achievement
 CLASS none/mt net/minecraft/achievement/AchievementRegistry
 	FIELD e achievements Ljava/util/List;
+CLASS none/my net/minecraft/stat/Stat
+	FIELD a chatComponent Lnone/eu;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
