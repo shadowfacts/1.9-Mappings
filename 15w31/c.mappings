@@ -630,6 +630,10 @@ CLASS none/eb net/minecraft/nbt/TagBase
 	METHOD c_ zeroTags ()Z
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 0 other
+CLASS none/es net/minecraft/chat/ChatComponentBase
+	FIELD a siblings Ljava/util/List;
+	FIELD b style Lnone/ez;
+	METHOD a getSiblings ()Ljava/util/List;
 CLASS none/et net/minecraft/chat/ClickEvent
 	CLASS none/et$a Action
 		FIELD a OPEN_URL Lnone/et$a;
@@ -662,6 +666,22 @@ CLASS none/eu net/minecraft/chat/ChatComponent
 		METHOD a deserialize (Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnone/eu;
 		METHOD a serialize (Lnone/eu;)Ljava/lang/String;
 		METHOD a serialize (Lnone/eu;Ljava/lang/reflect/Type;Lcom/google/gson/JsonSerializationContext;)Lcom/google/gson/JsonElement;
+	METHOD a getSiblings ()Ljava/util/List;
+	METHOD e ()Ljava/lang/String;
+CLASS none/ex net/minecraft/chat/ChatComponentScore
+	METHOD e ()Ljava/lang/String;
+CLASS none/ey net/minecraft/chat/ChatComponentSelector
+	METHOD e ()Ljava/lang/String;
+CLASS none/fa net/minecraft/chat/ChatComponentText
+	FIELD b value Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;)V
+		ARG 0 value
+	METHOD e ()Ljava/lang/String;
+	METHOD equals (Ljava/lang/Object;)Z
+		ARG 0 other
+	METHOD g getValue ()Ljava/lang/String;
+CLASS none/fb net/minecraft/chat/ChatComponentTranslatable
+	METHOD e ()Ljava/lang/String;
 CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lh
 	METHOD a sendMessage (Lnone/eu;)V
