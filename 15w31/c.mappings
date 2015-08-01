@@ -850,12 +850,257 @@ CLASS none/xr
 	METHOD t_ onUpdate ()V
 CLASS none/xu
 	METHOD t_ onUpdate ()V
+CLASS none/zb net/minecraft/item/base/ItemArmor
+	CLASS none/zb$a ArmorType
+		FIELD a LEATHER Lnone/zb$a;
+		FIELD b CHAINMAIL Lnone/zb$a;
+		FIELD c IRON Lnone/zb$a;
+		FIELD d GOLD Lnone/zb$a;
+		FIELD e DIAMOND Lnone/zb$a;
 CLASS none/zv net/minecraft/creativetab/CreativeTabs
-	FIELD b tabBlock Lnone/zv;
+	CLASS none/zv$1
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$2
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$3
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$4
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$5
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$6
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$7
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$8
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$9
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$10
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$11
+		METHOD e getItem ()Lnone/aas;
+	CLASS none/zv$12
+		METHOD e getItem ()Lnone/aas;
+	FIELD a tabs [Lnone/zv;
+	FIELD b tabBuildingBlocks Lnone/zv;
+	FIELD c tabDecorations Lnone/zv;
+	FIELD d tabRedstone Lnone/zv;
+	FIELD e tabTransportation Lnone/zv;
+	FIELD f tabMisc Lnone/zv;
+	FIELD g tabSearch Lnone/zv;
+	FIELD h tabFood Lnone/zv;
+	FIELD i tabTools Lnone/zv;
+	FIELD j tabCombat Lnone/zv;
+	FIELD k tabBrewing Lnone/zv;
+	FIELD l tabMaterials Lnone/zv;
+	FIELD m tabInventory Lnone/zv;
+	FIELD o name Ljava/lang/String;
+	METHOD <init> (ILjava/lang/String;)V
+		ARG 1 name
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getUnlocalizedName ()Ljava/lang/String;
+	METHOD e getItem ()Lnone/aas;
 CLASS none/aar
-CLASS none/aas net/minecraft/item/Item
+CLASS none/aas net/minecraft/item/base/Item
 	METHOD a getItem (Lnone/agk;)Lnone/aas;
 CLASS none/aau
+CLASS none/aav net/minecraft/init/Items
+	FIELD A stick Lnone/aas;
+	FIELD B bowl Lnone/aas;
+	FIELD C mushroomStew Lnone/aas;
+	FIELD D goldenSword Lnone/aas;
+	FIELD E goldenShovel Lnone/aas;
+	FIELD F goldenPickaxe Lnone/aas;
+	FIELD G goldenAxe Lnone/aas;
+	FIELD H string Lnone/aas;
+	FIELD I feather Lnone/aas;
+	FIELD J gunpowder Lnone/aas;
+	FIELD K woodenHoe Lnone/aas;
+	FIELD L stoneHoe Lnone/aas;
+	FIELD M ironHoe Lnone/aas;
+	FIELD N diamondHoe Lnone/aas;
+	FIELD O goldenHoe Lnone/aas;
+	FIELD P wheatSeeds Lnone/aas;
+	FIELD Q wheat Lnone/aas;
+	FIELD R bread Lnone/aas;
+	FIELD S leatherHelmet Lnone/zb;
+	FIELD T leatherChestplate Lnone/zb;
+	FIELD U leatherLeggings Lnone/zb;
+	FIELD V leatherBoots Lnone/zb;
+	FIELD W chainmailHelmet Lnone/zb;
+	FIELD X chainmailChestplate Lnone/zb;
+	FIELD Y chainmailLeggings Lnone/zb;
+	FIELD Z chainmailBoots Lnone/zb;
+	FIELD aA lavaBucket Lnone/aas;
+	FIELD aB minecart Lnone/aas;
+	FIELD aC saddle Lnone/aas;
+	FIELD aD ironDoor Lnone/aas;
+	FIELD aE redstone Lnone/aas;
+	FIELD aF snowball Lnone/aas;
+	FIELD aG boat Lnone/aas;
+	FIELD aH leather Lnone/aas;
+	FIELD aI milkBucket Lnone/aas;
+	FIELD aJ brick Lnone/aas;
+	FIELD aK clayBall Lnone/aas;
+	FIELD aL reeds Lnone/aas;
+	FIELD a ironShovel Lnone/aas;
+	FIELD aM paper Lnone/aas;
+	FIELD aN book Lnone/aas;
+	FIELD aO slimeBall Lnone/aas;
+	FIELD aP chestMinecart Lnone/aas;
+	FIELD aQ furnaceMinecart Lnone/aas;
+	FIELD aR egg Lnone/aas;
+	FIELD aS compass Lnone/aas;
+	FIELD aT fishingRod Lnone/aam;
+	FIELD aU clock Lnone/aas;
+	FIELD aV glowstoneDust Lnone/aas;
+	FIELD aW fish Lnone/aas;
+	FIELD aX cookedFish Lnone/aas;
+	FIELD aY dye Lnone/aas;
+	FIELD aZ bone Lnone/aas;
+	FIELD aa ironHelmet Lnone/zb;
+	FIELD ab ironChestplate Lnone/zb;
+	FIELD ac ironLeggings Lnone/zb;
+	FIELD ad ironBoots Lnone/zb;
+	FIELD ae diamondHelmet Lnone/zb;
+	FIELD af diamondChestplate Lnone/zb;
+	FIELD ag diamondLeggings Lnone/zb;
+	FIELD ah diamondBoots Lnone/zb;
+	FIELD ai goldenHelmet Lnone/zb;
+	FIELD aj goldenChestplate Lnone/zb;
+	FIELD ak goldenLeggings Lnone/zb;
+	FIELD al goldenBoots Lnone/zb;
+	FIELD am flint Lnone/aas;
+	FIELD an porkchop Lnone/aas;
+	FIELD ao cookedPorkchop Lnone/aas;
+	FIELD ap painting Lnone/aas;
+	FIELD aq goldenApple Lnone/aas;
+	FIELD ar sign Lnone/aas;
+	FIELD as woodenDoor Lnone/aas;
+	FIELD at spruceDoor Lnone/aas;
+	FIELD au birchDoor Lnone/aas;
+	FIELD av jungleDoor Lnone/aas;
+	FIELD aw acaciaDoor Lnone/aas;
+	FIELD ax darkOakDoor Lnone/aas;
+	FIELD ay bucket Lnone/aas;
+	FIELD az waterBucket Lnone/aas;
+	FIELD bA netherWart Lnone/aas;
+	FIELD bB potion Lnone/abf;
+	FIELD bC splashPotion Lnone/abf;
+	FIELD bD glassBottle Lnone/aas;
+	FIELD bE spiderEye Lnone/aas;
+	FIELD bF fermentedSpiderEye Lnone/aas;
+	FIELD bG blazePowder Lnone/aas;
+	FIELD bH magamCream Lnone/aas;
+	FIELD bI brewingStand Lnone/aas;
+	FIELD bJ cauldron Lnone/aas;
+	FIELD bK enderEye Lnone/aas;
+	FIELD bL speckledMelon Lnone/aas;
+	FIELD b ironPickaxe Lnone/aas;
+	FIELD bM spawnEgg Lnone/aas;
+	FIELD bN experienceBottle Lnone/aas;
+	FIELD bO fireCharge Lnone/aas;
+	FIELD bP writeableBook Lnone/aas;
+	FIELD bQ writtenBook Lnone/aas;
+	FIELD bR emerald Lnone/aas;
+	FIELD bS itemFrame Lnone/aas;
+	FIELD bT flowerPot Lnone/aas;
+	FIELD bU carrot Lnone/aas;
+	FIELD bV potato Lnone/aas;
+	FIELD bW bakedPotato Lnone/aas;
+	FIELD bX poisonusPotato Lnone/aas;
+	FIELD bY map Lnone/aad;
+	FIELD bZ goldenCarrot Lnone/aas;
+	FIELD ba sugar Lnone/aas;
+	FIELD bb cake Lnone/aas;
+	FIELD bc bed Lnone/aas;
+	FIELD bd repeater Lnone/aas;
+	FIELD be cookie Lnone/aas;
+	FIELD bf filledMap Lnone/aay;
+	FIELD bg shears Lnone/abm;
+	FIELD bh melon Lnone/aas;
+	FIELD bi pumpkinSeeds Lnone/aas;
+	FIELD bj melonSeeds Lnone/aas;
+	FIELD bk beef Lnone/aas;
+	FIELD bl cookedBeef Lnone/aas;
+	FIELD bm chicken Lnone/aas;
+	FIELD bn cookedChicken Lnone/aas;
+	FIELD bo mutton Lnone/aas;
+	FIELD bp cookedMutton Lnone/aas;
+	FIELD bq rabbit Lnone/aas;
+	FIELD br cookedRabbit Lnone/aas;
+	FIELD bs rabbitStew Lnone/aas;
+	FIELD bt rabbitFoot Lnone/aas;
+	FIELD bu rabbitHide Lnone/aas;
+	FIELD bv rottenFlesh Lnone/aas;
+	FIELD bw enderPearl Lnone/aas;
+	FIELD bx blazeRod Lnone/aas;
+	FIELD by ghastTear Lnone/aas;
+	FIELD bz goldNugget Lnone/aas;
+	FIELD cA recordStal Lnone/aas;
+	FIELD cB recordStrad Lnone/aas;
+	FIELD cC recordWard Lnone/aas;
+	FIELD cD record11 Lnone/aas;
+	FIELD cE recordWait Lnone/aas;
+	FIELD cF prismarineShard Lnone/aas;
+	FIELD cG prismarineCrystals Lnone/aas;
+	FIELD cH banner Lnone/aas;
+	FIELD cI chorusFruit Lnone/aas;
+	FIELD cJ chorusFruitPopped Lnone/aas;
+	FIELD cK beetrootSeeds Lnone/aas;
+	FIELD cL beetroot Lnone/aas;
+	FIELD c ironAxe Lnone/aas;
+	FIELD cM beetrootSoup Lnone/aas;
+	FIELD ca skull Lnone/aas;
+	FIELD cb carrotOnAStick Lnone/aas;
+	FIELD cc netherStar Lnone/aas;
+	FIELD cd pumpkinPie Lnone/aas;
+	FIELD ce fireworks Lnone/aas;
+	FIELD cf fireworkCharge Lnone/aas;
+	FIELD cg enchantedBook Lnone/aae;
+	FIELD ch comparator Lnone/aas;
+	FIELD ci netherbrick Lnone/aas;
+	FIELD cj quartz Lnone/aas;
+	FIELD ck tntMinecart Lnone/aas;
+	FIELD cl hopperMinecart Lnone/aas;
+	FIELD cm armorStand Lnone/zc;
+	FIELD cn ironHorseArmor Lnone/aas;
+	FIELD co goldenHorseArmor Lnone/aas;
+	FIELD cp diamondHorseArmor Lnone/aas;
+	FIELD cq lead Lnone/aas;
+	FIELD cr nameTag Lnone/aas;
+	FIELD cs commandBlockMinecart Lnone/aas;
+	FIELD ct record13 Lnone/aas;
+	FIELD cu recordCat Lnone/aas;
+	FIELD cv recordBlocks Lnone/aas;
+	FIELD cw recordChirp Lnone/aas;
+	FIELD cx recordAir Lnone/aas;
+	FIELD cy recordMall Lnone/aas;
+	FIELD cz recordMellohi Lnone/aas;
+	FIELD d flintAndSteel Lnone/aas;
+	FIELD e apple Lnone/aas;
+	FIELD f bow Lnone/zm;
+	FIELD g arrow Lnone/aas;
+	FIELD h spectralArrow Lnone/aas;
+	FIELD i tippedArrow Lnone/aas;
+	FIELD j coal Lnone/aas;
+	FIELD k diamond Lnone/aas;
+	FIELD l ironIngot Lnone/aas;
+	FIELD m goldIngot Lnone/aas;
+	FIELD n ironSword Lnone/aas;
+	FIELD o woodenSword Lnone/aas;
+	FIELD p woodenShovel Lnone/aas;
+	FIELD q woodenPickaxe Lnone/aas;
+	FIELD r woodenAxe Lnone/aas;
+	FIELD s stoneSword Lnone/aas;
+	FIELD t stoneShovel Lnone/aas;
+	FIELD u stonePickaxe Lnone/aas;
+	FIELD v stoneAxe Lnone/aas;
+	FIELD w diamondSword Lnone/aas;
+	FIELD x diamondShovel Lnone/aas;
+	FIELD y diamondPickaxe Lnone/aas;
+	FIELD z diamondAxe Lnone/aas;
 CLASS none/ace net/minecraft/potion/Potion
 	FIELD b defaultTexture Lnone/jz;
 	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
@@ -875,18 +1120,21 @@ CLASS none/agc
 	METHOD c isOpaqueCube ()Z
 CLASS none/agd
 	METHOD c isOpaqueCube ()Z
+CLASS none/age net/minecraft/block/base/BlockContainer
+	METHOD <init> (Lnone/atl;)V
+		ARG 0 material
 CLASS none/agf
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 CLASS none/agg
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/agh
+CLASS none/agh net/minecraft/block/BlockBeacon
 	METHOD c isOpaqueCube ()Z
 CLASS none/agi net/minecraft/block/BlockBed
 	METHOD c isOpaqueCube ()Z
 CLASS none/agj
-CLASS none/agk net/minecraft/block/Block
+CLASS none/agk net/minecraft/block/base/Block
 	CLASS none/agk$1
 		METHOD a digSound ()Ljava/lang/String;
 	CLASS none/agk$2
@@ -1109,6 +1357,218 @@ CLASS none/agk net/minecraft/block/Block
 	METHOD t getLightValue ()I
 	METHOD v getMaterial ()Lnone/atl;
 	METHOD z setBlockUnbreakable ()Lnone/agk;
+CLASS none/agl net/minecraft/init/Blocks
+	FIELD A sandstone Lnone/agk;
+	FIELD B noteBlock Lnone/agk;
+	FIELD C bed Lnone/agk;
+	FIELD D goldenRail Lnone/agk;
+	FIELD E detectorRail Lnone/agk;
+	FIELD F stickyPiston Lnone/anf;
+	FIELD G web Lnone/agk;
+	FIELD H tallGrass Lnone/aln;
+	FIELD I deadBush Lnone/ahg;
+	FIELD J piston Lnone/anf;
+	FIELD K pistonHead Lnone/ang;
+	FIELD L wool Lnone/agk;
+	FIELD M pistonExtension Lnone/ani;
+	FIELD N yellowFlower Lnone/aid;
+	FIELD O redFlower Lnone/aid;
+	FIELD P brownMushroom Lnone/agp;
+	FIELD Q redMushroom Lnone/agp;
+	FIELD R goldBlock Lnone/agk;
+	FIELD S ironBlock Lnone/agk;
+	FIELD T doubleStoneSlab Lnone/aip;
+	FIELD U stoneSlab Lnone/aip;
+	FIELD V bricks Lnone/agk;
+	FIELD W tnt Lnone/agk;
+	FIELD X bookshelf Lnone/agk;
+	FIELD Y mossyCobblestone Lnone/agk;
+	FIELD Z obsidian Lnone/agk;
+	FIELD aA ironDoor Lnone/agk;
+	FIELD aB woodenPressurePlate Lnone/agk;
+	FIELD aC redstoneOre Lnone/agk;
+	FIELD aD litRedstoneOre Lnone/agk;
+	FIELD aE unlitRedstoneOre Lnone/agk;
+	FIELD aF redstoneTorch Lnone/agk;
+	FIELD aG stoneButton Lnone/agk;
+	FIELD aH snowLayer Lnone/agk;
+	FIELD aI ice Lnone/agk;
+	FIELD aJ snow Lnone/agk;
+	FIELD aK cactus Lnone/agr;
+	FIELD aL clay Lnone/agk;
+	FIELD a air Lnone/agk;
+	FIELD aM reeds Lnone/ako;
+	FIELD aN jukebox Lnone/agk;
+	FIELD aO fence Lnone/agk;
+	FIELD aP spruceFence Lnone/agk;
+	FIELD aQ birchFence Lnone/agk;
+	FIELD aR jungleFence Lnone/agk;
+	FIELD aS darkOakFence Lnone/agk;
+	FIELD aT acaciaFence Lnone/agk;
+	FIELD aU pumpkin Lnone/agk;
+	FIELD aV netherrack Lnone/agk;
+	FIELD aW soulSand Lnone/agk;
+	FIELD aX glowstone Lnone/agk;
+	FIELD aY netherPortal Lnone/ajy;
+	FIELD aZ litPumpkin Lnone/agk;
+	FIELD aa torch Lnone/agk;
+	FIELD ab fire Lnone/aic;
+	FIELD ac mobSpawner Lnone/agk;
+	FIELD ad oakStairs Lnone/agk;
+	FIELD ae chest Lnone/agv;
+	FIELD af redstoneWire Lnone/akl;
+	FIELD ag diamondOre Lnone/agk;
+	FIELD ah diamondBlock Lnone/agk;
+	FIELD ai craftingTable Lnone/agk;
+	FIELD aj wheat Lnone/agk;
+	FIELD ak farmland Lnone/agk;
+	FIELD al furnace Lnone/agk;
+	FIELD am litFurnace Lnone/agk;
+	FIELD an standingSign Lnone/agk;
+	FIELD ao woodenDoor Lnone/agk;
+	FIELD ap spruceDoor Lnone/agk;
+	FIELD aq birchDoor Lnone/agk;
+	FIELD ar jungleDoor Lnone/agk;
+	FIELD as acaciaDoor Lnone/agk;
+	FIELD at darkOakDoor Lnone/agk;
+	FIELD au ladder Lnone/agk;
+	FIELD av rail Lnone/agk;
+	FIELD aw stoneStairs Lnone/agk;
+	FIELD ax wallSign Lnone/agk;
+	FIELD ay lever Lnone/agk;
+	FIELD az stonePressurePlate Lnone/agk;
+	FIELD bA netherBrickStairs Lnone/agk;
+	FIELD bB netherWart Lnone/agk;
+	FIELD bC enchantingTable Lnone/agk;
+	FIELD bD brewingStand Lnone/agk;
+	FIELD bE cauldron Lnone/agu;
+	FIELD bF endPortal Lnone/agk;
+	FIELD bG endPortalFrame Lnone/agk;
+	FIELD bH endStone Lnone/agk;
+	FIELD bI dragonEgg Lnone/agk;
+	FIELD bJ redstoneLamp Lnone/agk;
+	FIELD bK litRedstoneLamp Lnone/agk;
+	FIELD bL doubleWoodenSlab Lnone/aip;
+	FIELD b stone Lnone/agk;
+	FIELD bM woodenSlab Lnone/aip;
+	FIELD bN cocoa Lnone/agk;
+	FIELD bO sandstoneStairs Lnone/agk;
+	FIELD bP emeraldOre Lnone/agk;
+	FIELD bQ enderChest Lnone/agk;
+	FIELD bR tripwireHook Lnone/alu;
+	FIELD bS tripwire Lnone/agk;
+	FIELD bT emeraldBlock Lnone/agk;
+	FIELD bU spruceStairs Lnone/agk;
+	FIELD bV birchStairs Lnone/agk;
+	FIELD bW jungleStairs Lnone/agk;
+	FIELD bX commandBlock Lnone/agk;
+	FIELD bY beacon Lnone/agh;
+	FIELD bZ cobblestoneWall Lnone/agk;
+	FIELD ba cake Lnone/agk;
+	FIELD bb unpoweredRepeater Lnone/akp;
+	FIELD bc poweredRepeater Lnone/akp;
+	FIELD bd trapdoor Lnone/agk;
+	FIELD be monsterEgg Lnone/agk;
+	FIELD bf stoneBrick Lnone/agk;
+	FIELD bg brownMushroomBlock Lnone/agk;
+	FIELD bh redMushroomBlock Lnone/agk;
+	FIELD bi ironBars Lnone/agk;
+	FIELD bj glassPane Lnone/agk;
+	FIELD bk melonBlock Lnone/agk;
+	FIELD bl pumpkinStem Lnone/agk;
+	FIELD bm melonStem Lnone/agk;
+	FIELD bn vine Lnone/agk;
+	FIELD bo fenceGate Lnone/agk;
+	FIELD bp spruceFenceGate Lnone/agk;
+	FIELD bq birchFenceGate Lnone/agk;
+	FIELD br jungleFenceGate Lnone/agk;
+	FIELD bs darkOakFenceGate Lnone/agk;
+	FIELD bt acaciaFenceGate Lnone/agk;
+	FIELD bu brickStairs Lnone/agk;
+	FIELD bv stoneBrickStairs Lnone/agk;
+	FIELD bw mycelium Lnone/ajk;
+	FIELD bx waterlily Lnone/agk;
+	FIELD by netherBrick Lnone/agk;
+	FIELD bz netherBrickFence Lnone/agk;
+	FIELD cA coalBlock Lnone/agk;
+	FIELD cB packedIce Lnone/agk;
+	FIELD cC acaciaStairs Lnone/agk;
+	FIELD cD darkOakStairs Lnone/agk;
+	FIELD cE slime Lnone/agk;
+	FIELD cF doublePlant Lnone/ahn;
+	FIELD cG stainedGlass Lnone/alc;
+	FIELD cH stainedGlassPane Lnone/ald;
+	FIELD cI prismarine Lnone/agk;
+	FIELD cJ seaLantern Lnone/agk;
+	FIELD cK standingBanner Lnone/agk;
+	FIELD cL wallBanner Lnone/agk;
+	FIELD c grass Lnone/ail;
+	FIELD cM redSandstone Lnone/agk;
+	FIELD cN redSandstoneStairs Lnone/agk;
+	FIELD cO doubleStoneSlab2 Lnone/aip;
+	FIELD cP stoneSlab2 Lnone/aip;
+	FIELD cQ endRod Lnone/agk;
+	FIELD cR chorusPlant Lnone/agk;
+	FIELD cS chorusFlower Lnone/agk;
+	FIELD cT purpurBlock Lnone/agk;
+	FIELD cU purpurPillar Lnone/agk;
+	FIELD cV purpurStairs Lnone/agk;
+	FIELD cW purpurDoubleSlab Lnone/aip;
+	FIELD cX purpurSlab Lnone/aip;
+	FIELD cY endBricks Lnone/agk;
+	FIELD cZ beetroots Lnone/agk;
+	FIELD ca flowerPot Lnone/agk;
+	FIELD cb carrots Lnone/agk;
+	FIELD cc potatoes Lnone/agk;
+	FIELD cd woodenButton Lnone/agk;
+	FIELD ce skull Lnone/akw;
+	FIELD cf anvil Lnone/agk;
+	FIELD cg trappedChest Lnone/agk;
+	FIELD ch lightWeightedPressurePlate Lnone/agk;
+	FIELD ci heavyWeightedPressurePlate Lnone/agk;
+	FIELD cj unpoweredComparator Lnone/ahc;
+	FIELD ck poweredComparator Lnone/ahc;
+	FIELD cl daylightDetector Lnone/ahf;
+	FIELD cm daylightDetectorInverted Lnone/ahf;
+	FIELD cn redstoneBlock Lnone/agk;
+	FIELD co quartzOre Lnone/agk;
+	FIELD cp hopper Lnone/aiv;
+	FIELD cq quartzBlock Lnone/agk;
+	FIELD cr quartzStairs Lnone/agk;
+	FIELD cs activatorRail Lnone/agk;
+	FIELD ct dropper Lnone/agk;
+	FIELD cu stainedHardenedClay Lnone/agk;
+	FIELD cv barrier Lnone/agk;
+	FIELD cw ironTrapdoor Lnone/agk;
+	FIELD cx hayBlock Lnone/agk;
+	FIELD cy carpet Lnone/agk;
+	FIELD cz hardenedClay Lnone/agk;
+	FIELD d dirt Lnone/agk;
+	FIELD da grassPath Lnone/agk;
+	FIELD db endGateway Lnone/agk;
+	FIELD dc structureBlock Lnone/agk;
+	FIELD e cobblestone Lnone/agk;
+	FIELD f planks Lnone/agk;
+	FIELD g sapling Lnone/agk;
+	FIELD h bedrock Lnone/agk;
+	FIELD i flowingWater Lnone/ahq;
+	FIELD j water Lnone/alg;
+	FIELD k flowingLava Lnone/ahq;
+	FIELD l lava Lnone/alg;
+	FIELD m sand Lnone/akr;
+	FIELD n gravel Lnone/agk;
+	FIELD o goldOre Lnone/agk;
+	FIELD p ironOre Lnone/agk;
+	FIELD q coalOre Lnone/agk;
+	FIELD r log Lnone/agk;
+	FIELD s log2 Lnone/agk;
+	FIELD t leaves Lnone/ajb;
+	FIELD u leaves2 Lnone/ajb;
+	FIELD v sponge Lnone/agk;
+	FIELD w glass Lnone/agk;
+	FIELD x lapisOre Lnone/agk;
+	FIELD y lapisBlock Lnone/agk;
+	FIELD z dispenser Lnone/agk;
 CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/ago
 	METHOD c isOpaqueCube ()Z
@@ -1126,9 +1586,9 @@ CLASS none/ags
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/agu
+CLASS none/agu net/minecraft/block/BlockCauldron
 	METHOD c isOpaqueCube ()Z
-CLASS none/agv
+CLASS none/agv net/minecraft/block/BlockChest
 	METHOD c isOpaqueCube ()Z
 CLASS none/agw
 	METHOD c isOpaqueCube ()Z
@@ -1143,7 +1603,8 @@ CLASS none/agz
 	METHOD c isOpaqueCube ()Z
 CLASS none/aha net/minecraft/block/BlockColored
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ahf
+CLASS none/ahc net/minecraft/block/BlockComparator
+CLASS none/ahf net/minecraft/block/BlockDaylightDetector
 	METHOD c isOpaqueCube ()Z
 CLASS none/ahg net/minecraft/block/BlockDeadBush
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
@@ -1176,6 +1637,7 @@ CLASS none/ahv
 	METHOD c isOpaqueCube ()Z
 CLASS none/ahw
 	METHOD c isOpaqueCube ()Z
+CLASS none/ahx net/minecraft/tileentity/base/TileEntityProvider
 CLASS none/ahz
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
@@ -1200,7 +1662,7 @@ CLASS none/aim
 	METHOD c isOpaqueCube ()Z
 CLASS none/ain net/minecraft/block/BlockGravel
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/aip
+CLASS none/aip net/minecraft/block/BlockSlab
 	METHOD c isOpaqueCube ()Z
 CLASS none/aiq net/minecraft/block/BlockStoneSlab
 CLASS none/air
@@ -1236,6 +1698,7 @@ CLASS none/aje
 CLASS none/ajh net/minecraft/block/BlockMobSpawner
 	METHOD c isOpaqueCube ()Z
 CLASS none/ajj net/minecraft/block/BlockMushroom
+CLASS none/ajk net/minecraft/block/BlockMycelium
 CLASS none/ajl
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajn
@@ -1254,7 +1717,7 @@ CLASS none/ajv net/minecraft/block/BlockOre
 CLASS none/ajw net/minecraft/block/BlockPackedIce
 CLASS none/ajx net/minecraft/block/BlockWood
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ajy
+CLASS none/ajy net/minecraft/block/BlockNetherPortal
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/akb net/minecraft/block/BlockRailPowered
 CLASS none/akd
@@ -1262,12 +1725,13 @@ CLASS none/akd
 CLASS none/akg
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aki net/minecraft/block/BlockRedFlower
-CLASS none/akl
+CLASS none/akl net/minecraft/block/BlockRedstoneWire
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 CLASS none/ako net/minecraft/block/BlockReeds
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
+CLASS none/akp net/minecraft/block/BlockRepeater
 CLASS none/akr net/minecraft/block/BlockSand
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aks net/minecraft/block/BlockSandstone
@@ -1279,7 +1743,7 @@ CLASS none/akv
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/akw
+CLASS none/akw net/minecraft/block/BlockSkull
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 CLASS none/aky net/minecraft/block/BlockSnow
@@ -1309,7 +1773,7 @@ CLASS none/alp net/minecraft/block/BlockTNT
 CLASS none/alq net/minecraft/block/BlockTorch
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/alr net/minecraft/block/BlockLeavesBase
+CLASS none/alr net/minecraft/block/base/BlockLeavesBase
 	METHOD c isOpaqueCube ()Z
 CLASS none/als
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
@@ -1318,7 +1782,7 @@ CLASS none/als
 CLASS none/alt
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/alu
+CLASS none/alu net/minecraft/block/BlockTripwireHook
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 CLASS none/alv
