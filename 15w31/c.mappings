@@ -1550,6 +1550,7 @@ CLASS none/agl net/minecraft/init/Blocks
 	FIELD da grassPath Lnone/agk;
 	FIELD db endGateway Lnone/agk;
 	FIELD dc structureBlock Lnone/agk;
+	FIELD dd blocks Ljava/util/Set;
 	FIELD e cobblestone Lnone/agk;
 	FIELD f planks Lnone/agk;
 	FIELD g sapling Lnone/agk;
@@ -1572,11 +1573,13 @@ CLASS none/agl net/minecraft/init/Blocks
 	FIELD x lapisOre Lnone/agk;
 	FIELD y lapisBlock Lnone/agk;
 	FIELD z dispenser Lnone/agk;
+	METHOD a addBlock (Ljava/lang/String;)Lnone/agk;
+		ARG 0 name
 CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/ago
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD c isOpaqueCube ()Z
-CLASS none/agp
+CLASS none/agp net/minecraft/block/BlockBush
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 CLASS none/agq
@@ -1628,6 +1631,7 @@ CLASS none/ahm
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
+CLASS none/ahn net/minecraft/block/BlockDoublePlant
 CLASS none/aho net/minecraft/block/BlockDragonEgg
 	METHOD c isOpaqueCube ()Z
 CLASS none/ahp
@@ -1669,6 +1673,7 @@ CLASS none/aic net/minecraft/block/BlockFire
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/aid net/minecraft/block/BlockFlower
 CLASS none/aie
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD c isOpaqueCube ()Z
@@ -1711,7 +1716,7 @@ CLASS none/aja
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
-CLASS none/ajb
+CLASS none/ajb net/minecraft/block/BlockLeaves
 	METHOD c isOpaqueCube ()Z
 CLASS none/ajd
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
@@ -1736,7 +1741,7 @@ CLASS none/ajr net/minecraft/block/BlockNote
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 CLASS none/ajs net/minecraft/block/BlockObsidian
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ajt net/minecraft/block/BlockLeaves
+CLASS none/ajt net/minecraft/block/BlockOldLeaves
 CLASS none/aju net/minecraft/block/BlockOldLog
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajv net/minecraft/block/BlockOre
@@ -1781,9 +1786,9 @@ CLASS none/akz
 CLASS none/ala
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alb net/minecraft/block/BlockSponge
-CLASS none/alc
+CLASS none/alc net/minecraft/block/BlockStainedGlass
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ald
+CLASS none/ald net/minecraft/block/BlockStainedGlassPane
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ale net/minecraft/block/BlockStairs
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
