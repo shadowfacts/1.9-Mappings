@@ -854,6 +854,7 @@ CLASS none/zv net/minecraft/creativetab/CreativeTabs
 	FIELD b tabBlock Lnone/zv;
 CLASS none/aar
 CLASS none/aas net/minecraft/item/Item
+	METHOD a getItem (Lnone/agk;)Lnone/aas;
 CLASS none/aau
 CLASS none/ace net/minecraft/potion/Potion
 	FIELD b defaultTexture Lnone/jz;
@@ -864,6 +865,14 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 CLASS none/aes net/minecraft/level/BlockAccess
 CLASS none/aga net/minecraft/block/BlockAir
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/agc
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/agf
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/agg
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/agi net/minecraft/block/BlockBed
 CLASS none/agj
 CLASS none/agk net/minecraft/block/Block
@@ -880,6 +889,8 @@ CLASS none/agk net/minecraft/block/Block
 		METHOD a digSound ()Ljava/lang/String;
 		METHOD c stepSound ()Ljava/lang/String;
 	FIELD H sound Lnone/agk$d;
+	FIELD J material Lnone/atl;
+	FIELD K mapColour Lnone/atm;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
 	FIELD b creativetab Lnone/zv;
@@ -892,53 +903,250 @@ CLASS none/agk net/minecraft/block/Block
 	FIELD k soundTypeGlass Lnone/agk$d;
 	FIELD l soundTypeCloth Lnone/agk$d;
 	FIELD m soundTypeSand Lnone/agk$d;
+	FIELD n soundTypeSnow Lnone/agk$d;
+	FIELD o soundTypeLadder Lnone/agk$d;
+	FIELD p soundTypeAnvil Lnone/agk$d;
+	FIELD q soundTypeSlime Lnone/agk$d;
 	FIELD s lightOpacity I
 	FIELD u lightValue I
 	FIELD w hardness F
 	FIELD x blastResistance F
+	METHOD <init> (Lnone/atl;)V
+		ARG 0 material
+	METHOD <init> (Lnone/atl;Lnone/atm;)V
+		ARG 0 material
+		ARG 1 mapColour
 	METHOD M disableStats ()Lnone/agk;
 	METHOD U registerBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a setLightLevel (F)Lnone/agk;
 		ARG 0 lightValue
-	METHOD a boundingBox (FFFFFF)V
+	METHOD a setBoundingBox (FFFFFF)V
+		ARG 0 minX
+		ARG 1 minY
+		ARG 2 minZ
+		ARG 3 maxX
+		ARG 4 maxY
+		ARG 5 maxZ
+	METHOD a (Ljava/util/Random;)I
+		ARG 0 random
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
+	METHOD a (Lnone/aeo;)I
+		ARG 0 level
+	METHOD a (Lnone/aeo;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/aat;)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/aek;)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;FI)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 random
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/agk;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 block
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/awg;Ljava/util/List;Lnone/pr;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 bounds
+		ARG 5 entity
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 player
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/awi;Lnone/awi;)Lnone/awh;
+		ARG 0 level
+		ARG 1 pos
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/cq;FFFILnone/qa;)Lnone/anm;
+		ARG 0 level
+		ARG 1 pos
+		ARG 7 entity
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/cq;Lnone/aat;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/pr;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 entity
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/pr;Lnone/awi;)Lnone/awi;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 entity
+	METHOD a (Lnone/aeo;Lnone/cj;Lnone/xa;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 player
+	METHOD a (Lnone/aes;Lnone/cj;)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD a (Lnone/aes;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
 	METHOD a setStepSound (Lnone/agk$d;)Lnone/agk;
 		ARG 0 sound
+	METHOD a (Lnone/anm;)I
+		ARG 0 stack
+	METHOD a (Lnone/anm;Ljava/util/Random;I)Lnone/aas;
+		ARG 0 stack
+		ARG 1 random
+	METHOD a (Lnone/anm;Lnone/aes;Lnone/cj;)Lnone/anm;
+		ARG 0 stack
+		ARG 1 level
+		ARG 2 pos
+	METHOD a (Lnone/anm;Lnone/agk$a;)Lnone/anm;
+		ARG 0 stack
+	METHOD a (Lnone/anm;Lnone/agk$c;)Lnone/anm;
+		ARG 0 stack
+	METHOD a (Lnone/anm;Z)Z
+		ARG 0 stack
+	METHOD a (Lnone/pr;)F
+		ARG 0 entity
+	METHOD a (Lnone/xa;Lnone/aeo;Lnone/cj;)F
+		ARG 0 player
+		ARG 1 level
+		ARG 2 pos
 	METHOD a setCreativeTab (Lnone/zv;)Lnone/agk;
 		ARG 0 creativetab
 	METHOD b setBlastResistance (F)Lnone/agk;
 		ARG 0 blastResistance
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+		ARG 0 level
+		ARG 1 pos
+	METHOD b (Lnone/aeo;Lnone/cj;I)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD b (Lnone/aeo;Lnone/cj;Lnone/anm;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+	METHOD b (Lnone/aeo;Lnone/cj;Lnone/anm;I)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+	METHOD b (Lnone/aeo;Lnone/cj;Lnone/anm;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 random
+	METHOD b (Lnone/aeo;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD b (Lnone/aes;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 unlocalizedName
+	METHOD c (Lnone/aeo;Lnone/cj;Lnone/anm;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+	METHOD c (Lnone/aeo;Lnone/cj;Lnone/anm;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+		ARG 3 random
+	METHOD c (Lnone/aes;Lnone/cj;)I
+		ARG 0 level
+		ARG 1 pos
+	METHOD d (Lnone/aeo;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD d (Lnone/aeo;Lnone/cj;Lnone/anm;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
 	METHOD e setLightOpacity (I)Lnone/agk;
 		ARG 0 opacity
+	METHOD g getHardness (Lnone/aeo;Lnone/cj;)F
+		ARG 0 level
+		ARG 1 pos
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+		ARG 0 stack
+	METHOD r getLightOpacity ()I
+	METHOD t getLightValue ()I
 	METHOD z setBlockUnbreakable ()Lnone/agk;
 CLASS none/agn net/minecraft/block/BlockBookshelf
+CLASS none/agp
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/agq
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/agr net/minecraft/block/BlockCactus
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/ags
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/agx
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 CLASS none/agy net/minecraft/block/BlockClay
+CLASS none/agz
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 CLASS none/aha net/minecraft/block/BlockColored
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahg net/minecraft/block/BlockDeadBush
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahh net/minecraft/block/BlockRailDetector
 CLASS none/ahk net/minecraft/block/BlockDirt
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahl net/minecraft/block/BlockDispenser
+CLASS none/ahm
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 CLASS none/aho net/minecraft/block/BlockDragonEgg
 CLASS none/ahq net/minecraft/block/BlockDynamicLiquid
+CLASS none/ahs
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/aht
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ahv
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/ahz
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/aia net/minecraft/block/BlockFence
+CLASS none/aib
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/aic net/minecraft/block/BlockFire
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aig net/minecraft/block/BlockDoubleStoneSlab
 CLASS none/aij net/minecraft/block/BlockGlass
+CLASS none/aik
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ail net/minecraft/block/BlockGrass
+CLASS none/aim
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/ain net/minecraft/block/BlockGravel
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aiq net/minecraft/block/BlockStoneSlab
 CLASS none/air
 	METHOD a (Lnone/aes;Lnone/cj;Lnone/cq;)Z
 		ARG 0 blockAccess
 		ARG 1 pos
+CLASS none/ait
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aiv net/minecraft/block/BlockHopper
+CLASS none/aix
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aiy net/minecraft/block/BlockIce
 CLASS none/aiz net/minecraft/block/BlockJukebox
 	CLASS none/aiz$a TileEntityJukeBox
@@ -946,31 +1154,99 @@ CLASS none/aiz net/minecraft/block/BlockJukebox
 		METHOD a getRecord ()Lnone/aat;
 		METHOD a readFromNBT (Lnone/dn;)V
 		METHOD b writeToNBT (Lnone/dn;)V
+CLASS none/aja
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/ajd
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/aje
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/ajh net/minecraft/block/BlockMobSpawner
 CLASS none/ajj net/minecraft/block/BlockMushroom
+CLASS none/ajl
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ajn
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ajp
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ajq
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajr net/minecraft/block/BlockNote
 CLASS none/ajs net/minecraft/block/BlockObsidian
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajt net/minecraft/block/BlockLeaves
 CLASS none/aju net/minecraft/block/BlockOldLog
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajv net/minecraft/block/BlockOre
 CLASS none/ajw net/minecraft/block/BlockPackedIce
 CLASS none/ajx net/minecraft/block/BlockWood
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ajy
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/akb net/minecraft/block/BlockRailPowered
+CLASS none/akd
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/akg
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aki net/minecraft/block/BlockRedFlower
+CLASS none/akl
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/ako net/minecraft/block/BlockReeds
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/akr net/minecraft/block/BlockSand
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aks net/minecraft/block/BlockSandstone
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/akt net/minecraft/block/BlockSapling
+CLASS none/aku
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/akv
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/akw
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/aky net/minecraft/block/BlockSnow
+CLASS none/akz
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/ala
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alb net/minecraft/block/BlockSponge
+CLASS none/alc
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/ald
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ale net/minecraft/block/BlockStairs
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/ali net/minecraft/block/BlockStone
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/all
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aln net/minecraft/block/BlockTallGrass
 CLASS none/alp net/minecraft/block/BlockTNT
 CLASS none/alq net/minecraft/block/BlockTorch
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alr net/minecraft/block/BlockLeavesBase
+CLASS none/als
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+CLASS none/alt
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/alu
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/alv
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/alw
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/aly
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alz net/minecraft/block/BlockWeb
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/amc
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+CLASS none/amd
+	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ame net/minecraft/block/BlockYellowFlower
 CLASS none/amf net/minecraft/tileentity/TileEntityBanner
 	METHOD a readFromNBT (Lnone/dn;)V
@@ -1076,11 +1352,14 @@ CLASS none/anf net/minecraft/block/BlockPistonBase
 	FIELD N isSticky Z
 	METHOD <init> (Z)V
 		ARG 0 isSticky
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/ang net/minecraft/block/BlockPistonExtension
 CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/ani net/minecraft/block/BlockPistonMoving
+	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/anm net/minecraft/item/ItemStack
 CLASS none/atl net/minecraft/block/material/Material
 	FIELD a air Lnone/atl;
 	FIELD e rock Lnone/atl;
