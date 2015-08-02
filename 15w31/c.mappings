@@ -630,6 +630,13 @@ CLASS none/eb net/minecraft/nbt/TagBase
 	METHOD c_ zeroTags ()Z
 	METHOD equals (Ljava/lang/Object;)Z
 		ARG 0 other
+CLASS none/ek net/minecraft/network/NetworkManager
+	CLASS none/ek$1
+		METHOD b load ()Ljava/lang/Object;
+	CLASS none/ek$2
+		METHOD b load ()Ljava/lang/Object;
+	CLASS none/ek$3
+		METHOD b load ()Ljava/lang/Object;
 CLASS none/es net/minecraft/chat/ChatComponentBase
 	FIELD a siblings Ljava/util/List;
 	FIELD b style Lnone/ez;
@@ -687,6 +694,13 @@ CLASS none/lh
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
+CLASS none/ln
+	CLASS none/ln$1
+		METHOD b load ()Ljava/lang/Object;
+	CLASS none/ln$2
+		METHOD b load ()Ljava/lang/Object;
+	CLASS none/ln$3
+		METHOD b load ()Ljava/lang/Object;
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
@@ -730,6 +744,11 @@ CLASS none/mt net/minecraft/achievement/AchievementRegistry
 	FIELD z ghast Lnone/ms;
 CLASS none/my net/minecraft/stat/Stat
 	FIELD a chatComponent Lnone/eu;
+CLASS none/nq net/minecraft/util/LazyLoadBase
+	FIELD a value Ljava/lang/Object;
+	FIELD b isLoaded Z
+	METHOD b load ()Ljava/lang/Object;
+	METHOD c getValue ()Ljava/lang/Object;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c random Ljava/util/Random;
 	METHOD a sqrt (D)F
@@ -1994,21 +2013,56 @@ CLASS none/axd net/minecraft/client/Minecraft
 	FIELD S instance Lnone/axd;
 	METHOD A getMinecraft ()Lnone/axd;
 	METHOD at ()V
+CLASS none/axm
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
 CLASS none/axo net/minecraft/client/Gui
 	FIELD b options_background Lnone/jz;
 	FIELD c stats_icons Lnone/jz;
 	FIELD d icons Lnone/jz;
+CLASS none/axs net/minecraft/client/gui/GuiButton
+	FIELD a buttonTextures Lnone/jz;
+	FIELD f width I
+	FIELD g height I
+	FIELD j displayString Ljava/lang/String;
+	FIELD l enabled Z
+	FIELD m visible Z
+	FIELD n hovered Z
+	METHOD <init> (IIIIILjava/lang/String;)V
+		ARG 3 width
+		ARG 4 height
+		ARG 5 displayString
+	METHOD <init> (IIILjava/lang/String;)V
+		ARG 3 displayString
+	METHOD a getHoverState (Z)I
+		ARG 0 mouseOver
+CLASS none/axx
+	METHOD a getHoverState (Z)I
+CLASS none/ayk
+	METHOD a getHoverState (Z)I
+CLASS none/ayp
+	METHOD a getHoverState (Z)I
 CLASS none/ayr
 	METHOD a confirmClicked (ZI)V
 CLASS none/ayy net/minecraft/client/gui/GuiYesNoCallback
 	METHOD a confirmClicked (ZI)V
 		ARG 0 result
 		ARG 1 id
+CLASS none/aza net/minecraft/client/multiplayer/GuiConnecting
+	FIELD a CONNECTION_ID Ljava/util/concurrent/atomic/AtomicInteger;
+	FIELD f logger Lorg/apache/logging/log4j/Logger;
+	FIELD h cancel Z
+	FIELD i previousGuiScreen Lnone/azv;
+CLASS none/azb net/minecraft/client/gui/GuiCreateFlatWorld
+	FIELD a createWorldGui Lnone/azc;
+CLASS none/azc net/minecraft/client/gui/GuiCreateWorld
+CLASS none/azd net/minecraft/client/gui/GuiScreenCustomizePresets
+CLASS none/aze net/minecraft/client/gui/GuiCustomizeWorldScreen
 CLASS none/azf
 	METHOD a confirmClicked (ZI)V
-CLASS none/azg
+CLASS none/azg net/minecraft/client/gui/GuiScreenDemo
 	FIELD a logger Lorg/apache/logging/log4j/Logger;
 	FIELD f demo_background Lnone/jz;
+CLASS none/azh net/minecraft/client/gui/GuiScreenServerList
 CLASS none/azo
 	METHOD a confirmClicked (ZI)V
 CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
@@ -2016,6 +2070,9 @@ CLASS none/azv net/minecraft/client/gui/GuiScreen
 	METHOD a confirmClicked (ZI)V
 CLASS none/azw
 	METHOD a confirmClicked (ZI)V
+CLASS none/baa
+	CLASS none/baa$a
+		METHOD a getHoverState (Z)I
 CLASS none/bab
 	METHOD a confirmClicked (ZI)V
 CLASS none/bbj
@@ -2028,6 +2085,7 @@ CLASS none/bez
 	CLASS none/bez$3
 		CLASS none/bez$3$1
 			METHOD a confirmClicked (ZI)V
+CLASS none/bff net/minecraft/client/multiplayer/ServerData
 CLASS none/bfm
 	METHOD t_ onUpdate ()V
 CLASS none/bfn
@@ -2099,14 +2157,66 @@ CLASS none/bhb
 	METHOD t_ onUpdate ()V
 CLASS none/bhg net/minecraft/client/renderer/WorldRenderer
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
+CLASS none/bhn
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bhu
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
 CLASS none/bia net/minecraft/client/renderer/Tessellator
 	FIELD c instance Lnone/bia;
 	METHOD <init> (I)V
 		ARG 0 bufferSize
+CLASS none/bih
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
 CLASS none/blx net/minecraft/client/renderer/entity/RenderItem
 	FIELD a textures Lnone/jz;
 	FIELD b minecraft Lnone/axd;
+CLASS none/bly
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bpd
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
 CLASS none/bpm net/minecraft/client/renderer/vertex/VertexFormat
+CLASS none/bpt
+	METHOD a getResourceDomains ()Ljava/util/Set;
+	METHOD a getResource (Lnone/jz;)Lnone/bpz;
+	METHOD b getAllResources (Lnone/jz;)Ljava/util/List;
+CLASS none/bpw
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bpx
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bpz net/minecraft/client/resources/IResource
+	METHOD a getResourceLocation ()Lnone/jz;
+	METHOD b getInputStream ()Ljava/io/InputStream;
+	METHOD c hasMetadata ()Z
+	METHOD d getResourcePathName ()Ljava/lang/String;
+CLASS none/bqa net/minecraft/client/resources/IResourceManager
+	METHOD a getResourceDomains ()Ljava/util/Set;
+	METHOD a getResource (Lnone/jz;)Lnone/bpz;
+		ARG 0 resourceLocation
+	METHOD b getAllResources (Lnone/jz;)Ljava/util/List;
+		ARG 0 resourceLocation
+CLASS none/bqb net/minecraft/client/resources/IResourceManagerReloadListener
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bqg
+	METHOD a getResourceLocation ()Lnone/jz;
+	METHOD b getInputStream ()Ljava/io/InputStream;
+	METHOD c hasMetadata ()Z
+	METHOD d getResourcePathName ()Ljava/lang/String;
+CLASS none/bqi net/minecraft/client/resources/I18n
+	FIELD a i18nLocale Lnone/bql;
+	METHOD a format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+	METHOD a setLocal (Lnone/bql;)V
+		ARG 0 local
+CLASS none/bqk
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bql net/minecraft/client/resources/Locale
+	FIELD a properties Ljava/util/Map;
+	FIELD b splitter Lcom/google/common/base/Splitter;
+	FIELD c pattern Ljava/util/regex/Pattern;
+	FIELD d unicode Z
+CLASS none/brm
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
+CLASS none/bss net/minecraft/client/audio/SoundHandler
+	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
 CLASS net/minecraft/client/main/Main net/minecraft/client/main/Main
 	CLASS net/minecraft/client/main/Main$2
 		METHOD run run ()V
