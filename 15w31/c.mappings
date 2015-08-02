@@ -876,6 +876,8 @@ CLASS none/zb net/minecraft/item/base/ItemArmor
 		FIELD c IRON Lnone/zb$a;
 		FIELD d GOLD Lnone/zb$a;
 		FIELD e DIAMOND Lnone/zb$a;
+CLASS none/zc net/minecraft/item/ItemArmorStand
+CLASS none/zm net/minecraft/item/ItemBow
 CLASS none/zv net/minecraft/creativetab/CreativeTabs
 	CLASS none/zv$1
 		METHOD e getItem ()Lnone/aas;
@@ -920,9 +922,13 @@ CLASS none/zv net/minecraft/creativetab/CreativeTabs
 	METHOD b getName ()Ljava/lang/String;
 	METHOD c getUnlocalizedName ()Ljava/lang/String;
 	METHOD e getItem ()Lnone/aas;
+CLASS none/aad net/minecraft/item/ItemEmptyMap
+CLASS none/aae net/minecraft/item/ItemEnchantedBook
+CLASS none/aam net/minecraft/item/ItemFishingRod
 CLASS none/aar
 CLASS none/aas net/minecraft/item/base/Item
 	METHOD a getItem (Lnone/agk;)Lnone/aas;
+	METHOD c (Lnone/agk;)V
 CLASS none/aau
 CLASS none/aav net/minecraft/init/Items
 	FIELD A stick Lnone/aas;
@@ -1120,6 +1126,11 @@ CLASS none/aav net/minecraft/init/Items
 	FIELD x diamondShovel Lnone/aas;
 	FIELD y diamondPickaxe Lnone/aas;
 	FIELD z diamondAxe Lnone/aas;
+	METHOD a getItem (Ljava/lang/String;)Lnone/aas;
+		ARG 0 name
+CLASS none/aay net/minecraft/item/ItemMap
+CLASS none/abf net/minecraft/item/ItemPotion
+CLASS none/abm net/minecraft/item/ItemShears
 CLASS none/ace net/minecraft/potion/Potion
 	FIELD b defaultTexture Lnone/jz;
 	METHOD <init> (Ljava/lang/String;[Lnone/pl;)V
@@ -1592,7 +1603,7 @@ CLASS none/agl net/minecraft/init/Blocks
 	FIELD x lapisOre Lnone/agk;
 	FIELD y lapisBlock Lnone/agk;
 	FIELD z dispenser Lnone/agk;
-	METHOD a addBlock (Ljava/lang/String;)Lnone/agk;
+	METHOD a getBlock (Ljava/lang/String;)Lnone/agk;
 		ARG 0 name
 CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/ago
