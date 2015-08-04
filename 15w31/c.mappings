@@ -309,7 +309,7 @@ CLASS none/be net/minecraft/command/CommandSetBlock
 	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
-CLASS none/bf net/minecraft/command/CommandSetWorldSpawn
+CLASS none/bf net/minecraft/command/CommandSetLevelSpawn
 	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
@@ -378,7 +378,7 @@ CLASS none/bw net/minecraft/command/server/CommandWhitelist
 	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
-CLASS none/bx net/minecraft/command/CommandWorldBorder
+CLASS none/bx net/minecraft/command/CommandLevelBorder
 	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
@@ -704,7 +704,7 @@ CLASS none/lf
 	METHOD e canSave ()Z
 	METHOD f makeString ()Ljava/lang/String;
 	METHOD g getLoadedChunkCount ()I
-CLASS none/lg net/minecraft/world/WorldServer
+CLASS none/lg net/minecraft/level/LevelServer
 	METHOD a addScheduledTask (Ljava/lang/Runnable;)Lcom/google/common/util/concurrent/ListenableFuture;
 	METHOD aJ isCallingFromMinecraftThread ()Z
 	METHOD d tick ()V
@@ -801,7 +801,7 @@ CLASS none/pr net/minecraft/entity/Entity
 	FIELD y rotationX F
 	FIELD z RotationY F
 	METHOD <init> (Lnone/aeo;)V
-		ARG 0 world
+		ARG 0 Level
 	METHOD P getSwimSound ()Ljava/lang/String;
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD aa getSwimSplashSound ()Ljava/lang/String;
@@ -1325,22 +1325,22 @@ CLASS none/ace net/minecraft/potion/Potion
 CLASS none/aem
 	METHOD b getGameRuleBooleanValue (Ljava/lang/String;)Z
 CLASS none/aen net/minecraft/util/MathHelper
-CLASS none/aeo net/minecraft/world/World
+CLASS none/aeo net/minecraft/level/Level
 	FIELD s rand Ljava/util/Random;
 	FIELD t provider Lnone/aoz;
-	FIELD u worldAccesses Ljava/util/List;
+	FIELD u LevelAccesses Ljava/util/List;
 	FIELD v chunkProvider Lnone/aoi;
 	FIELD w saveHandler Lnone/avp;
-	FIELD x worldInfo Lnone/avo;
-	METHOD L getTotalWorldTime ()J
-	METHOD M getWorldTime ()J
+	FIELD x LevelInfo Lnone/avo;
+	METHOD L getTotalLevelTime ()J
+	METHOD M getLevelTime ()J
 	METHOD R getGameRules ()Lnone/aem;
-	METHOD a setTotalWorldTime (J)V
+	METHOD a setTotalLevelTime (J)V
 	METHOD a setBlock (Lnone/cj;Lnone/anm;I)Z
-	METHOD b setWorldTime (J)V
+	METHOD b setLevelTime (J)V
 	METHOD d tick ()V
-CLASS none/aeq net/minecraft/world/IWorldAccess
-CLASS none/aes net/minecraft/world/IBlockAccess
+CLASS none/aeq net/minecraft/level/ILevelAccess
+CLASS none/aes net/minecraft/level/IBlockAccess
 CLASS none/aga net/minecraft/block/BlockAir
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getRenderType ()I
@@ -2310,7 +2310,7 @@ CLASS none/ani net/minecraft/block/BlockPistonMoving
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/anm net/minecraft/item/ItemStack
-CLASS none/aoi net/minecraft/world/chunk/IChunkProvider
+CLASS none/aoi net/minecraft/level/chunk/IChunkProvider
 	METHOD a chunkExists (II)Z
 	METHOD a getStrongholdGen (Lnone/aeo;Ljava/lang/String;Lnone/cj;)Lnone/cj;
 	METHOD a populate (Lnone/aoi;II)V
@@ -2323,9 +2323,9 @@ CLASS none/aoi net/minecraft/world/chunk/IChunkProvider
 	METHOD e canSave ()Z
 	METHOD f makeString ()Ljava/lang/String;
 	METHOD g getLoadedChunkCount ()I
-CLASS none/aol net/minecraft/world/chunk/Chunk
-CLASS none/aoz net/minecraft/world/WorldProvider
-	FIELD b worldObj Lnone/aeo;
+CLASS none/aol net/minecraft/level/chunk/Chunk
+CLASS none/aoz net/minecraft/level/LevelProvider
+	FIELD b LevelObj Lnone/aeo;
 	METHOD a calculateCelestialAngle (JF)F
 CLASS none/apb
 	METHOD a calculateCelestialAngle (JF)F
@@ -2444,17 +2444,17 @@ CLASS none/atn
 	METHOD b getCanBlockGrass ()Z
 CLASS none/avl
 	METHOD b setTotalTime (J)V
-	METHOD c setWorldTime (J)V
+	METHOD c setLevelTime (J)V
 	METHOD f getTotalTime ()J
-	METHOD g getWorldTime ()J
-CLASS none/avo net/minecraft/world/storage/WorldInfo
+	METHOD g getLevelTime ()J
+CLASS none/avo net/minecraft/level/storage/LevelInfo
 	FIELD h totalTime J
-	FIELD i worldTime J
+	FIELD i LevelTime J
 	METHOD b setTotalTime (J)V
-	METHOD c setWorldTime (J)V
+	METHOD c setLevelTime (J)V
 	METHOD f getTotalTime ()J
-	METHOD g getWorldTime ()J
-CLASS none/avp net/minecraft/world/storage/ISaveHandler
+	METHOD g getLevelTime ()J
+CLASS none/avp net/minecraft/level/storage/ISaveHandler
 CLASS none/awg net/minecraft/util/AxisAlignedBB
 CLASS none/awh net/minecraft/util/Vec3d
 CLASS none/axc
@@ -2505,11 +2505,11 @@ CLASS none/aza net/minecraft/client/multiplayer/GuiConnecting
 	FIELD f logger Lorg/apache/logging/log4j/Logger;
 	FIELD h cancel Z
 	FIELD i previousGuiScreen Lnone/azv;
-CLASS none/azb net/minecraft/client/gui/GuiCreateFlatWorld
-	FIELD a createWorldGui Lnone/azc;
-CLASS none/azc net/minecraft/client/gui/GuiCreateWorld
+CLASS none/azb net/minecraft/client/gui/GuiCreateFlatLevel
+	FIELD a createLevelGui Lnone/azc;
+CLASS none/azc net/minecraft/client/gui/GuiCreateLevel
 CLASS none/azd net/minecraft/client/gui/GuiScreenCustomizePresets
-CLASS none/aze net/minecraft/client/gui/GuiCustomizeWorldScreen
+CLASS none/aze net/minecraft/client/gui/GuiCustomizeLevelScreen
 CLASS none/azf
 	METHOD a confirmClicked (ZI)V
 CLASS none/azg net/minecraft/client/gui/GuiScreenDemo
@@ -2518,7 +2518,7 @@ CLASS none/azg net/minecraft/client/gui/GuiScreenDemo
 CLASS none/azh net/minecraft/client/gui/GuiScreenServerList
 CLASS none/azo
 	METHOD a confirmClicked (ZI)V
-CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
+CLASS none/azu net/minecraft/client/gui/GuiRenameLevel
 CLASS none/azv net/minecraft/client/gui/GuiScreen
 	METHOD a confirmClicked (ZI)V
 CLASS none/azw
@@ -2551,8 +2551,8 @@ CLASS none/bfa
 	METHOD e canSave ()Z
 	METHOD f makeString ()Ljava/lang/String;
 	METHOD g getLoadedChunkCount ()I
-CLASS none/bfc net/minecraft/client/multiplayer/WorldClient
-	METHOD b setWorldTime (J)V
+CLASS none/bfc net/minecraft/client/multiplayer/LevelClient
+	METHOD b setLevelTime (J)V
 	METHOD d tick ()V
 CLASS none/bff net/minecraft/client/multiplayer/ServerData
 CLASS none/bfm
@@ -2624,7 +2624,7 @@ CLASS none/bha
 CLASS none/bhb
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
-CLASS none/bhg net/minecraft/client/renderer/WorldRenderer
+CLASS none/bhg net/minecraft/client/renderer/LevelRenderer
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
 CLASS none/bhn
 	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
