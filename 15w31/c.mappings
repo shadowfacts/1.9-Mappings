@@ -801,7 +801,7 @@ CLASS none/pr net/minecraft/entity/Entity
 	FIELD y rotationX F
 	FIELD z RotationY F
 	METHOD <init> (Lnone/aeo;)V
-		ARG 0 Level
+		ARG 0 level
 	METHOD P getSwimSound ()Ljava/lang/String;
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD aa getSwimSplashSound ()Ljava/lang/String;
@@ -1328,10 +1328,10 @@ CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
 	FIELD s rand Ljava/util/Random;
 	FIELD t provider Lnone/aoz;
-	FIELD u LevelAccesses Ljava/util/List;
+	FIELD u levelAccesses Ljava/util/List;
 	FIELD v chunkProvider Lnone/aoi;
 	FIELD w saveHandler Lnone/avp;
-	FIELD x LevelInfo Lnone/avo;
+	FIELD x levelInfo Lnone/avo;
 	METHOD L getTotalLevelTime ()J
 	METHOD M getLevelTime ()J
 	METHOD R getGameRules ()Lnone/aem;
@@ -2449,7 +2449,7 @@ CLASS none/avl
 	METHOD g getLevelTime ()J
 CLASS none/avo net/minecraft/level/storage/LevelInfo
 	FIELD h totalTime J
-	FIELD i LevelTime J
+	FIELD i levelTime J
 	METHOD b setTotalTime (J)V
 	METHOD c setLevelTime (J)V
 	METHOD f getTotalTime ()J
