@@ -405,6 +405,26 @@ CLASS none/cj net/minecraft/util/BlockPos
 		ARG 2 z
 	METHOD <init> (Lnone/df;)V
 		ARG 0 vec
+	METHOD b offsetDown ()Lnone/cj;
+	METHOD b offsetUp (I)Lnone/cj;
+	METHOD c offsetNorth ()Lnone/cj;
+	METHOD d offsetSouth ()Lnone/cj;
+	METHOD e offsetWest ()Lnone/cj;
+	METHOD f offsetEast ()Lnone/cj;
+CLASS none/cq net/minecraft/util/Direction
+	CLASS none/cq$b PositiveOrNegative
+		FIELD a POSITIVE Lnone/cq$b;
+		FIELD b NEGATIVE Lnone/cq$b;
+	FIELD a DOWN Lnone/cq;
+	FIELD b UP Lnone/cq;
+	FIELD c NORTH Lnone/cq;
+	FIELD d SOUTH Lnone/cq;
+	FIELD e WEST Lnone/cq;
+	FIELD f EAST Lnone/cq;
+	FIELD l posOrNeg Lnone/cq$b;
+	METHOD <init> (Ljava/lang/String;IIIILjava/lang/String;Lnone/cq$b;Lnone/cq$a;Lnone/df;)V
+		ARG 7 positiveOrNeg
+	METHOD c getPositiveOrNegative ()Lnone/cq$b;
 CLASS none/df net/minecraft/util/Vec3i
 	FIELD a x I
 	FIELD b NULL_VECTOR Lnone/df;
@@ -425,7 +445,7 @@ CLASS none/dl net/minecraft/nbt/TagByteArray
 	FIELD b val [B
 	METHOD <init> ([B)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -434,7 +454,7 @@ CLASS none/dm net/minecraft/nbt/TagByte
 	FIELD b val B
 	METHOD <init> (B)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -448,7 +468,7 @@ CLASS none/dm net/minecraft/nbt/TagByte
 	METHOD h getFloat ()F
 CLASS none/dn net/minecraft/nbt/TagCompound
 	FIELD b values Ljava/util/Map;
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a load (BLjava/lang/String;Ljava/io/DataInput;ILnone/dw;)Lnone/eb;
 		ARG 0 type
 		ARG 1 key
@@ -499,21 +519,26 @@ CLASS none/dn net/minecraft/nbt/TagCompound
 	METHOD b copy ()Lnone/eb;
 	METHOD b getTag (Ljava/lang/String;)Lnone/eb;
 		ARG 0 key
-	METHOD c getByte (Ljava/lang/String;)B
+	METHOD b hasKey (Ljava/lang/String;I)Z
+	METHOD c getTagType (Ljava/lang/String;)B
 		ARG 0 key
 	METHOD c_ zeroTags ()Z
 	METHOD d hasKey (Ljava/lang/String;)Z
 		ARG 0 key
+	METHOD e getByte (Ljava/lang/String;)B
 	METHOD f getShort (Ljava/lang/String;)S
 	METHOD g getInt (Ljava/lang/String;)I
 		ARG 0 key
+	METHOD i getFloat (Ljava/lang/String;)F
 	METHOD k getString (Ljava/lang/String;)Ljava/lang/String;
 		ARG 0 key
+	METHOD n getCompoundTag (Ljava/lang/String;)Lnone/dn;
+	METHOD o getBoolean (Ljava/lang/String;)Z
 CLASS none/dp net/minecraft/nbt/TagDouble
 	FIELD b val D
 	METHOD <init> (D)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -524,7 +549,7 @@ CLASS none/dp net/minecraft/nbt/TagDouble
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
 CLASS none/dq net/minecraft/nbt/TagEnd
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -532,7 +557,7 @@ CLASS none/dr net/minecraft/nbt/TagFloat
 	FIELD b val F
 	METHOD <init> (F)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -546,7 +571,7 @@ CLASS none/ds net/minecraft/nbt/TagIntArray
 	FIELD b val [I
 	METHOD <init> ([I)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -555,7 +580,7 @@ CLASS none/dt net/minecraft/nbt/TagInt
 	FIELD b val I
 	METHOD <init> (I)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -566,7 +591,7 @@ CLASS none/dt net/minecraft/nbt/TagInt
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
 CLASS none/du net/minecraft/nbt/TagList
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 		ARG 0 input
 		ARG 1 depth
@@ -578,7 +603,7 @@ CLASS none/dv net/minecraft/nbt/TagLong
 	FIELD b val J
 	METHOD <init> (J)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -592,7 +617,7 @@ CLASS none/dw net/minecraft/nbt/SizeTracker
 	FIELD a instance Lnone/dw;
 CLASS none/dz net/minecraft/nbt/TagShort
 	FIELD b val S
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD b copy ()Lnone/eb;
@@ -608,7 +633,7 @@ CLASS none/ea net/minecraft/nbt/TagString
 	FIELD b val Ljava/lang/String;
 	METHOD <init> (Ljava/lang/String;)V
 		ARG 0 val
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD a_ get ()Ljava/lang/String;
@@ -623,7 +648,7 @@ CLASS none/eb net/minecraft/nbt/TagBase
 		METHOD g getDouble ()D
 		METHOD h getFloat ()F
 	FIELD a TYPES [Ljava/lang/String;
-	METHOD a asByte ()B
+	METHOD a getType ()B
 	METHOD a read (Ljava/io/DataInput;ILnone/dw;)V
 	METHOD a write (Ljava/io/DataOutput;)V
 	METHOD a_ get ()Ljava/lang/String;
@@ -692,7 +717,10 @@ CLASS none/fb net/minecraft/chat/ChatComponentTranslatable
 	METHOD e ()Ljava/lang/String;
 CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lh
+	METHOD a readFromNbt (Lnone/dn;)V
 	METHOD a sendMessage (Lnone/eu;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
 CLASS none/ln
@@ -745,6 +773,8 @@ CLASS none/mt net/minecraft/achievement/AchievementRegistry
 	FIELD z ghast Lnone/ms;
 CLASS none/my net/minecraft/stat/Stat
 	FIELD a chatComponent Lnone/eu;
+CLASS none/no net/minecraft/util/IntHashMap
+	METHOD a lookup (I)Ljava/lang/Object;
 CLASS none/nq net/minecraft/util/LazyLoadBase
 	FIELD a value Ljava/lang/Object;
 	FIELD b isLoaded Z
@@ -758,10 +788,19 @@ CLASS none/nu net/minecraft/util/MathUtils
 	METHOD c hsvToRgb (FFF)I
 	METHOD d roundDown (D)J
 	METHOD d roundDown (F)I
+CLASS none/ny net/minecraft/util/IStringSerializeable
+CLASS none/oo
+CLASS none/pc net/minecraft/util/DamageSource
+	FIELD f drown Lnone/pc;
 CLASS none/po net/minecraft/entity/EntityAgeable
+	METHOD a setSize (FF)V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
+CLASS none/pp net/minecraft/entity/IAnimals
 CLASS none/pr net/minecraft/entity/Entity
 	FIELD C OnGround Z
 	FIELD D isCollidedHorizontally Z
+	FIELD I isDead Z
 	FIELD O FallDistance F
 	FIELD V rand Ljava/util/Random;
 	FIELD aj portalCooldown I
@@ -781,13 +820,28 @@ CLASS none/pr net/minecraft/entity/Entity
 	FIELD z RotationY F
 	METHOD <init> (Lnone/aeo;)V
 		ARG 0 world
+	METHOD K onEntityUpdate ()V
 	METHOD P getSwimSound ()Ljava/lang/String;
+	METHOD V isInWater ()Z
+	METHOD a setSize (FF)V
+	METHOD a readFromNbt (Lnone/dn;)V
 	METHOD a sendMessage (Lnone/eu;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD aB getAir ()I
+	METHOD aN isPushedByWater ()Z
+	METHOD aT getEntityBoundingBox ()Lnone/awg;
 	METHOD aa getSwimSplashSound ()Ljava/lang/String;
+	METHOD ai isEntityAlive ()Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD c getPosition ()Lnone/cj;
 	METHOD d moveEntity (DDD)V
+	METHOD e getDistanceSq (DDD)D
+	METHOD i setAir (I)V
 	METHOD t_ onUpdate ()V
 CLASS none/px
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/py net/minecraft/entity/EntityFlying
 CLASS none/qa net/minecraft/entity/EntityLivingBase
@@ -796,155 +850,671 @@ CLASS none/qa net/minecraft/entity/EntityLivingBase
 	FIELD ax hurtTime I
 	FIELD b sprintingSpeedBoost Lnone/qm;
 	FIELD bt hurtByTimestamp I
+	METHOD K onEntityUpdate ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD ai isEntityAlive ()Z
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
 	METHOD bO absorptionAmount ()F
 	METHOD bd getRandom ()Ljava/util/Random;
 	METHOD bo health ()F
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD k getFallingHurtSound (I)Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 	METHOD t_ onUpdate ()V
 CLASS none/qb net/minecraft/entity/EntityLiving
+	FIELD bq attackTarget Lnone/qa;
+	FIELD br senses Lnone/tk;
+	FIELD h navigator Lnone/tg;
+	METHOD K onEntityUpdate ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
+	METHOD cg handleLavaMovement ()Z
+	METHOD d setAttackTarget (Lnone/qa;)V
+	METHOD q getLookHelper ()Lnone/qy;
 	METHOD t_ onUpdate ()V
+	METHOD u getNavigator ()Lnone/tg;
+	METHOD v getEntitySenses ()Lnone/tk;
+	METHOD w getAttackTarget ()Lnone/qa;
+	METHOD y getTalkInterval ()I
 CLASS none/qg net/minecraft/entity/passiveIAnimals
 CLASS none/qh net/minecraft/entity/EntityCreature
 	FIELD bq FleeingSpeedBonusModifierUUID Ljava/util/UUID;
 	FIELD br FleeingSpeedBonusModifier Lnone/qm;
 CLASS none/qj net/minecraft/entity/passive/EntityTameable
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/qm net/minecraft/entity/attribute/AttributeModifier
 	METHOD a setSaved (Z)Lnone/qm;
+CLASS none/qy
+	METHOD a setLookPositionWithEntity (Lnone/pr;FF)V
+CLASS none/rb
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rc
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rd
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/re
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rf
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rg
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD e updateTask ()V
+CLASS none/rh
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/ri
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+CLASS none/rj net/minecraft/entity/AI/EntityAISwimming
+	METHOD a shouldExecute ()Z
+	METHOD e updateTask ()V
+CLASS none/rk
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rl
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rm net/minecraft/entity/AI/EntityAIBase
+	FIELD a mutexBits I
+	METHOD a shouldExecute ()Z
+	METHOD a setMutexBits (I)V
+		ARG 0 setTo
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+	METHOD i isInterruptable ()Z
+	METHOD j getMutexBits ()I
+CLASS none/ro
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rq
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+CLASS none/rr
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rs
+	METHOD a shouldExecute ()Z
+CLASS none/rt
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
 CLASS none/ru net/minecraft/entity/AI/EntityAIAttackOnCollide
+	FIELD a world Lnone/aeo;
+	FIELD b entity Lnone/qh;
+	FIELD d speedTowardsTarget D
+	FIELD e longMemory Z
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/rv
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
 CLASS none/rw net/minecraft/entity/AI/EntityAIMoveThroughtVillage
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/rx
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/ry
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+CLASS none/rz
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/sa
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sb
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sc
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sd
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/se
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+CLASS none/sf
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sh
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD e updateTask ()V
+CLASS none/si
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+CLASS none/sj
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sk
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sl
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sm
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/sn
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD e updateTask ()V
+CLASS none/so
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/sp
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sq
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/sr
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+	METHOD e updateTask ()V
+CLASS none/ss
+	FIELD a entity Lnone/wv;
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/st
+	METHOD c startExecuting ()V
+	METHOD e updateTask ()V
+CLASS none/sv
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+CLASS none/sw
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+CLASS none/sx
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/sy
+	METHOD a shouldExecute ()Z
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
 CLASS none/sz net/minecraft/entity/AI/EntityAIWatchClosest
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+CLASS none/ta
+	METHOD a shouldExecute ()Z
+CLASS none/tb
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+CLASS none/tc
+	METHOD a shouldExecute ()Z
+	METHOD c startExecuting ()V
+CLASS none/td
+	METHOD b continueExecuting ()Z
+	METHOD c startExecuting ()V
+	METHOD d resetTask ()V
+CLASS none/tg net/minecraft/entity/ai/navigator/Navigator
+	FIELD d pathEntity Lnone/auw;
+	METHOD a setPath (Lnone/auw;D)Z
+	METHOD m noPath ()Z
+	METHOD n clearPathEntity ()V
+CLASS none/tk net/minecraft/entity/AI/EntitySenses
+	METHOD a canSee (Lnone/pr;)Z
 CLASS none/tu
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/tw net/minecraft/entity/passiveEntityAnimal
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
+	METHOD y getTalkInterval ()I
 CLASS none/tx
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/ty
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/tz
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
+	METHOD y getTalkInterval ()I
 CLASS none/ua
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD y getTalkInterval ()I
 CLASS none/uc
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD cg handleLavaMovement ()Z
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 CLASS none/ud
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/ue
+	CLASS none/ue$c
+		METHOD e updateTask ()V
+	CLASS none/ue$g
+		METHOD e updateTask ()V
+	CLASS none/ue$h
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 CLASS none/uf
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/ug
+	CLASS none/ug$a
+		METHOD a shouldExecute ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
+	CLASS none/ug$c
+		METHOD a shouldExecute ()Z
+	CLASS none/ug$e
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 	METHOD t_ onUpdate ()V
 CLASS none/ui
+	CLASS none/ui$a
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	METHOD V isInWater ()Z
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/uj
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
+CLASS none/uk net/minecraft/entity/EntityWaterMob
+	METHOD K onEntityUpdate ()V
+	METHOD aN isPushedByWater ()Z
+	METHOD b getExperiencePoints (Lnone/xa;)I
+		ARG 0 player
+	METHOD cg handleLavaMovement ()Z
+	METHOD y getTalkInterval ()I
 CLASS none/ul net/minecraft/entity/passive/EntityWolf
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD d setAttackTarget (Lnone/qa;)V
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 	METHOD t_ onUpdate ()V
+CLASS none/up
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/uq
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/ur
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 CLASS none/uw
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/uy
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
-CLASS none/uz
+CLASS none/uz net/minecraft/entity/EntityHanging
+	METHOD <init> (Lnone/aeo;)V
+		ARG 0 level
+	METHOD <init> (Lnone/aeo;Lnone/cj;)V
+		ARG 0 level
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD d moveEntity (DDD)V
 	METHOD t_ onUpdate ()V
+CLASS none/va
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
+CLASS none/vb
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
+CLASS none/vc
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/ve
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vi
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vk net/minecraft/entity/item/EntityBoat
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
-CLASS none/vl
+CLASS none/vl net/minecraft/entity/EntityFallingBlock
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vm
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vn
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vp
 	CLASS none/vp$1
 		METHOD c getPosition ()Lnone/cj;
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
+CLASS none/vq
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/vr
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vs
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 	METHOD z getLevel ()Lnone/aeo;
 CLASS none/vu
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vv
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vw
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/vy
+	CLASS none/vy$a
+		METHOD a shouldExecute ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+CLASS none/vz
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 CLASS none/wa net/minecraft/entity/monster/EntityCreeper
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 	METHOD t_ onUpdate ()V
 CLASS none/wb net/minecraft/entity/monster/EntityEnderman
+	CLASS none/wb$a
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	CLASS none/wb$b
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
 	CLASS none/wb$c
 		FIELD a entityEnderman Lnone/wb;
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
 	FIELD c carryBlockList Ljava/util/Set;
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/wc net/minecraft/entity/monster/EntityEndermite
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/wd net/minecraft/entity/monster/IMob
 CLASS none/we net/minecraft/entity/monster/EntityGhast
+	CLASS none/we$a
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	CLASS none/we$c
+		METHOD a shouldExecute ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
+	CLASS none/we$d
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/wg
+	CLASS none/wg$a
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+		METHOD e updateTask ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD cg handleLavaMovement ()Z
+	METHOD y getTalkInterval ()I
 CLASS none/wh net/minecraft/entity/monster/EntityMagmaCube
+	METHOD cg handleLavaMovement ()Z
 CLASS none/wi net/minecraft/entity/monster/EntityMob
 	METHOD P getSwimSound ()Ljava/lang/String;
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 	METHOD aa getSwimSplashSound ()Ljava/lang/String;
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD k getFallingHurtSound (I)Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 	METHOD t_ onUpdate ()V
 CLASS none/wj net/minecraft/entity/monster/EntityPigZombie
+	CLASS none/wj$a
+		METHOD a shouldExecute ()Z
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD cg handleLavaMovement ()Z
 	METHOD t_ onUpdate ()V
 CLASS none/wk net/minecraft/entity/IRangedAttackMob
 CLASS none/wm net/minecraft/entity/monster/EntitySilverfish
+	CLASS none/wm$a
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+	CLASS none/wm$b
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/wn net/minecraft/entity/monster/EntitySkeleton
+	CLASS none/wn$1
+		METHOD c startExecuting ()V
+		METHOD d resetTask ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 CLASS none/wo net/minecraft/entity/monster/EntitySlime
+	CLASS none/wo$a
+		METHOD a shouldExecute ()Z
+		METHOD b continueExecuting ()Z
+		METHOD c startExecuting ()V
+		METHOD e updateTask ()V
+	CLASS none/wo$b
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	CLASS none/wo$c
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	CLASS none/wo$e
+		METHOD a shouldExecute ()Z
+		METHOD e updateTask ()V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/wp net/minecraft/entity/monster/EntitySpider
+	CLASS none/wp$a
+		METHOD b continueExecuting ()Z
+	CLASS none/wp$c
+		METHOD a shouldExecute ()Z
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
@@ -954,38 +1524,81 @@ CLASS none/wq
 CLASS none/wr net/minecraft/entity/monster/EntityZombie
 	FIELD b babySpeedBoostModifierUUID Ljava/util/UUID;
 	FIELD c babySpeedBoostModifier Lnone/qm;
+	METHOD a setSize (FF)V
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
+	METHOD r attackEntityAsMob (Lnone/pr;)Z
 	METHOD t_ onUpdate ()V
 CLASS none/wv net/minecraft/entity/passive/EntityVillager
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 CLASS none/xa net/minecraft/entity/player/EntityPlayer
 	METHOD P getSwimSound ()Ljava/lang/String;
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD aN isPushedByWater ()Z
 	METHOD aa getSwimSplashSound ()Ljava/lang/String;
+	METHOD b writeToNbt (Lnone/dn;)V
+	METHOD b getExperiencePoints (Lnone/xa;)I
 	METHOD bO absorptionAmount ()F
 	METHOD bp getDamageSound ()Ljava/lang/String;
 	METHOD bq getDeathSound ()Ljava/lang/String;
 	METHOD k getFallingHurtSound (I)Ljava/lang/String;
 	METHOD t_ onUpdate ()V
 CLASS none/xd
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
+CLASS none/xe
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 CLASS none/xf
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/xg
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/xh net/minecraft/entity/item/EntityFireworkRocket
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
+CLASS none/xi
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/xl
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
+CLASS none/xm
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 CLASS none/xo
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/xp
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/xr
 	METHOD t_ onUpdate ()V
+CLASS none/xt
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 CLASS none/xu
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
+CLASS none/xv
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 CLASS none/zb net/minecraft/item/base/ItemArmor
 	CLASS none/zb$a ArmorType
 		FIELD a LEATHER Lnone/zb$a;
@@ -997,7 +1610,7 @@ CLASS none/zc net/minecraft/item/ItemArmorStand
 CLASS none/zd net/minecraft/item/ItemArrow
 CLASS none/ze net/minecraft/item/ItemAxe
 CLASS none/zg net/minecraft/item/ItemBed
-CLASS none/zh
+CLASS none/zh net/minecraft/item/ItemBlock
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/aas;
 CLASS none/zi net/minecraft/item/ItemReed
 CLASS none/zj net/minecraft/item/ItemBoat
@@ -1079,6 +1692,7 @@ CLASS none/aas net/minecraft/item/base/Item
 	METHOD a getItem (Lnone/agk;)Lnone/aas;
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/aas;
 	METHOD c (Lnone/agk;)V
+CLASS none/aat net/minecraft/item/ItemStack
 CLASS none/aau
 CLASS none/aav net/minecraft/init/Items
 	FIELD A stick Lnone/aas;
@@ -1305,17 +1919,33 @@ CLASS none/aem
 	METHOD b getGameRuleBooleanValue (Ljava/lang/String;)Z
 CLASS none/aen net/minecraft/util/MathHelper
 CLASS none/aeo net/minecraft/level/Level
+	FIELD s rand Ljava/util/Random;
 	METHOD R getGameRules ()Lnone/aem;
-	METHOD a setBlock (Lnone/cj;Lnone/anm;I)Z
+	METHOD a checkNoEntityCollision (Lnone/awg;Lnone/pr;)Z
+	METHOD a setBlockState (Lnone/cj;Lnone/anm;I)Z
+	METHOD d isAirBlock (Lnone/cj;)Z
+	METHOD p getBlockState (Lnone/cj;)Lnone/anm;
 CLASS none/aes net/minecraft/level/BlockAccess
+	METHOD d isAirBlock (Lnone/cj;)Z
+	METHOD p getBlockState (Lnone/cj;)Lnone/anm;
+CLASS none/aex
+	METHOD d isAirBlock (Lnone/cj;)Z
+	METHOD p getBlockState (Lnone/cj;)Lnone/anm;
 CLASS none/aga net/minecraft/block/BlockAir
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 CLASS none/agb net/minecraft/block/BlockAnvil
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agc
+	CLASS none/agc$a
+		METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	CLASS none/agc$b
+		METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
@@ -1339,10 +1969,13 @@ CLASS none/agg
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agh net/minecraft/block/BlockBeacon
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agi net/minecraft/block/BlockBed
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agj
@@ -1375,6 +2008,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	FIELD J blockMaterial Lnone/atl;
 	FIELD K mapColour Lnone/atm;
 	FIELD L slipperiness F
+	FIELD M blockState Lnone/ann;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
 	FIELD b creativetab Lnone/zv;
@@ -1407,6 +2041,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 1 mapColour
 	METHOD K canSilkHarvest ()Z
 	METHOD M disableStats ()Lnone/agk;
+	METHOD S getDefaultState ()Lnone/anm;
 	METHOD U registerBlocks ()V
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a setLightLevel (F)Lnone/agk;
@@ -1418,6 +2053,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 3 maxX
 		ARG 4 maxY
 		ARG 5 maxZ
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a (Ljava/util/Random;)I
 		ARG 0 random
 	METHOD a getblock (Lnone/aas;)Lnone/agk;
@@ -1455,7 +2091,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 3 bounds
 		ARG 5 entity
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
-	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 		ARG 0 level
 		ARG 1 pos
 		ARG 2 stack
@@ -1490,7 +2126,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 1 pos
 	METHOD a setStepSound (Lnone/agk$d;)Lnone/agk;
 		ARG 0 sound
-	METHOD a (Lnone/anm;)I
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 		ARG 0 stack
 	METHOD a (Lnone/anm;Ljava/util/Random;I)Lnone/aas;
 		ARG 0 stack
@@ -1513,9 +2149,11 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 2 pos
 	METHOD a setCreativeTab (Lnone/zv;)Lnone/agk;
 		ARG 0 creativetab
+	METHOD a setTickRandomly (Z)Lnone/agk;
 	METHOD b getRenderType ()I
 	METHOD b setResistance (F)Lnone/agk;
 		ARG 0 resistance
+	METHOD b getBlockByName (Ljava/lang/String;)Lnone/agk;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 		ARG 0 level
 		ARG 1 pos
@@ -1544,6 +2182,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	METHOD c isOpaqueCube ()Z
 	METHOD c setHardness (F)Lnone/agk;
 		ARG 0 hardness
+	METHOD c getBlockById (I)Lnone/agk;
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/agk;
 		ARG 0 unlocalizedName
 	METHOD c (Lnone/aeo;Lnone/cj;Lnone/anm;)V
@@ -1573,6 +2212,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 1 pos
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 		ARG 0 stack
+	METHOD j setDefaultState (Lnone/anm;)V
 	METHOD r getLightOpacity ()I
 	METHOD t getLightValue ()I
 	METHOD u useNeighborBrightness ()Z
@@ -1793,9 +2433,12 @@ CLASS none/agl net/minecraft/init/Blocks
 	FIELD z dispenser Lnone/agk;
 	METHOD a getBlock (Ljava/lang/String;)Lnone/agk;
 		ARG 0 name
+CLASS none/agm net/minecraft/block/IGrowable
 CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/ago net/minecraft/block/BlockBrewingStand
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
@@ -1804,32 +2447,42 @@ CLASS none/agp net/minecraft/block/BlockBush
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agq
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agr net/minecraft/block/BlockCactus
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ags net/minecraft/block/BlockCake
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agt net/minecraft/block/BlockCarrot
 CLASS none/agu net/minecraft/block/BlockCauldron
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agv net/minecraft/block/BlockChest
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agw net/minecraft/block/BlockChorusFlower
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agx net/minecraft/block/BlockChorusPlant
@@ -1839,43 +2492,64 @@ CLASS none/agx net/minecraft/block/BlockChorusPlant
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agy net/minecraft/block/BlockClay
 CLASS none/agz net/minecraft/block/BlockCocoa
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aha net/minecraft/block/BlockColored
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahb net/minecraft/block/BlockCommandBlock
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/ahc net/minecraft/block/BlockComparator
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 CLASS none/ahd net/minecraft/block/BlockWorkbench
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 CLASS none/ahe net/minecraft/block/BlockCrops
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/ahf net/minecraft/block/BlockDaylightDetector
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahg net/minecraft/block/BlockDeadBush
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahh net/minecraft/block/BlockRailDetector
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 CLASS none/ahi
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahk net/minecraft/block/BlockDirt
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahl net/minecraft/block/BlockDispenser
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/ahm net/minecraft/block/BlockDoor
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahn net/minecraft/block/BlockDoublePlant
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/aho net/minecraft/block/BlockDragonEgg
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahp net/minecraft/block/BlockDropper
@@ -1883,6 +2557,7 @@ CLASS none/ahp net/minecraft/block/BlockDropper
 CLASS none/ahq net/minecraft/block/BlockDynamicLiquid
 CLASS none/ahr net/minecraft/block/BlockEnchantingTable
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
@@ -1899,14 +2574,18 @@ CLASS none/aht net/minecraft/block/BlockEndPortal
 	METHOD d renderAsNormalBlock ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ahu net/minecraft/block/BlockEndPortalBlock
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD c isOpaqueCube ()Z
 CLASS none/ahv net/minecraft/block/BlockEndRod
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahw net/minecraft/block/BlockEnderChest
 	METHOD K canSilkHarvest ()Z
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
@@ -1914,31 +2593,47 @@ CLASS none/ahx net/minecraft/tileentity/base/TileEntityProvider
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 		ARG 0 level
 		ARG 1 blockMeta
+CLASS none/ahy net/minecraft/block/BlockFalling
 CLASS none/ahz net/minecraft/block/BlockFarmland
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aia net/minecraft/block/BlockFence
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aib net/minecraft/block/BlockFenceGate
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aic net/minecraft/block/BlockFire
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aid net/minecraft/block/BlockFlower
+	CLASS none/aid$a FlowerType
+	CLASS none/aid$b FlowerItems
+		FIELD a FLOWERITEMA Lnone/aid$b;
+		FIELD b FLOWERITEMB Lnone/aid$b;
+		METHOD a getWhichItem ()Lnone/aid;
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/aie net/minecraft/block/BlockFlowerPot
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aig net/minecraft/block/BlockDoubleStoneSlab
 CLASS none/aii net/minecraft/block/BlockFurnace
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/aij net/minecraft/block/BlockGlass
 	METHOD K canSilkHarvest ()Z
@@ -1966,11 +2661,14 @@ CLASS none/ait net/minecraft/block/BlockHardenedClay
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aiu net/minecraft/block/BlockHay
 CLASS none/aiv net/minecraft/block/BlockHopper
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aix net/minecraft/block/BlockHugeMushroom
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aiy net/minecraft/block/BlockIce
 CLASS none/aiz net/minecraft/block/BlockJukebox
@@ -1979,9 +2677,12 @@ CLASS none/aiz net/minecraft/block/BlockJukebox
 		METHOD a getRecord ()Lnone/aat;
 		METHOD a readFromNBT (Lnone/dn;)V
 		METHOD b writeToNBT (Lnone/dn;)V
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/aja net/minecraft/block/BlockLadder
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
@@ -1989,10 +2690,13 @@ CLASS none/aja net/minecraft/block/BlockLadder
 CLASS none/ajb net/minecraft/block/BlockLeaves
 	METHOD c isOpaqueCube ()Z
 CLASS none/ajd net/minecraft/block/BlockLever
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aje
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
@@ -2003,78 +2707,136 @@ CLASS none/ajh net/minecraft/block/BlockMobSpawner
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 CLASS none/aji net/minecraft/block/BlockSilverFish
+	CLASS none/aji$a SilverfishBlockType
+		FIELD a STONE Lnone/aji$a;
+		FIELD b COBBLE Lnone/aji$a;
+		FIELD c STONE_BRICK Lnone/aji$a;
+		FIELD d MOSSY_STONE_BRICK Lnone/aji$a;
+		FIELD e CRACKED_STONE_BRICK Lnone/aji$a;
+		FIELD f CHISELED_STONE_BRICK Lnone/aji$a;
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/ajj net/minecraft/block/BlockMushroom
 CLASS none/ajk net/minecraft/block/BlockMycelium
+	FIELD a SNOWY_PROP Lnone/anx;
 CLASS none/ajl
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajm net/minecraft/block/BlockNetherWart
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/ajn net/minecraft/block/BlockNetherrack
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajo net/minecraft/block/BlockNewLeaf
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/ajp net/minecraft/block/BlockNewLog
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ajq
+CLASS none/ajq net/minecraft/blocks/BlockSlabRedSandstone
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajr net/minecraft/block/BlockNote
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/ajs net/minecraft/block/BlockObsidian
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajt net/minecraft/block/BlockOldLeaves
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/aju net/minecraft/block/BlockOldLog
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajv net/minecraft/block/BlockOre
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/ajw net/minecraft/block/BlockPackedIce
 CLASS none/ajx net/minecraft/block/BlockWood
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ajy net/minecraft/block/BlockNetherPortal
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ajz net/minecraft/block/BlockPotatoe
 CLASS none/aka net/minecraft/block/BlockCompressedPowered
 CLASS none/akb net/minecraft/block/BlockRailPowered
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/akc net/minecraft/block/BlockPreassurePlate
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/akd net/minecraft/block/BlockPrismarine
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ake net/minecraft/block/BlockPumpkin
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+CLASS none/akf
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/akg net/minecraft/block/BlockQuartz
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/akh net/minecraft/block/BlockRail
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/aki net/minecraft/block/BlockRedFlower
+CLASS none/akj
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/akk net/minecraft/block/BlockRedstoneOre
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 CLASS none/akl net/minecraft/block/BlockRedstoneWire
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/akm net/minecraft/block/BlockRedsonteLight
 CLASS none/akn net/minecraft/block/BlockRedstoneTorch
 CLASS none/ako net/minecraft/block/BlockReeds
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/akp net/minecraft/block/BlockRepeater
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
+CLASS none/akq
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/akr net/minecraft/block/BlockSand
+	CLASS none/akr$a EnumType
+		FIELD a SAND Lnone/akr$a;
+		FIELD b SAND_RED Lnone/akr$a;
+		METHOD values values ()[Lnone/akr$a;
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/aks net/minecraft/block/BlockSandstone
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/akt net/minecraft/block/BlockSapling
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/aku net/minecraft/block/BlockSeaLantern
 	METHOD K canSilkHarvest ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/akv
+CLASS none/akv net/minecraft/block/BlockWallSign
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/akw net/minecraft/block/BlockSkull
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aky net/minecraft/block/BlockSnow
 CLASS none/akz
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
@@ -2082,65 +2844,108 @@ CLASS none/ala net/minecraft/block/BlockSoulSand
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 CLASS none/alb net/minecraft/block/BlockSponge
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/alc net/minecraft/block/BlockStainedGlass
 	METHOD K canSilkHarvest ()Z
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD d renderAsNormalBlock ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ald net/minecraft/block/BlockStainedGlassPane
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/ale net/minecraft/block/BlockStairs
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/alf net/minecraft/block/BlockSign
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/alh net/minecraft/block/BlockStem
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/ali net/minecraft/block/BlockStone
+	CLASS none/ali$a StoneStates
+		FIELD a STONE Lnone/ali$a;
+		FIELD b GRANITE Lnone/ali$a;
+		FIELD c GRANITE_SMOOTH Lnone/ali$a;
+		FIELD d DIORITE Lnone/ali$a;
+		FIELD e DIORITE_SMOOTH Lnone/ali$a;
+		FIELD f ANDESITE Lnone/ali$a;
+		FIELD g ANDESITE_SMOOTH Lnone/ali$a;
+		FIELD i meta I
+		FIELD l mapColor Lnone/atm;
+		METHOD a getMeta ()I
+		METHOD c getMapColor ()Lnone/atm;
+		METHOD values values ()[Lnone/ali$a;
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/alj net/minecraft/block/BlockStoneBrick
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 CLASS none/alk net/minecraft/block/BlockStoneButton
 CLASS none/all
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/alm
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getRenderType ()I
 CLASS none/aln net/minecraft/block/BlockTallGrass
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/alo net/minecraft/block/BlockPane
 	METHOD K canSilkHarvest ()Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alp net/minecraft/block/BlockTNT
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 CLASS none/alq net/minecraft/block/BlockTorch
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alr net/minecraft/block/base/BlockLeavesBase
 	METHOD c isOpaqueCube ()Z
 CLASS none/als net/minecraft/block/BlockTrapDoor
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alt net/minecraft/block/BlockTripwire
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alu net/minecraft/block/BlockTripwireHook
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alv net/minecraft/block/BlockVine
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alw net/minecraft/block/BlockWall
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alx
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/aly net/minecraft/block/BlockLilyPad
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alz net/minecraft/block/BlockWeb
@@ -2150,10 +2955,15 @@ CLASS none/alz net/minecraft/block/BlockWeb
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ama net/minecraft/block/BlockPressurePlateWeighted
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 CLASS none/amb net/minecraft/block/BlockButton
 CLASS none/amc
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
 CLASS none/amd net/minecraft/block/BlockCarpet
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
+	METHOD a getMetaFromBlockState (Lnone/anm;)I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
@@ -2262,21 +3072,123 @@ CLASS none/anf net/minecraft/block/BlockPistonBase
 	FIELD N isSticky Z
 	METHOD <init> (Z)V
 		ARG 0 isSticky
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ang net/minecraft/block/BlockPistonExtension
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/ani net/minecraft/block/BlockPistonMoving
+	METHOD a getBlockStateFromMeta (I)Lnone/anm;
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onBlockActivated (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/anm net/minecraft/item/ItemStack
+CLASS none/anm net/minecraft/block/state/IBlockState
+	METHOD a withProperty (Lnone/aob;Ljava/lang/Comparable;)Lnone/anm;
+	METHOD c getBlock ()Lnone/agk;
+CLASS none/ann net/minecraft/block/state/BlockState
+	CLASS none/ann$a
+		METHOD a withProperty (Lnone/aob;Ljava/lang/Comparable;)Lnone/anm;
+		METHOD c getBlock ()Lnone/agk;
+	METHOD b getBaseState ()Lnone/anm;
+CLASS none/anx net/minecraft/block/properties/PropertyBool
+CLASS none/anz net/minecraft/block/properties/PropertyEnum
+CLASS none/aob net/minecraft/block/properties/IProperty
+CLASS none/apy
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/apz
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqa
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqb
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqc
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqd
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqf
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqg
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqh net/minecraft/world/gen/feature/WorldGenDesertWells
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqi
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqj
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqk
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aql
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqm net/minecraft/world/gen/feature/WorldGenerator
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqn
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqo
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqp
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqq
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqr
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqs
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqt
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqu
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqv
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqw
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqx
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aqy
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/ara net/minecrafy/block/BlockMelonStem
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 BlockMelonStem
+CLASS none/arb
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arc
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/ard
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/are
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arf net/minecraft/world/gen/feature/WorldGenReed
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arg
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arh
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/ari
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arj
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/ark
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arl
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arm
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arn
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/aro
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arp
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
+CLASS none/arq
+	METHOD b generate (Lnone/aeo;Ljava/util/Random;Lnone/cj;)Z
 CLASS none/ati net/minecraft/block/material/MaterialLogic
 	METHOD b getCanBlockGrass ()Z
 CLASS none/atj net/minecraft/block/material/MaterialTransparent
@@ -2323,8 +3235,63 @@ CLASS none/atm net/minecraft/block/material/MapColour
 		ARG 1 colour
 CLASS none/atn
 	METHOD b getCanBlockGrass ()Z
+CLASS none/auw net/minecraft/entity/ai/navigator/PathEntity
+CLASS none/ave net/minecraft/world/WorldSavedData
+	FIELD b dirty Z
+	METHOD a setDirty (Z)V
+	METHOD c markDirty ()V
+	METHOD d isDirty ()Z
+CLASS none/avz net/minecraft/world/storage/SaveDataMemoryStorage
+	METHOD a saveAllData ()V
+	METHOD a loadData (Ljava/lang/Class;Ljava/lang/String;)Lnone/ave;
+	METHOD a getUniqueDataId (Ljava/lang/String;)I
+	METHOD a setData (Ljava/lang/String;Lnone/ave;)V
+CLASS none/awa net/minecraft/world/storage/MapStorage
+	FIELD a loadedDataMap Ljava/util/Map;
+	METHOD a saveAllData ()V
+	METHOD a loadData (Ljava/lang/Class;Ljava/lang/String;)Lnone/ave;
+	METHOD a getUniqueDataId (Ljava/lang/String;)I
+	METHOD a setData (Ljava/lang/String;Lnone/ave;)V
 CLASS none/awg net/minecraft/util/AxisAlignedBB
 CLASS none/awh net/minecraft/util/Vec3d
+CLASS none/awr net/minecraft/scoreboard/GoalColor
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b isReadOnly ()Z
+	METHOD c getRenderType ()Lnone/awu$a;
+CLASS none/aws net/minecraft/scoreboard/ScoreDummyCriteria
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b isReadOnly ()Z
+	METHOD c getRenderType ()Lnone/awu$a;
+CLASS none/awt net/minecraft/scoreboard/ScoreHealthCriteria
+	METHOD b isReadOnly ()Z
+	METHOD c getRenderType ()Lnone/awu$a;
+CLASS none/awu net/minecraft/scoreboard/IScoreObjectiveCriteria
+	CLASS none/awu$a EnumRenderType
+		FIELD a INTEGER Lnone/awu$a;
+		FIELD b HEARTS Lnone/awu$a;
+		METHOD values values ()[Lnone/awu$a;
+	FIELD a INSTANCES Ljava/util/Map;
+	FIELD b DUMMY Lnone/awu;
+	FIELD c trigger Lnone/awu;
+	FIELD d deathCount Lnone/awu;
+	FIELD e playerKillCount Lnone/awu;
+	FIELD f totalKillCount Lnone/awu;
+	FIELD g health Lnone/awu;
+	FIELD h teamKill [Lnone/awu;
+	FIELD i killedByTeam [Lnone/awu;
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b isReadOnly ()Z
+	METHOD c getRenderType ()Lnone/awu$a;
+CLASS none/axa net/minecraft/client/settings/KeyBinding
+	FIELD b hash Lnone/no;
+	FIELD h pressed Z
+	FIELD i pressTime I
+	METHOD a onTick (I)V
+		ARG 0 keyCode
+	METHOD a setKeybindState (IZ)V
+		ARG 0 keyCode
+		ARG 1 pressed
+	METHOD d isPressed ()Z
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
@@ -2387,7 +3354,7 @@ CLASS none/azo
 CLASS none/azu net/minecraft/client/gui/GuiRenameWorld
 CLASS none/azv net/minecraft/client/gui/GuiScreen
 	METHOD a confirmClicked (ZI)V
-CLASS none/azw
+CLASS none/azw net/minecraft/client/gui/SelectWorldScreen
 	METHOD a confirmClicked (ZI)V
 CLASS none/baa
 	CLASS none/baa$a
@@ -2441,6 +3408,8 @@ CLASS none/bgc
 CLASS none/bgd
 	METHOD t_ onUpdate ()V
 CLASS none/bge
+	METHOD a readFromNbt (Lnone/dn;)V
+	METHOD b writeToNbt (Lnone/dn;)V
 	METHOD t_ onUpdate ()V
 CLASS none/bgh
 	METHOD t_ onUpdate ()V
@@ -2469,12 +3438,16 @@ CLASS none/bgv
 CLASS none/bgz
 CLASS none/bha
 	METHOD a sendMessage (Lnone/eu;)V
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
 CLASS none/bhb
+	METHOD a attackEntityFrom (Lnone/pc;F)Z
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
 CLASS none/bhg net/minecraft/client/renderer/WorldRenderer
+CLASS none/bhi
+	METHOD p getBlockState (Lnone/cj;)Lnone/anm;
 CLASS none/bhm net/minecraft/client/renderer/EntityRenderer
 CLASS none/bhn
 	METHOD a onResourceManagerManagerReload (Lnone/bqa;)V
