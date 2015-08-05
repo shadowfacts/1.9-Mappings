@@ -1,0 +1,8 @@
+CLASS none/cj net/minecraft/level/BlockPos
+CLASS none/qa net/minecraft/entity/Entity
+	FIELD v motionX D
+	FIELD x motionZ D
+CLASS none/abo net/minecraft/item/Item
+CLASS none/afk net/minecraft/level/Level
+CLASS none/ahg net/minecraft/block/Block
+CLASS none/alw net/minecraft/block/BlockSoulSand
