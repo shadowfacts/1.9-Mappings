@@ -1,5 +1,5 @@
 CLASS none/cj net/minecraft/level/BlockPos
-CLASS none/dn net/minecraft/utils/NBTagComponent
+CLASS none/dn net/minecraft/utils/TagComponent
 	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
 	METHOD a setBoolean (Ljava/lang/String;Z)V
@@ -20,10 +20,10 @@ CLASS none/qa net/minecraft/entity/Entity
 	METHOD aP customName ()Ljava/lang/String;
 	METHOD aQ customNameVisible ()Z
 	METHOD e (Lnone/dn;)V
-		ARG 0 nbtagcomponent
+		ARG 0 tagcomponent
 CLASS none/qj net/minecraft/entity/EntityLivingBase
 CLASS none/qk net/minecraft/entity/monster/EntityMonster
-CLASS none/va net/minecraft/entity/monster/EntityEnderDragon
+CLASS none/va net/minecraft/entity/boss/EntityEnderDragon
 CLASS none/wj
 	METHOD aP customName ()Ljava/lang/String;
 CLASS none/abo net/minecraft/item/Item
