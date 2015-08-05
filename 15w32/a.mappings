@@ -1,8 +1,82 @@
 CLASS none/cj net/minecraft/level/BlockPos
+CLASS none/dn net/minecraft/utils/NBTagComponent
+	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
+	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
+	METHOD a setBoolean (Ljava/lang/String;Z)V
+	METHOD o getBoolean (Ljava/lang/String;)Z
 CLASS none/qa net/minecraft/entity/Entity
+	FIELD C onGround Z
+	FIELD V rand Ljava/util/Random;
+	FIELD ar glowing Z
+	FIELD az invulnerable Z
+	FIELD s posX D
+	FIELD t posY D
+	FIELD u posZ D
 	FIELD v motionX D
+	FIELD w motionY D
 	FIELD x motionZ D
+	METHOD R silent ()Z
+	METHOD aN uuid ()Ljava/util/UUID;
+	METHOD aP customName ()Ljava/lang/String;
+	METHOD aQ customNameVisible ()Z
+	METHOD e (Lnone/dn;)V
+		ARG 0 nbtagcomponent
+CLASS none/qj net/minecraft/entity/EntityLivingBase
+CLASS none/qk net/minecraft/entity/monster/EntityMonster
+CLASS none/va net/minecraft/entity/monster/EntityEnderDragon
+CLASS none/wj
+	METHOD aP customName ()Ljava/lang/String;
 CLASS none/abo net/minecraft/item/Item
+CLASS none/adq net/minecraft/inventory/crafting/CraftingManager
+CLASS none/adz net/minecraft/enchantment/EnchantmentFire
+CLASS none/aec net/minecraft/enchantment/EnchantmentDamage
+CLASS none/aed net/minecraft/enchantment/EnchantmentDurability
+CLASS none/aef net/minecraft/enchantment/Enchantment
+CLASS none/aej net/minecraft/enchantment/EnchantmentList
+CLASS none/aen net/minecraft/enchantment/EnchantmentLuck
+CLASS none/aes net/minecraft/enchantment/EnchantmentWaterWalker
 CLASS none/afk net/minecraft/level/Level
+CLASS none/agw net/minecraft/block/BlockAir
 CLASS none/ahg net/minecraft/block/Block
+	METHOD a setBounds (FFFFFF)V
+	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/ahg;
+	METHOD e setBlockLight (I)Lnone/ahg;
+CLASS none/ahh net/minecraft/init/Blocks
+	FIELD a air Lnone/ahg;
+	FIELD b stone Lnone/ahg;
+	FIELD c grass Lnone/ajh;
+	FIELD d dirt Lnone/ahg;
+	FIELD dd blockList Ljava/util/Set;
+	FIELD e cobblestone Lnone/ahg;
+	FIELD f planks Lnone/ahg;
+	FIELD g sapling Lnone/ahg;
+	FIELD h bedrock Lnone/ahg;
+	FIELD i flowingWater Lnone/aim;
+	FIELD j water Lnone/amc;
+	FIELD k flowingLava Lnone/aim;
+	FIELD l lava Lnone/amc;
+	FIELD m sand Lnone/aln;
+	FIELD n gravel Lnone/ahg;
+	FIELD o goldOre Lnone/ahg;
+	METHOD a addBlock (Ljava/lang/String;)Lnone/ahg;
+CLASS none/ahr net/minecraft/block/BlockChest
+CLASS none/ahs net/minecraft/block/BlockChorusFlower
+CLASS none/aht net/minecraft/block/BlockChorusPlant
+CLASS none/aii net/minecraft/block/BlockDoor
+CLASS none/aim net/minecraft/block/BlockFlowingLiquid
+CLASS none/ain net/minecraft/block/BlockEnchantingTable
+CLASS none/aiu net/minecraft/block/BlockFalling
+CLASS none/aiv net/minecraft/block/BlockFarmland
+CLASS none/aiw net/minecraft/block/BlockFence
+CLASS none/ajr net/minecraft/block/BlockHopper
+CLASS none/akr net/minecraft/block/BlockOre
+CLASS none/aln net/minecraft/block/BlockSand
+	CLASS none/aln$a
+		FIELD a SAND Lnone/aln$a;
+		FIELD b REDSAND Lnone/aln$a;
 CLASS none/alw net/minecraft/block/BlockSoulSand
+CLASS none/amc net/minecraft/block/BlockStaticLiquid
+CLASS none/auh net/minecraft/material/Material
+CLASS none/bme net/minecraft/client/entity/EntityEnderDragon
+CLASS none/bno net/minecraft/client/entity/EntitySnowman
+CLASS net/minecraft/server/MinecraftServer
