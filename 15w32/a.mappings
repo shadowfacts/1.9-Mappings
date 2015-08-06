@@ -1,13 +1,287 @@
+CLASS none/i
+	METHOD a canUseCommand (Lnone/m;)Z
+CLASS none/k net/minecraft/command/base/Command
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+		ARG 1 args
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+		ARG 0 sender
+CLASS none/m net/minecraft/command/base/CommandSender
+	METHOD a sendMessage (Lnone/eu;)V
+		ARG 0 message
+	METHOD c getPosition ()Lnone/cj;
+CLASS none/n
+	CLASS none/n$1
+		METHOD a sendMessage (Lnone/eu;)V
+		METHOD c getPosition ()Lnone/cj;
+CLASS none/p
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/q
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/r
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/s
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/t
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/u
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/v
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/w
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/x
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/y
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aa
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ab
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ac
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ad
+	CLASS none/ad$1
+		METHOD a sendMessage (Lnone/eu;)V
+		METHOD c getPosition ()Lnone/cj;
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ae
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/af
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ag
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ah
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ai
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aj
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ak
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/al
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/am
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/an
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ao
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ap
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aq
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ar
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/as
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/at
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/au
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/av
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/aw
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ax
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ay
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/az
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/ba
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bb
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bc
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/be
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bf
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bg
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bh
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bi
+	METHOD a canUseCommand (Lnone/m;)Z
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bj
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bk
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bl
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bm
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bn
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bp
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bq
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/br
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bs
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bt
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bu
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bv
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bw
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
+CLASS none/bx
+	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
+	METHOD c getName ()Ljava/lang/String;
+	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
 CLASS none/cj net/minecraft/level/BlockPos
 CLASS none/dn net/minecraft/utils/TagComponent
 	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
 	METHOD a setBoolean (Ljava/lang/String;Z)V
 	METHOD o getBoolean (Ljava/lang/String;)Z
+CLASS none/es
+	METHOD a getSiblings ()Ljava/util/List;
+CLASS none/eu net/minecraft/chat/ChatComponent
+	METHOD a getSiblings ()Ljava/util/List;
+CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lg net/minecraft/level/LevelServer
 	METHOD d tick ()V
 CLASS none/lh
+	METHOD a sendMessage (Lnone/eu;)V
+	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
+CLASS none/ml
+	METHOD a sendMessage (Lnone/eu;)V
+	METHOD c getPosition ()Lnone/cj;
+CLASS none/nu net/minecraft/util/MathUtils
+	FIELD c rand Ljava/util/Random;
 CLASS none/qa net/minecraft/entity/Entity
 	FIELD C onGround Z
 	FIELD D isCollidedHorizontally Z
@@ -20,10 +294,14 @@ CLASS none/qa net/minecraft/entity/Entity
 	FIELD v motionX D
 	FIELD w motionY D
 	FIELD x motionZ D
+	FIELD y rotationX F
+	FIELD z rotationY F
 	METHOD R silent ()Z
+	METHOD a sendMessage (Lnone/eu;)V
 	METHOD aN uuid ()Ljava/util/UUID;
 	METHOD aP customName ()Ljava/lang/String;
 	METHOD aQ customNameVisible ()Z
+	METHOD c getPosition ()Lnone/cj;
 	METHOD d moveEntity (DDD)V
 	METHOD e (Lnone/dn;)V
 		ARG 0 tagcomponent
@@ -63,6 +341,9 @@ CLASS none/wi
 CLASS none/wj
 	METHOD aP customName ()Ljava/lang/String;
 	METHOD t_ onUpdate ()V
+CLASS none/wl
+	CLASS none/wl$1
+		METHOD c getPosition ()Lnone/cj;
 CLASS none/wn
 	METHOD t_ onUpdate ()V
 CLASS none/wo
@@ -112,7 +393,72 @@ CLASS none/yn
 CLASS none/yq
 	METHOD t_ onUpdate ()V
 CLASS none/aaf net/minecraft/item/ItemBoat
-CLASS none/abo net/minecraft/item/Item
+CLASS none/aah net/minecraft/item/ItemGlassBotle
+CLASS none/aar net/minecraft/inventory/CreativeTabs
+	CLASS none/aar$1
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$2
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$3
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$4
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$5
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$6
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$7
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$8
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$9
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$10
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$11
+		METHOD e getItem ()Lnone/abo;
+	CLASS none/aar$12
+		METHOD e getItem ()Lnone/abo;
+	FIELD a tabs [Lnone/aar;
+	FIELD b tabBuildingBlocks Lnone/aar;
+	FIELD c tabDecorations Lnone/aar;
+	FIELD d tabRedstone Lnone/aar;
+	FIELD e tabTransportation Lnone/aar;
+	FIELD f tabMisc Lnone/aar;
+	FIELD g tabSearch Lnone/aar;
+	FIELD h tabFood Lnone/aar;
+	FIELD i tabTools Lnone/aar;
+	FIELD j tabCombat Lnone/aar;
+	FIELD k tabBrewing Lnone/aar;
+	FIELD l tabMatertials Lnone/aar;
+	FIELD m tabInventory Lnone/aar;
+	FIELD o name Ljava/lang/String;
+	FIELD p icon Ljava/lang/String;
+	METHOD b getName ()Ljava/lang/String;
+	METHOD c getUnlocalizedName ()Ljava/lang/String;
+	METHOD e getItem ()Lnone/abo;
+CLASS none/aat net/minecraft/item/ItemDoor
+CLASS none/abo net/minecraft/item/base/Item
+	METHOD a addItem (ILjava/lang/String;Lnone/abo;)V
+	METHOD a addItemResource (ILnone/jz;Lnone/abo;)V
+	METHOD a getItem (Lnone/ahg;)Lnone/abo;
+CLASS none/abr net/minecraft/init/Items
+	FIELD A stick Lnone/abo;
+	FIELD D goldenSword Lnone/abo;
+	FIELD aA lavaBucket Lnone/abo;
+	FIELD aS compass Lnone/abo;
+	FIELD aY dye Lnone/abo;
+	FIELD bB potion Lnone/acb;
+	FIELD bR emerald Lnone/abo;
+	FIELD c ironAxe Lnone/abo;
+	FIELD cg enchantedBook Lnone/aba;
+	FIELD cj quartz Lnone/abo;
+	FIELD e apple Lnone/abo;
+	FIELD j coal Lnone/abo;
+	FIELD k diamond Lnone/abo;
+CLASS none/acb net/minecraft/item/ItemPotion
+CLASS none/acg net/minecraft/item/ItemSeedFood
+CLASS none/acs net/minecraft/item/ItemSplashPotion
 CLASS none/adq net/minecraft/inventory/crafting/CraftingManager
 CLASS none/adz net/minecraft/enchantment/EnchantmentFire
 CLASS none/aec net/minecraft/enchantment/EnchantmentDamage
@@ -121,6 +467,8 @@ CLASS none/aef net/minecraft/enchantment/Enchantment
 CLASS none/aej net/minecraft/enchantment/EnchantmentList
 CLASS none/aen net/minecraft/enchantment/EnchantmentLuck
 CLASS none/aes net/minecraft/enchantment/EnchantmentWaterWalker
+CLASS none/afa
+	METHOD a sendMessage (Lnone/eu;)V
 CLASS none/afk net/minecraft/level/Level
 	FIELD t provider Lnone/apv;
 	FIELD x levelInfo Lnone/awk;
@@ -130,17 +478,89 @@ CLASS none/afk net/minecraft/level/Level
 	METHOD b setLevelTime (J)V
 	METHOD d tick ()V
 CLASS none/agw net/minecraft/block/BlockAir
+CLASS none/ahe net/minecraft/block/BlockBed
 CLASS none/ahg net/minecraft/block/base/Block
+	CLASS none/ahg$d blockSound
+	FIELD A isBlockContainer Z
+	FIELD B minX D
+	FIELD C minY D
+	FIELD D minZ D
+	FIELD E maxX D
+	FIELD F maxY D
+	FIELD G maxZ D
+	FIELD H blockSound Lnone/ahg$d;
+	FIELD I blockParticleGravity F
+	FIELD J blockMaterial Lnone/auh;
+	FIELD K mapColor Lnone/aui;
+	FIELD L slipperiness F
 	FIELD M blockStateDefinition Lnone/aoj;
+	FIELD O unlocalizedName Ljava/lang/String;
+	FIELD a airTexture Lnone/jz;
+	FIELD b creativeTab Lnone/aar;
+	FIELD e soundTypeStone Lnone/ahg$d;
+	FIELD f soundTypeWood Lnone/ahg$d;
+	FIELD g soundTypeDirt Lnone/ahg$d;
+	FIELD h soundTypeGrass Lnone/ahg$d;
+	FIELD i soundTypePiston Lnone/ahg$d;
+	FIELD j soundTypeMetal Lnone/ahg$d;
+	FIELD k soundTypeGlass Lnone/ahg$d;
+	FIELD l soundTypeCloth Lnone/ahg$d;
+	FIELD m soundTypeSand Lnone/ahg$d;
+	FIELD n soundTypeSnow Lnone/ahg$d;
+	FIELD o soundTypeLadder Lnone/ahg$d;
+	FIELD p soundTypeAnvil Lnone/ahg$d;
+	FIELD q soundTypeSlime Lnone/ahg$d;
+	FIELD r opaque Z
+	FIELD s lightOpacity I
+	FIELD t canBlockGrass Z
+	FIELD u lightValue I
+	FIELD v useNeighborBrigtness Z
+	FIELD w blockHardness F
+	FIELD x blockResistance F
+	FIELD y enableStats Z
+	FIELD z needsRandomTick Z
+	METHOD M disableStats ()Lnone/ahg;
+	METHOD U registerBlocks ()V
+	METHOD a setLightLevel (F)Lnone/ahg;
 	METHOD a setBounds (FFFFFF)V
+	METHOD a setCreativeTabs (Lnone/aar;)Lnone/ahg;
+		ARG 0 creativetab
+	METHOD a getBlock (Lnone/abo;)Lnone/ahg;
+		ARG 0 item
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a setSounds (Lnone/ahg$d;)Lnone/ahg;
+	METHOD b setResistance (F)Lnone/ahg;
+	METHOD c setHardness (F)Lnone/ahg;
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/ahg;
 	METHOD e setBlockLight (I)Lnone/ahg;
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD q getOpaque ()Z
+	METHOD r getLightOpacity ()I
+	METHOD s getBlockGrass ()Z
+	METHOD t getLightValue ()I
+	METHOD u getNeightborBrigtness ()Z
+	METHOD v getMaterial ()Lnone/auh;
+	METHOD z setBlockUnbreakble ()Lnone/ahg;
 CLASS none/ahh net/minecraft/init/Blocks
+	FIELD A sandstone Lnone/ahg;
+	FIELD V bricks Lnone/ahg;
 	FIELD a air Lnone/ahg;
+	FIELD ae chest Lnone/ahr;
+	FIELD ag diamondOre Lnone/ahg;
 	FIELD b stone Lnone/ahg;
+	FIELD bP emeraldOre Lnone/ahg;
 	FIELD c grass Lnone/ajh;
+	FIELD cQ endRod Lnone/ahg;
+	FIELD cR chorusPlant Lnone/ahg;
+	FIELD cS chorusFlower Lnone/ahg;
+	FIELD cX purpurslab Lnone/ajl;
+	FIELD cY endBricks Lnone/ahg;
+	FIELD cZ beetroots Lnone/ahg;
+	FIELD co quartzOre Lnone/ahg;
 	FIELD d dirt Lnone/ahg;
+	FIELD da grassPath Lnone/ahg;
+	FIELD db endGateway Lnone/ahg;
+	FIELD dc structureBlock Lnone/ahg;
 	FIELD dd blockList Ljava/util/Set;
 	FIELD e cobblestone Lnone/ahg;
 	FIELD f planks Lnone/ahg;
@@ -153,48 +573,175 @@ CLASS none/ahh net/minecraft/init/Blocks
 	FIELD m sand Lnone/aln;
 	FIELD n gravel Lnone/ahg;
 	FIELD o goldOre Lnone/ahg;
+	FIELD p ironOre Lnone/ahg;
+	FIELD q coalOre Lnone/ahg;
+	FIELD r log Lnone/ahg;
+	FIELD s log2 Lnone/ahg;
+	FIELD t leaves Lnone/ajx;
+	FIELD u leaves2 Lnone/ajx;
+	FIELD v sponge Lnone/ahg;
+	FIELD w glass Lnone/ahg;
+	FIELD x lapisOre Lnone/ahg;
+	FIELD y lapisBlock Lnone/ahg;
+	FIELD z dispenser Lnone/ahg;
 	METHOD a addBlock (Ljava/lang/String;)Lnone/ahg;
+CLASS none/ahj net/minecraft/block/BlockBookshelf
 CLASS none/ahk
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ahn net/minecraft/block/BlockCactus
+CLASS none/aho net/minecraft/block/BlockCake
 CLASS none/ahq
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/ahr net/minecraft/block/BlockChest
 CLASS none/ahs net/minecraft/block/BlockChorusFlower
 CLASS none/aht net/minecraft/block/BlockChorusPlant
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ahw net/minecraft/block/BlockColored
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ahz net/minecraft/block/BlockWorkbench
+CLASS none/aia net/minecraft/block/BlockCrops
+CLASS none/aic net/minecraft/block/BlockDeadBush
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/aid net/minecraft/block/BlockRailDetector
+CLASS none/aig net/minecraft/block/BlockDirt
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/aih net/minecraft/block/BlockDispenser
 CLASS none/aii net/minecraft/block/BlockDoor
 CLASS none/aim net/minecraft/block/BlockFlowingLiquid
 CLASS none/ain net/minecraft/block/BlockEnchantingTable
+CLASS none/aio
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/aip
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/aiq
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/aiu net/minecraft/block/BlockFalling
 CLASS none/aiv net/minecraft/block/BlockFarmland
 CLASS none/aiw net/minecraft/block/BlockFence
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aiy net/minecraft/block/BlockFire
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ajc net/minecraft/block/BlockDoubleStoneSlab
+CLASS none/aje net/minecraft/block/BlockFurnace
+CLASS none/ajf net/minecraft/block/BlockGlass
+CLASS none/ajg net/minecraft/block/BlockGlowstone
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ajh net/minecraft/block/BlockGrass
+CLASS none/ajj net/minecraft/block/BlockGravel
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/ajl
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ajm net/minecraft/block/BlockStoneSlab
+CLASS none/ajp
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/ajr net/minecraft/block/BlockHopper
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ajt
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/aju net/minecraft/block/BlockIce
+CLASS none/ajv net/minecraft/block/BlockJuckebox
+CLASS none/ajw net/minecraft/block/BlockLadder
+CLASS none/ajz net/minecraft/block/BlockLever
+CLASS none/akd net/minecraft/block/BlockMobSpawner
+CLASS none/akf net/minecraft/block/BlockMushroom
+CLASS none/akh
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/akj net/minecraft/block/BlockNetherrack
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/akl
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/akm
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/akn net/minecraft/block/BlockNote
+CLASS none/ako net/minecraft/block/BlockObsidian
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/akp net/minecraft/block/BlockOldLeaves
+CLASS none/akq net/minecraft/block/BlockOldLog
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/akr net/minecraft/block/BlockOre
+CLASS none/akt net/minecraft/block/BlockWood
+	CLASS none/akt$a woodType
+		FIELD a OAK Lnone/akt$a;
+		FIELD b SPRUCE Lnone/akt$a;
+		FIELD c BIRCH Lnone/akt$a;
+		FIELD d JUNGLE Lnone/akt$a;
+		FIELD e ACACIA Lnone/akt$a;
+		FIELD f DARK_OAK Lnone/akt$a;
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/aku net/minecraft/block/BlockNetherPortal
+CLASS none/akx net/minecraft/block/BlockRailPowered
+CLASS none/aky net/minecraft/block/BlockPreassurePlate
+	CLASS none/aky$a preassurePlatesType
+		FIELD a wood Lnone/aky$a;
+		FIELD b stone Lnone/aky$a;
+CLASS none/akz
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ala net/minecraft/block/BlockPumpkin
+CLASS none/alc
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ald net/minecraft/block/BlockRail
+CLASS none/ale net/minecraft/block/BlockRedFlower
+CLASS none/alg net/minecraft/block/BlockRedstoneOre
+CLASS none/alh net/minecraft/block/BlockRedstoneWire
+CLASS none/alj net/minecraft/block/BlockRedstoneTorch
+CLASS none/all net/minecraft/block/BlockRedstoneRepeater
 CLASS none/aln net/minecraft/block/BlockSand
 	CLASS none/aln$a
 		FIELD a SAND Lnone/aln$a;
 		FIELD b REDSAND Lnone/aln$a;
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/alo net/minecraft/block/BlockSandstone
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/alp net/minecraft/block/BlockSapling
+CLASS none/alq
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/alw net/minecraft/block/BlockSoulSand
-CLASS none/ama
+CLASS none/alx net/minecraft/block/BlockSponge
+CLASS none/aly
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/alz
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ama net/minecraft/block/BlockStairs
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/amb net/minecraft/block/BlockSign
 CLASS none/amc net/minecraft/block/BlockStaticLiquid
-CLASS none/amk
+CLASS none/ame net/minecraft/block/BlockStone
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/amg net/minecraft/block/BlockButton
+CLASS none/amh
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/amj net/minecraft/block/BlockTailGrass
+CLASS none/amk net/minecraft/block/BlockPanel
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aml net/minecraft/block/BlockTNT
+CLASS none/amm net/minecraft/block/BlockTorch
 CLASS none/amn net/minecraft/block/base/BlockLeavesBase
+CLASS none/amt net/minecraft/block/BlockWallSign
 CLASS none/amu
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
-CLASS none/aob
+CLASS none/amv net/minecraft/block/BlockWeb
+CLASS none/amy
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/amz
+	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ana net/minecraft/block/BlockYellowFlower
+CLASS none/ang
+	CLASS none/ang$1
+		METHOD c getPosition ()Lnone/cj;
+CLASS none/anu
+	CLASS none/anu$1
+		METHOD a sendMessage (Lnone/eu;)V
+		METHOD c getPosition ()Lnone/cj;
+	CLASS none/anu$2
+		METHOD a sendMessage (Lnone/eu;)V
+		METHOD c getPosition ()Lnone/cj;
+CLASS none/aob net/minecraft/block/BlockPiston
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
-CLASS none/aoc
+CLASS none/aoc net/minecraft/block/BlockPistonExtension
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aoe net/minecraft/block/BlockPistonMoving
 CLASS none/aoi net/minecraft/block/state/BlockState
 CLASS none/aoj net/minecraft/block/state/BlockStateDefinition
 CLASS none/apv net/minecraft/level/LevelProvider
@@ -204,6 +751,43 @@ CLASS none/apx
 CLASS none/aqa
 	METHOD a calculateCelestialAngle (JF)F
 CLASS none/auh net/minecraft/material/Material
+	FIELD M materialMapColor Lnone/aui;
+	FIELD a air Lnone/auh;
+	FIELD b grass Lnone/auh;
+	FIELD c ground Lnone/auh;
+	FIELD d wood Lnone/auh;
+	FIELD e rock Lnone/auh;
+	FIELD f iron Lnone/auh;
+	FIELD g anvil Lnone/auh;
+	FIELD h water Lnone/auh;
+	FIELD i lava Lnone/auh;
+	FIELD j leaves Lnone/auh;
+	FIELD k planks Lnone/auh;
+	FIELD l vine Lnone/auh;
+	FIELD m sponge Lnone/auh;
+	FIELD n cloth Lnone/auh;
+	FIELD o fire Lnone/auh;
+	FIELD p sand Lnone/auh;
+	FIELD q circuits Lnone/auh;
+	FIELD r carpet Lnone/auh;
+	FIELD s glass Lnone/auh;
+	METHOD r getMaterialMapColor ()Lnone/aui;
+CLASS none/aui net/minecraft/material/MapColor
+	FIELD D brickColor Lnone/aui;
+	FIELD F goldColor Lnone/aui;
+	FIELD G diamondColor Lnone/aui;
+	FIELD H lapisColor Lnone/aui;
+	FIELD L color I
+	FIELD M id I
+	FIELD a colors [Lnone/aui;
+	FIELD b invisible Lnone/aui;
+	FIELD f lava Lnone/aui;
+	FIELD h ironColor Lnone/aui;
+	FIELD m rock Lnone/aui;
+	FIELD n water Lnone/aui;
+	METHOD <init> (II)V
+		ARG 0 id
+		ARG 1 color
 CLASS none/awh
 	METHOD b setTotalTime (J)V
 	METHOD c setLevelTime (J)V
@@ -282,9 +866,15 @@ CLASS none/bhq
 CLASS none/bhr
 	METHOD t_ onUpdate ()V
 CLASS none/bhw
+	METHOD a sendMessage (Lnone/eu;)V
+	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
 CLASS none/bhx
+	METHOD a sendMessage (Lnone/eu;)V
+	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
 CLASS none/bme net/minecraft/client/entity/EntityEnderDragon
 CLASS none/bno net/minecraft/client/entity/EntitySnowman
 CLASS net/minecraft/server/MinecraftServer
+	METHOD a sendMessage (Lnone/eu;)V
+	METHOD c getPosition ()Lnone/cj;
