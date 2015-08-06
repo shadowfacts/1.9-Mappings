@@ -4,8 +4,13 @@ CLASS none/dn net/minecraft/utils/TagComponent
 	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
 	METHOD a setBoolean (Ljava/lang/String;Z)V
 	METHOD o getBoolean (Ljava/lang/String;)Z
+CLASS none/lg net/minecraft/level/LevelServer
+	METHOD d tick ()V
+CLASS none/lh
+	METHOD t_ onUpdate ()V
 CLASS none/qa net/minecraft/entity/Entity
 	FIELD C onGround Z
+	FIELD D isCollidedHorizontally Z
 	FIELD V rand Ljava/util/Random;
 	FIELD ar glowing Z
 	FIELD az invulnerable Z
@@ -19,13 +24,94 @@ CLASS none/qa net/minecraft/entity/Entity
 	METHOD aN uuid ()Ljava/util/UUID;
 	METHOD aP customName ()Ljava/lang/String;
 	METHOD aQ customNameVisible ()Z
+	METHOD d moveEntity (DDD)V
 	METHOD e (Lnone/dn;)V
 		ARG 0 tagcomponent
+	METHOD t_ onUpdate ()V
+CLASS none/qg
+	METHOD t_ onUpdate ()V
 CLASS none/qj net/minecraft/entity/EntityLivingBase
+	METHOD t_ onUpdate ()V
 CLASS none/qk net/minecraft/entity/monster/EntityMonster
+	METHOD t_ onUpdate ()V
+CLASS none/ud
+	METHOD t_ onUpdate ()V
+CLASS none/ui
+	METHOD t_ onUpdate ()V
+CLASS none/up
+	METHOD t_ onUpdate ()V
+CLASS none/uu
+	METHOD t_ onUpdate ()V
+CLASS none/uz
+	METHOD t_ onUpdate ()V
 CLASS none/va net/minecraft/entity/boss/EntityEnderDragon
+CLASS none/vu
+	METHOD t_ onUpdate ()V
+CLASS none/vv
+	METHOD d moveEntity (DDD)V
+	METHOD t_ onUpdate ()V
+CLASS none/wa
+	METHOD t_ onUpdate ()V
+CLASS none/we
+	METHOD t_ onUpdate ()V
+CLASS none/wg net/minecraft/entity/item/EntityBoat
+	METHOD t_ onUpdate ()V
+CLASS none/wh
+	METHOD t_ onUpdate ()V
+CLASS none/wi
+	METHOD t_ onUpdate ()V
 CLASS none/wj
 	METHOD aP customName ()Ljava/lang/String;
+	METHOD t_ onUpdate ()V
+CLASS none/wn
+	METHOD t_ onUpdate ()V
+CLASS none/wo
+	METHOD t_ onUpdate ()V
+CLASS none/wq
+	METHOD t_ onUpdate ()V
+CLASS none/wr
+	METHOD t_ onUpdate ()V
+CLASS none/ws
+	METHOD t_ onUpdate ()V
+CLASS none/ww
+	METHOD t_ onUpdate ()V
+CLASS none/wy
+	METHOD t_ onUpdate ()V
+CLASS none/xa
+	METHOD t_ onUpdate ()V
+CLASS none/xe
+	METHOD t_ onUpdate ()V
+CLASS none/xf
+	METHOD t_ onUpdate ()V
+CLASS none/xi
+	METHOD t_ onUpdate ()V
+CLASS none/xk
+	METHOD t_ onUpdate ()V
+CLASS none/xl
+	METHOD t_ onUpdate ()V
+CLASS none/xn
+	METHOD t_ onUpdate ()V
+CLASS none/xw net/minecraft/entity/player/EntityPlayer
+	METHOD t_ onUpdate ()V
+CLASS none/xz
+	METHOD t_ onUpdate ()V
+CLASS none/yb
+	METHOD t_ onUpdate ()V
+CLASS none/yc
+	METHOD t_ onUpdate ()V
+CLASS none/yd
+	METHOD t_ onUpdate ()V
+CLASS none/yh
+	METHOD t_ onUpdate ()V
+CLASS none/yk
+	METHOD t_ onUpdate ()V
+CLASS none/yl
+	METHOD t_ onUpdate ()V
+CLASS none/yn
+	METHOD t_ onUpdate ()V
+CLASS none/yq
+	METHOD t_ onUpdate ()V
+CLASS none/aaf net/minecraft/item/ItemBoat
 CLASS none/abo net/minecraft/item/Item
 CLASS none/adq net/minecraft/inventory/crafting/CraftingManager
 CLASS none/adz net/minecraft/enchantment/EnchantmentFire
@@ -36,9 +122,18 @@ CLASS none/aej net/minecraft/enchantment/EnchantmentList
 CLASS none/aen net/minecraft/enchantment/EnchantmentLuck
 CLASS none/aes net/minecraft/enchantment/EnchantmentWaterWalker
 CLASS none/afk net/minecraft/level/Level
+	FIELD t provider Lnone/apv;
+	FIELD x levelInfo Lnone/awk;
+	METHOD L getTotalLevelTime ()J
+	METHOD M getLevelTime ()J
+	METHOD a setTotalLevelTime (J)V
+	METHOD b setLevelTime (J)V
+	METHOD d tick ()V
 CLASS none/agw net/minecraft/block/BlockAir
-CLASS none/ahg net/minecraft/block/Block
+CLASS none/ahg net/minecraft/block/base/Block
+	FIELD M blockStateDefinition Lnone/aoj;
 	METHOD a setBounds (FFFFFF)V
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/ahg;
 	METHOD e setBlockLight (I)Lnone/ahg;
 CLASS none/ahh net/minecraft/init/Blocks
@@ -59,24 +154,137 @@ CLASS none/ahh net/minecraft/init/Blocks
 	FIELD n gravel Lnone/ahg;
 	FIELD o goldOre Lnone/ahg;
 	METHOD a addBlock (Ljava/lang/String;)Lnone/ahg;
+CLASS none/ahk
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ahq
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/ahr net/minecraft/block/BlockChest
 CLASS none/ahs net/minecraft/block/BlockChorusFlower
 CLASS none/aht net/minecraft/block/BlockChorusPlant
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/aii net/minecraft/block/BlockDoor
 CLASS none/aim net/minecraft/block/BlockFlowingLiquid
 CLASS none/ain net/minecraft/block/BlockEnchantingTable
+CLASS none/aip
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aiq
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/aiu net/minecraft/block/BlockFalling
 CLASS none/aiv net/minecraft/block/BlockFarmland
 CLASS none/aiw net/minecraft/block/BlockFence
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/ajl
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/ajr net/minecraft/block/BlockHopper
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/akr net/minecraft/block/BlockOre
 CLASS none/aln net/minecraft/block/BlockSand
 	CLASS none/aln$a
 		FIELD a SAND Lnone/aln$a;
 		FIELD b REDSAND Lnone/aln$a;
 CLASS none/alw net/minecraft/block/BlockSoulSand
+CLASS none/ama
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
 CLASS none/amc net/minecraft/block/BlockStaticLiquid
+CLASS none/amk
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/amn net/minecraft/block/base/BlockLeavesBase
+CLASS none/amu
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aob
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aoc
+	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+CLASS none/aoi net/minecraft/block/state/BlockState
+CLASS none/aoj net/minecraft/block/state/BlockStateDefinition
+CLASS none/apv net/minecraft/level/LevelProvider
+	METHOD a calculateCelestialAngle (JF)F
+CLASS none/apx
+	METHOD a calculateCelestialAngle (JF)F
+CLASS none/aqa
+	METHOD a calculateCelestialAngle (JF)F
 CLASS none/auh net/minecraft/material/Material
+CLASS none/awh
+	METHOD b setTotalTime (J)V
+	METHOD c setLevelTime (J)V
+	METHOD e getTotalTime ()J
+	METHOD f getLevelTime ()J
+CLASS none/awk net/minecraft/level/storage/LevelInfo
+	FIELD k totalTime J
+	FIELD l worldTime J
+	METHOD b setTotalTime (J)V
+	METHOD c setLevelTime (J)V
+	METHOD e getTotalTime ()J
+	METHOD f getLevelTime ()J
+CLASS none/axc net/minecraft/utils/AxisAlignedBB
+CLASS none/bfy net/minecraft/client/multiplayer/LevelClient
+	METHOD b setLevelTime (J)V
+	METHOD d tick ()V
+CLASS none/bgi
+	METHOD t_ onUpdate ()V
+CLASS none/bgj
+	METHOD t_ onUpdate ()V
+CLASS none/bgk
+	METHOD t_ onUpdate ()V
+CLASS none/bgl
+	METHOD t_ onUpdate ()V
+CLASS none/bgm
+	METHOD t_ onUpdate ()V
+CLASS none/bgo
+	METHOD t_ onUpdate ()V
+CLASS none/bgp
+	CLASS none/bgp$b
+		METHOD t_ onUpdate ()V
+	CLASS none/bgp$c
+		METHOD t_ onUpdate ()V
+CLASS none/bgq
+	METHOD t_ onUpdate ()V
+CLASS none/bgr
+	METHOD t_ onUpdate ()V
+CLASS none/bgs
+	METHOD t_ onUpdate ()V
+CLASS none/bgt
+	METHOD t_ onUpdate ()V
+CLASS none/bgu
+	METHOD t_ onUpdate ()V
+CLASS none/bgv
+	METHOD t_ onUpdate ()V
+CLASS none/bgx
+	METHOD t_ onUpdate ()V
+CLASS none/bgy
+	METHOD t_ onUpdate ()V
+CLASS none/bgz
+	METHOD t_ onUpdate ()V
+CLASS none/bha
+	METHOD t_ onUpdate ()V
+CLASS none/bhd
+	METHOD t_ onUpdate ()V
+CLASS none/bhe
+	METHOD t_ onUpdate ()V
+CLASS none/bhf
+	METHOD t_ onUpdate ()V
+CLASS none/bhg
+	METHOD t_ onUpdate ()V
+CLASS none/bhh
+	METHOD t_ onUpdate ()V
+CLASS none/bhi
+	METHOD t_ onUpdate ()V
+CLASS none/bhj
+	METHOD t_ onUpdate ()V
+CLASS none/bhl
+	METHOD t_ onUpdate ()V
+CLASS none/bhm
+	METHOD t_ onUpdate ()V
+CLASS none/bhp
+	METHOD t_ onUpdate ()V
+CLASS none/bhq
+	METHOD t_ onUpdate ()V
+CLASS none/bhr
+	METHOD t_ onUpdate ()V
+CLASS none/bhw
+	METHOD t_ onUpdate ()V
+CLASS none/bhx
+	METHOD t_ onUpdate ()V
 CLASS none/bme net/minecraft/client/entity/EntityEnderDragon
 CLASS none/bno net/minecraft/client/entity/EntitySnowman
 CLASS net/minecraft/server/MinecraftServer
