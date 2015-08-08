@@ -261,6 +261,55 @@ CLASS none/bx
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
 CLASS none/cj net/minecraft/level/BlockPos
+	CLASS none/cj$a
+		METHOD n getX ()I
+		METHOD o getY ()I
+		METHOD p getZ ()I
+	METHOD b down ()Lnone/cj;
+CLASS none/co net/minecraft/util/RegistryNamespacedDefaultedByKey
+	METHOD a validateKey ()V
+	METHOD a getObjectById (I)Ljava/lang/Object;
+	METHOD a register (ILjava/lang/Object;Ljava/lang/Object;)V
+	METHOD a getIDForObject (Ljava/lang/Object;)I
+	METHOD c getObject (Ljava/lang/Object;)Ljava/lang/Object;
+CLASS none/cp
+	METHOD c getObject (Ljava/lang/Object;)Ljava/lang/Object;
+CLASS none/cq net/minecraft/util/EnumFacing
+	FIELD a DOWN Lnone/cq;
+	FIELD b UP Lnone/cq;
+	FIELD c NORTH Lnone/cq;
+	FIELD d SOUTH Lnone/cq;
+	FIELD e WEST Lnone/cq;
+	FIELD f EAST Lnone/cq;
+CLASS none/cs net/minecraft/util/IntIterable
+CLASS none/ct net/minecraft/util/IntIdentityMap
+	FIELD a identityMap Ljava/util/IdentityHashMap;
+	FIELD b objectList Ljava/util/List;
+	METHOD a getByValue (I)Ljava/lang/Object;
+		ARG 0 value
+	METHOD a get (Ljava/lang/Object;)I
+		ARG 0 key
+	METHOD a put (Ljava/lang/Object;I)V
+		ARG 0 key
+		ARG 1 value
+	METHOD iterator iterator ()Ljava/util/Iterator;
+CLASS none/cx
+	METHOD a getObjectById (I)Ljava/lang/Object;
+	METHOD a register (ILjava/lang/Object;Ljava/lang/Object;)V
+	METHOD a getIDForObject (Ljava/lang/Object;)I
+	METHOD c getObject (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD d containsKey (Ljava/lang/Object;)Z
+CLASS none/db
+	METHOD c getObject (Ljava/lang/Object;)Ljava/lang/Object;
+CLASS none/dd
+	METHOD c getObject (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD d containsKey (Ljava/lang/Object;)Z
+CLASS none/df
+	METHOD n getX ()I
+	METHOD o getY ()I
+	METHOD p getZ ()I
+CLASS none/di net/minecraft/util/StatCollector
+	METHOD a translateToLocal (Ljava/lang/String;)Ljava/lang/String;
 CLASS none/dn net/minecraft/utils/TagComponent
 	METHOD a setString (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD a setUUID (Ljava/lang/String;Ljava/util/UUID;)V
@@ -272,6 +321,7 @@ CLASS none/eu net/minecraft/chat/ChatComponent
 	METHOD a getSiblings ()Ljava/util/List;
 CLASS none/jz net/minecraft/util/ResourceLocation
 CLASS none/lg net/minecraft/level/LevelServer
+	METHOD a spawnEntityInWorld (Lnone/qa;)Z
 	METHOD d tick ()V
 CLASS none/lh
 	METHOD a sendMessage (Lnone/eu;)V
@@ -280,8 +330,11 @@ CLASS none/lh
 CLASS none/ml
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
+CLASS none/nc net/minecraft/stats/StatList
+	FIELD ac mineBlockStatArray [Lnone/my;
 CLASS none/nu net/minecraft/util/MathUtils
 	FIELD c rand Ljava/util/Random;
+CLASS none/ox net/minecraft/entity/player/EnumHand
 CLASS none/qa net/minecraft/entity/Entity
 	FIELD C onGround Z
 	FIELD D isCollidedHorizontally Z
@@ -303,19 +356,34 @@ CLASS none/qa net/minecraft/entity/Entity
 	METHOD aQ customNameVisible ()Z
 	METHOD c getPosition ()Lnone/cj;
 	METHOD d moveEntity (DDD)V
+	METHOD e fall (FF)V
 	METHOD e (Lnone/dn;)V
 		ARG 0 tagcomponent
 	METHOD t_ onUpdate ()V
-CLASS none/qg
+CLASS none/qg net/minecraft/entity/item/EntityXPOrb
+	METHOD a getXPSplit (I)I
 	METHOD t_ onUpdate ()V
+CLASS none/qh
+	METHOD e fall (FF)V
 CLASS none/qj net/minecraft/entity/EntityLivingBase
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
 CLASS none/qk net/minecraft/entity/monster/EntityMonster
 	METHOD t_ onUpdate ()V
 CLASS none/ud
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
+CLASS none/ug
+	METHOD e fall (FF)V
 CLASS none/ui
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
+CLASS none/uj
+	METHOD e fall (FF)V
+CLASS none/ul
+	METHOD e fall (FF)V
+CLASS none/um
+	METHOD e fall (FF)V
 CLASS none/up
 	METHOD t_ onUpdate ()V
 CLASS none/uu
@@ -323,6 +391,8 @@ CLASS none/uu
 CLASS none/uz
 	METHOD t_ onUpdate ()V
 CLASS none/va net/minecraft/entity/boss/EntityEnderDragon
+CLASS none/vs
+	METHOD e fall (FF)V
 CLASS none/vu
 	METHOD t_ onUpdate ()V
 CLASS none/vv
@@ -335,8 +405,10 @@ CLASS none/we
 CLASS none/wg net/minecraft/entity/item/EntityBoat
 	METHOD t_ onUpdate ()V
 CLASS none/wh
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
-CLASS none/wi
+CLASS none/wi net/minecraft/entity/item/EntityItem
+	METHOD p setDefaultPickupDelay ()V
 	METHOD t_ onUpdate ()V
 CLASS none/wj
 	METHOD aP customName ()Ljava/lang/String;
@@ -351,15 +423,21 @@ CLASS none/wo
 CLASS none/wq
 	METHOD t_ onUpdate ()V
 CLASS none/wr
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
 CLASS none/ws
 	METHOD t_ onUpdate ()V
+CLASS none/wu
+	METHOD e fall (FF)V
 CLASS none/ww
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
 CLASS none/wy
 	METHOD t_ onUpdate ()V
 CLASS none/xa
 	METHOD t_ onUpdate ()V
+CLASS none/xd
+	METHOD e fall (FF)V
 CLASS none/xe
 	METHOD t_ onUpdate ()V
 CLASS none/xf
@@ -373,6 +451,11 @@ CLASS none/xl
 CLASS none/xn
 	METHOD t_ onUpdate ()V
 CLASS none/xw net/minecraft/entity/player/EntityPlayer
+	METHOD a addExhaustion (F)V
+	METHOD a getToolDigEfficiency (Lnone/ahg;)F
+	METHOD b canHarvestBlock (Lnone/ahg;)Z
+	METHOD b triggerAchievement (Lnone/my;)V
+	METHOD e fall (FF)V
 	METHOD t_ onUpdate ()V
 CLASS none/xz
 	METHOD t_ onUpdate ()V
@@ -392,6 +475,8 @@ CLASS none/yn
 	METHOD t_ onUpdate ()V
 CLASS none/yq
 	METHOD t_ onUpdate ()V
+CLASS none/aad net/minecraft/item/ItemBlock
+	METHOD d getBlock ()Lnone/ahg;
 CLASS none/aaf net/minecraft/item/ItemBoat
 CLASS none/aah net/minecraft/item/ItemGlassBotle
 CLASS none/aar net/minecraft/inventory/CreativeTabs
@@ -442,6 +527,8 @@ CLASS none/abo net/minecraft/item/base/Item
 	METHOD a addItem (ILjava/lang/String;Lnone/abo;)V
 	METHOD a addItemResource (ILnone/jz;Lnone/abo;)V
 	METHOD a getItem (Lnone/ahg;)Lnone/abo;
+	METHOD k getHasSubtypes ()Z
+CLASS none/abp net/minecraft/item/ItemStack
 CLASS none/abr net/minecraft/init/Items
 	FIELD A stick Lnone/abo;
 	FIELD D goldenSword Lnone/abo;
@@ -464,23 +551,179 @@ CLASS none/adz net/minecraft/enchantment/EnchantmentFire
 CLASS none/aec net/minecraft/enchantment/EnchantmentDamage
 CLASS none/aed net/minecraft/enchantment/EnchantmentDurability
 CLASS none/aef net/minecraft/enchantment/Enchantment
+CLASS none/aeh net/minecraft/util/EnchantmentHelper
+	METHOD a getEnchantmentLevel (Lnone/aef;Lnone/abp;)I
 CLASS none/aej net/minecraft/enchantment/EnchantmentList
+	FIELD q silkTouch Lnone/aef;
+	FIELD s fortune Lnone/aef;
 CLASS none/aen net/minecraft/enchantment/EnchantmentLuck
 CLASS none/aes net/minecraft/enchantment/EnchantmentWaterWalker
 CLASS none/afa
 	METHOD a sendMessage (Lnone/eu;)V
+CLASS none/afd net/minecraft/util/EnumWorldBlockLayer
+	FIELD a SOLID Lnone/afd;
+CLASS none/afg net/minecraft/level/Explosion
+CLASS none/afi
+	METHOD b getGameRuleBooleanValue (Ljava/lang/String;)Z
 CLASS none/afk net/minecraft/level/Level
+	FIELD D isClient Z
+	FIELD s rand Ljava/util/Random;
 	FIELD t provider Lnone/apv;
 	FIELD x levelInfo Lnone/awk;
 	METHOD L getTotalLevelTime ()J
 	METHOD M getLevelTime ()J
+	METHOD R getGameRules ()Lnone/afi;
 	METHOD a setTotalLevelTime (J)V
+	METHOD a spawnEntityInWorld (Lnone/qa;)Z
 	METHOD b setLevelTime (J)V
+	METHOD b getCombinedLight (Lnone/cj;I)I
 	METHOD d tick ()V
+	METHOD p getBlockState (Lnone/cj;)Lnone/aoi;
+CLASS none/afo net/minecraft/level/ILevel
+	METHOD b getCombinedLight (Lnone/cj;I)I
+	METHOD p getBlockState (Lnone/cj;)Lnone/aoi;
+CLASS none/aft
+	METHOD b getCombinedLight (Lnone/cj;I)I
+	METHOD p getBlockState (Lnone/cj;)Lnone/aoi;
 CLASS none/agw net/minecraft/block/BlockAir
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a canCollideCheck (Lnone/aoi;Z)Z
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+CLASS none/agx net/minecraft/block/BlockAnvil
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD b getStateForEntityRender (Lnone/aoi;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/agy
+	CLASS none/agy$a BlockBannerStanding
+		METHOD a getStateFromMeta (I)Lnone/aoi;
+		METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+		METHOD c getMetaFromState (Lnone/aoi;)I
+		METHOD e createBlockStateDefinition ()Lnone/aoj;
+	CLASS none/agy$b BlockBannerHanging
+		METHOD a getStateFromMeta (I)Lnone/aoi;
+		METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+		METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+		METHOD c getMetaFromState (Lnone/aoi;)I
+		METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD f getLocalizedName ()Ljava/lang/String;
+CLASS none/agz rnet/minecraft/block/BlockBarrier
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD h getAmbientOcclusionLightValue ()F
+CLASS none/aha
+	METHOD a onBlockEventReceived (Lnone/afk;Lnone/cj;Lnone/aoi;II)Z
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+CLASS none/ahb
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD i canProvidePower ()Z
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD k getMobilityFlag ()I
+CLASS none/ahc
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD k getMobilityFlag ()I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahd net/minecraft/block/BlockBeacon
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD d isFullCube ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/ahe net/minecraft/block/BlockBed
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD k getMobilityFlag ()I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahf net/minecraft/block/BlockBeetRoots
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/ahg net/minecraft/block/base/Block
-	CLASS none/ahg$d blockSound
+	CLASS none/ahg$1
+		METHOD a getBreakSound ()Ljava/lang/String;
+		METHOD b getPlaceSound ()Ljava/lang/String;
+	CLASS none/ahg$2
+		METHOD a getBreakSound ()Ljava/lang/String;
+	CLASS none/ahg$3
+		METHOD a getBreakSound ()Ljava/lang/String;
+		METHOD b getPlaceSound ()Ljava/lang/String;
+	CLASS none/ahg$4
+		METHOD a getBreakSound ()Ljava/lang/String;
+		METHOD b getPlaceSound ()Ljava/lang/String;
+		METHOD c getStepSound ()Ljava/lang/String;
+	CLASS none/ahg$b EnumOffsetType
+		FIELD a NONE Lnone/ahg$b;
+		FIELD b XZ Lnone/ahg$b;
+		FIELD c XYZ Lnone/ahg$b;
+	CLASS none/ahg$d BlockSound
+		FIELD a soundName Ljava/lang/String;
+		FIELD b volume F
+		FIELD c frequency F
+		METHOD <init> (Ljava/lang/String;FF)V
+			ARG 0 name
+			ARG 1 value
+			ARG 2 frequency
+		METHOD a getBreakSound ()Ljava/lang/String;
+		METHOD b getPlaceSound ()Ljava/lang/String;
+		METHOD c getStepSound ()Ljava/lang/String;
+		METHOD d getVolume ()F
+		METHOD e getFrequency ()F
 	FIELD A isBlockContainer Z
 	FIELD B minX D
 	FIELD C minY D
@@ -494,9 +737,12 @@ CLASS none/ahg net/minecraft/block/base/Block
 	FIELD K mapColor Lnone/aui;
 	FIELD L slipperiness F
 	FIELD M blockStateDefinition Lnone/aoj;
+	FIELD N defaultBlockState Lnone/aoi;
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
 	FIELD b creativeTab Lnone/aar;
+	FIELD c blockRegistry Lnone/co;
+	FIELD d BLOCK_STATE_IDS Lnone/ct;
 	FIELD e soundTypeStone Lnone/ahg$d;
 	FIELD f soundTypeWood Lnone/ahg$d;
 	FIELD g soundTypeDirt Lnone/ahg$d;
@@ -519,27 +765,360 @@ CLASS none/ahg net/minecraft/block/base/Block
 	FIELD x blockResistance F
 	FIELD y enableStats Z
 	FIELD z needsRandomTick Z
+	METHOD <init> (Lnone/auh;)V
+		ARG 0 material
+	METHOD <init> (Lnone/auh;Lnone/aui;)V
+		ARG 0 material
+		ARG 1 mapColor
+	METHOD A getTickRandomly ()Z
+	METHOD B hasTileEntity ()Z
+	METHOD C isCollidable ()Z
+	METHOD D getBlockBoundsMinX ()D
+	METHOD E getBlockBoundsMaxX ()D
+	METHOD F getBlockBoundsMinY ()D
+	METHOD G getBlockBoundsMaxY ()D
+	METHOD H getBlockBoundsMinZ ()D
+	METHOD I getBlockBoundsMaxZ ()D
+	METHOD J getBlockColor ()I
+	METHOD K canSilkHarvest ()Z
+	METHOD L getEnableStats ()Z
 	METHOD M disableStats ()Lnone/ahg;
+	METHOD N getCreativeTab ()Lnone/aar;
+	METHOD O isFlowerPot ()Z
+	METHOD P requiresUpdates ()Z
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD R getBlockStateDefinition ()Lnone/aoj;
+	METHOD S getDefaultState ()Lnone/aoi;
+	METHOD T getOffsetType ()Lnone/ahg$b;
 	METHOD U registerBlocks ()V
+	METHOD a getUnlocalizedName ()Ljava/lang/String;
 	METHOD a setLightLevel (F)Lnone/ahg;
+		ARG 0 value
 	METHOD a setBounds (FFFFFF)V
-	METHOD a setCreativeTabs (Lnone/aar;)Lnone/ahg;
+		ARG 0 minX
+		ARG 1 minY
+		ARG 2 minZ
+		ARG 3 maxX
+		ARG 4 maxY
+		ARG 5 maxZ
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+		ARG 0 meta
+	METHOD a registerBlock (ILjava/lang/String;Lnone/ahg;)V
+		ARG 0 id
+		ARG 1 textureID
+		ARG 2 block
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+		ARG 0 fortune
+		ARG 1 random
+	METHOD a registerBlock (ILnone/jz;Lnone/ahg;)V
+		ARG 0 id
+		ARG 1 textureID
+		ARG 2 block
+	METHOD a quantityDropped (Ljava/util/Random;)I
+		ARG 0 random
+	METHOD a setCreativeTab (Lnone/aar;)Lnone/ahg;
 		ARG 0 creativetab
 	METHOD a getBlock (Lnone/abo;)Lnone/ahg;
 		ARG 0 item
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+		ARG 0 item
+		ARG 1 tab
+		ARG 2 list
+	METHOD a canDropFromExplosion (Lnone/afg;)Z
+		ARG 0 explosion
+	METHOD a tickRate (Lnone/afk;)I
+		ARG 0 level
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD a spawnAsEntity (Lnone/afk;Lnone/cj;Lnone/abp;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 stack
+	METHOD a onBlockDestroyedByExplosion (Lnone/afk;Lnone/cj;Lnone/afg;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 explosion
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 chance
+		ARG 4 fortune
+	METHOD a onBlockEventReceived (Lnone/afk;Lnone/cj;Lnone/aoi;II)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 eventID
+		ARG 4 eventParam
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 random
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 neighborBlock
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
-	METHOD a setSounds (Lnone/ahg$d;)Lnone/ahg;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 mask
+		ARG 4 list
+		ARG 5 entity
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 entity
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 placer
+		ARG 4 stack
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 player
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 player
+		ARG 4 hand
+		ARG 5 stack
+		ARG 6 facing
+		ARG 7 hitX
+		ARG 8 hitY
+		ARG 9 hitZ
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 start
+		ARG 3 end
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 side
+		ARG 3 hitX
+		ARG 4 hitY
+		ARG 5 hitZ
+		ARG 6 meta
+		ARG 7 placer
+	METHOD a canReplace (Lnone/afk;Lnone/cj;Lnone/cq;Lnone/abp;)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 side
+		ARG 3 stack
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/qa;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 entity
+	METHOD a onFallenUpon (Lnone/afk;Lnone/cj;Lnone/qa;F)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 entity
+		ARG 3 fallDistance
+	METHOD a modifyAcceleration (Lnone/afk;Lnone/cj;Lnone/qa;Lnone/axe;)Lnone/axe;
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 entity
+		ARG 3 motion
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 player
+	METHOD a onLanded (Lnone/afk;Lnone/qa;)V
+		ARG 0 level
+		ARG 1 entity
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+		ARG 0 level
+		ARG 1 player
+		ARG 2 pos
+		ARG 3 state
+		ARG 4 tile
+		ARG 5 stack
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 renderPass
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 side
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 side
+	METHOD a setSound (Lnone/ahg$d;)Lnone/ahg;
+		ARG 0 sound
+	METHOD a getIdFromBlock (Lnone/ahg;)I
+		ARG 0 block
+	METHOD a isEqualTo (Lnone/ahg;Lnone/ahg;)Z
+		ARG 0 block
+		ARG 1 other
+	METHOD a damageDropped (Lnone/aoi;)I
+		ARG 0 state
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+		ARG 0 state
+		ARG 1 random
+		ARG 2 fortune
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+		ARG 0 state
+		ARG 1 level
+		ARG 2 pos
+	METHOD a canCollideCheck (Lnone/aoi;Z)Z
+		ARG 0 state
+		ARG 1 liquid
+	METHOD a isVecInsideYZBounds (Lnone/axe;)Z
+		ARG 0 point
+	METHOD a getExplosionResistance (Lnone/qa;)F
+		ARG 0 exploder
+	METHOD a getPlayerRelativeBlockHardness (Lnone/xw;Lnone/afk;Lnone/cj;)F
+		ARG 0 player
+		ARG 1 level
+		ARG 2 pos
+	METHOD a setTickRandomly (Z)Lnone/ahg;
+		ARG 0 shouldTick
+	METHOD b getRenderType ()I
 	METHOD b setResistance (F)Lnone/ahg;
+		ARG 0 resistance
+	METHOD b getBlockFromName (Ljava/lang/String;)Lnone/ahg;
+		ARG 0 name
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+		ARG 0 level
+		ARG 1 pos
+	METHOD b dropXpOnBlockBreak (Lnone/afk;Lnone/cj;I)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 amount
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+	METHOD b dropBlockAsItem (Lnone/afk;Lnone/cj;Lnone/aoi;I)V
+		ARG 0 level
+		ARG 1 pso
+		ARG 2 state
+		ARG 3 fortune
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 random
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 side
+	METHOD b isBlockSolid (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 side
+	METHOD b isAssociatedBlock (Lnone/ahg;)Z
+		ARG 0 other
+	METHOD b getStateForEntityRender (Lnone/aoi;)Lnone/aoi;
+		ARG 0 state
+	METHOD b isVecInsideXZBounds (Lnone/axe;)Z
+		ARG 0 point
+	METHOD c isOpaqueCube ()Z
 	METHOD c setHardness (F)Lnone/ahg;
+		ARG 0 hardness
+	METHOD c getBlockById (I)Lnone/ahg;
+		ARG 0 id
 	METHOD c setUnlocalizedName (Ljava/lang/String;)Lnone/ahg;
+		ARG 0 name
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+		ARG 0 level
+		ARG 1 pos
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+		ARG 3 random
+	METHOD c getBrightnessForBlock (Lnone/afo;Lnone/cj;)I
+		ARG 0 level
+		ARG 1 pos
+	METHOD c getMetaFromState (Lnone/aoi;)I
+		ARG 0 state
+	METHOD c isVecInsideXYBounds (Lnone/axe;)Z
+		ARG 0 point
+	METHOD d isFullCube ()Z
+	METHOD d getStateById (I)Lnone/aoi;
+		ARG 0 id
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+		ARG 0 level
+		ARG 1 pos
+	METHOD d onBlockDestroyedByPlayer (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+		ARG 0 level
+		ARG 1 pos
+		ARG 2 state
+	METHOD d colorMultiplier (Lnone/afo;Lnone/cj;)I
+		ARG 0 level
+		ARG 1 pos
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD e setBlockLight (I)Lnone/ahg;
+		ARG 0 opacity
+	METHOD f getLocalizedName ()Ljava/lang/String;
+	METHOD f getStateId (Lnone/aoi;)I
+		ARG 0 state
+	METHOD g getBlockHardness (Lnone/afk;Lnone/cj;)F
+		ARG 0 level
+		ARG 1 pos
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+		ARG 0 state
+	METHOD h getAmbientOcclusionLightValue ()F
+	METHOD h getRenderColor (Lnone/aoi;)I
+		ARG 0 state
+	METHOD i canProvidePower ()Z
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
+		ARG 0 state
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+		ARG 0 level
+		ARG 1 pos
+	METHOD j setDefaultState (Lnone/aoi;)V
+		ARG 0 state
+	METHOD k getMobilityFlag ()I
+	METHOD k fillWithRain (Lnone/afk;Lnone/cj;)V
+		ARG 0 level
+		ARG 1 pos
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+		ARG 0 level
+		ARG 1 pos
+	METHOD m getBlockLayer ()Lnone/afd;
 	METHOD q getOpaque ()Z
 	METHOD r getLightOpacity ()I
 	METHOD s getBlockGrass ()Z
 	METHOD t getLightValue ()I
 	METHOD u getNeightborBrigtness ()Z
 	METHOD v getMaterial ()Lnone/auh;
+	METHOD w isBlockNormalCube ()Z
+	METHOD x isNormalCube ()Z
+	METHOD y isVisuallyOpaque ()Z
 	METHOD z setBlockUnbreakble ()Lnone/ahg;
 CLASS none/ahh net/minecraft/init/Blocks
 	FIELD A sandstone Lnone/ahg;
@@ -586,80 +1165,797 @@ CLASS none/ahh net/minecraft/init/Blocks
 	FIELD z dispenser Lnone/ahg;
 	METHOD a addBlock (Ljava/lang/String;)Lnone/ahg;
 CLASS none/ahj net/minecraft/block/BlockBookshelf
-CLASS none/ahk
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+CLASS none/ahk net/minecraft/block/BlockBrewingStand
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahl
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahm
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+	METHOD j setBlockBoundsForItemRender ()V
 CLASS none/ahn net/minecraft/block/BlockCactus
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/aho net/minecraft/block/BlockCake
-CLASS none/ahq
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahp net/minecraft/block/BlockCarrot
+CLASS none/ahq net/minecraft/block/BlockCauldron
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD k fillWithRain (Lnone/afk;Lnone/cj;)V
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
 CLASS none/ahr net/minecraft/block/BlockChest
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
 CLASS none/ahs net/minecraft/block/BlockChorusFlower
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/aht net/minecraft/block/BlockChorusPlant
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ahu net/minecraft/block/BlockClay
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+CLASS none/ahv net/minecraft/block/BlockCocoa
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/ahw net/minecraft/block/BlockColored
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ahx net/minecraft/block/BlockCommandBlock
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD b getRenderType ()I
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+CLASS none/ahy net/minecraft/block/BlockRedstoneComparator
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onBlockEventReceived (Lnone/afk;Lnone/cj;Lnone/aoi;II)Z
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
 CLASS none/ahz net/minecraft/block/BlockWorkbench
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
 CLASS none/aia net/minecraft/block/BlockCrops
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/aib net/minecraft/block/BlockDaylightDetector
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
 CLASS none/aic net/minecraft/block/BlockDeadBush
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/aid net/minecraft/block/BlockRailDetector
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+CLASS none/aie
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b isAssociatedBlock (Lnone/ahg;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD d onBlockDestroyedByPlayer (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD i canProvidePower ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/aig net/minecraft/block/BlockDirt
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
 CLASS none/aih net/minecraft/block/BlockDispenser
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b getStateForEntityRender (Lnone/aoi;)Lnone/aoi;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
 CLASS none/aii net/minecraft/block/BlockDoor
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+	METHOD k getMobilityFlag ()I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/aij net/minecraft/block/BlockDoublePlant
+	METHOD T getOffsetType ()Lnone/ahg$b;
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+CLASS none/aik net/minecraft/block/BlockDragonEgg
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD d isFullCube ()Z
+CLASS none/ail net/minecraft/block/BlockDropper
 CLASS none/aim net/minecraft/block/BlockFlowingLiquid
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
 CLASS none/ain net/minecraft/block/BlockEnchantingTable
-CLASS none/aio
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD d isFullCube ()Z
+CLASS none/aio net/minecraft/block/BlockEndGateWay
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD d isFullCube ()Z
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/aip
+CLASS none/aip net/minecraft/block/BlockEndPortal
+	METHOD a quantityDropped (Ljava/util/Random;)I
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD d isFullCube ()Z
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/aiq
+CLASS none/aiq net/minecraft/block/BlockPortalEndFrame
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+CLASS none/air net/minecraft/block/BlockEndRod
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD k getMobilityFlag ()I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ais net/minecraft/block/BlockEnderChest
+	METHOD K canSilkHarvest ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aiu net/minecraft/block/BlockFalling
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
 CLASS none/aiv net/minecraft/block/BlockFarmland
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onFallenUpon (Lnone/afk;Lnone/cj;Lnone/qa;F)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aiw net/minecraft/block/BlockFence
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/aix net/minecraft/block/BlockFenceGate
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aiy net/minecraft/block/BlockFire
+	METHOD C isCollidable ()Z
+	METHOD P requiresUpdates ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/aiz
+	METHOD T getOffsetType ()Lnone/ahg$b;
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/aja net/minecraft/block/BlockFlowerPot
+	METHOD O isFlowerPot ()Z
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ajb net/minecraft/block/BlockDoubleStoneSlabNew
 CLASS none/ajc net/minecraft/block/BlockDoubleStoneSlab
+CLASS none/ajd net/minecraft/block/BlockDoubleWoodSlab
 CLASS none/aje net/minecraft/block/BlockFurnace
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b getStateForEntityRender (Lnone/aoi;)Lnone/aoi;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
 CLASS none/ajf net/minecraft/block/BlockGlass
+	METHOD K canSilkHarvest ()Z
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD d isFullCube ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/ajg net/minecraft/block/BlockGlowstone
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/ajh net/minecraft/block/BlockGrass
+	METHOD J getBlockColor ()I
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/aji net/minecraft/block/BlockGrassPath
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD d isFullCube ()Z
 CLASS none/ajj net/minecraft/block/BlockGravel
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/ajl
+CLASS none/ajk net/minecraft/block/BlockHalfStoneSlabNew
+CLASS none/ajl net/minecraft/block/BlockSlab
+	METHOD K canSilkHarvest ()Z
+	METHOD a quantityDropped (Ljava/util/Random;)I
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD d isFullCube ()Z
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
 CLASS none/ajm net/minecraft/block/BlockStoneSlab
-CLASS none/ajp
+CLASS none/ajn
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+CLASS none/ajo net/minecraft/block/BlockHalfWoodSlab
+CLASS none/ajp net/minecraft/block/BlockHardenedClay
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ajq net/minecraft/block/BlockHay
 CLASS none/ajr net/minecraft/block/BlockHopper
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
-CLASS none/ajt
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ajt net/minecraft/block/BlockHugeMushroom
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/aju net/minecraft/block/BlockIce
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD k getMobilityFlag ()I
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/ajv net/minecraft/block/BlockJuckebox
+	METHOD Q hasComparatorInputOverride ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD b getRenderType ()I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD l getComparatorInputOverride (Lnone/afk;Lnone/cj;)I
 CLASS none/ajw net/minecraft/block/BlockLadder
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ajx
+	METHOD J getBlockColor ()I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD m getBlockLayer ()Lnone/afd;
+	METHOD y isVisuallyOpaque ()Z
 CLASS none/ajz net/minecraft/block/BlockLever
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+CLASS none/aka
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a modifyAcceleration (Lnone/afk;Lnone/cj;Lnone/qa;Lnone/axe;)Lnone/axe;
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a canCollideCheck (Lnone/aoi;Z)Z
+	METHOD b getRenderType ()I
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD b isBlockSolid (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getBrightnessForBlock (Lnone/afo;Lnone/cj;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/akb
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+CLASS none/akc net/minecraft/block/BlockMelon
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 CLASS none/akd net/minecraft/block/BlockMobSpawner
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getRenderType ()I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ake rnet/minecraft/block/BlockSilverfish
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
 CLASS none/akf net/minecraft/block/BlockMushroom
-CLASS none/akh
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+CLASS none/akg net/minecraft/block/BlockMycelium
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/akh net/minecraft/block/BlockNetherBrick
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/aki net/minecraft/block/BlockNetherWart
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/akj net/minecraft/block/BlockNetherrack
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/akl
+CLASS none/akk rnet/minecraft/block/BlockNewLeaf
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+CLASS none/akl net/minecraft/block/BlockNewLog
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/akm
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/akn net/minecraft/block/BlockNote
+	METHOD a onBlockEventReceived (Lnone/afk;Lnone/cj;Lnone/aoi;II)Z
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+	METHOD b getRenderType ()I
 CLASS none/ako net/minecraft/block/BlockObsidian
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/akp net/minecraft/block/BlockOldLeaves
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/akq net/minecraft/block/BlockOldLog
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/akr net/minecraft/block/BlockOre
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+CLASS none/aks net/minecraft/block/BlockPackedIce
+	METHOD a quantityDropped (Ljava/util/Random;)I
 CLASS none/akt net/minecraft/block/BlockWood
 	CLASS none/akt$a woodType
 		FIELD a OAK Lnone/akt$a;
@@ -668,65 +1964,575 @@ CLASS none/akt net/minecraft/block/BlockWood
 		FIELD d JUNGLE Lnone/akt$a;
 		FIELD e ACACIA Lnone/akt$a;
 		FIELD f DARK_OAK Lnone/akt$a;
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/aku net/minecraft/block/BlockNetherPortal
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/akv net/minecraft/block/BlockPotato
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+CLASS none/akw rnet/minecraft/block/BlockCompressedPowered
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD i canProvidePower ()Z
 CLASS none/akx net/minecraft/block/BlockRailPowered
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aky net/minecraft/block/BlockPreassurePlate
 	CLASS none/aky$a preassurePlatesType
 		FIELD a wood Lnone/aky$a;
 		FIELD b stone Lnone/aky$a;
-CLASS none/akz
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/akz net/minecraft/block/BlockPrismarine
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/ala net/minecraft/block/BlockPumpkin
-CLASS none/alc
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/alb
+	CLASS none/alb$a BlockDoubleSlab
+	CLASS none/alb$b BlockSlab
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/alc rnet/minecraft/block/BlockQuartz
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/ald net/minecraft/block/BlockRail
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/ale net/minecraft/block/BlockRedFlower
+CLASS none/alf net/minecraft/block/BlockRedSandstone
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/alg net/minecraft/block/BlockRedstoneOre
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/qa;)V
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/alh net/minecraft/block/BlockRedstoneWire
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ali net/minecraft/block/BlockRedstoneLight
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/alj net/minecraft/block/BlockRedstoneTorch
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD b isAssociatedBlock (Lnone/ahg;)Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD i canProvidePower ()Z
+CLASS none/alk net/minecraft/block/BlockReed
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/all net/minecraft/block/BlockRedstoneRepeater
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+CLASS none/alm net/minecraft/block/BlockPurPurPillar
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i createStackedBlock (Lnone/aoi;)Lnone/abp;
 CLASS none/aln net/minecraft/block/BlockSand
 	CLASS none/aln$a
 		FIELD a SAND Lnone/aln$a;
 		FIELD b REDSAND Lnone/aln$a;
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/alo net/minecraft/block/BlockSandstone
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 CLASS none/alp net/minecraft/block/BlockSapling
-CLASS none/alq
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+CLASS none/alq net/minecraft/block/BlockSeaLantern
+	METHOD K canSilkHarvest ()Z
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/alr
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+CLASS none/als net/minecraft/block/BlockSkull
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
+CLASS none/alt net/minecraft/block/BlockSlime
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/qa;)V
+	METHOD a onFallenUpon (Lnone/afk;Lnone/cj;Lnone/qa;F)V
+	METHOD a onLanded (Lnone/afk;Lnone/qa;)V
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/alu net/minecraft/block/BlockSnowBlock
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+CLASS none/alv net/minecraft/block/BlockSnow
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
 CLASS none/alw net/minecraft/block/BlockSoulSand
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
 CLASS none/alx net/minecraft/block/BlockSponge
-CLASS none/aly
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
+CLASS none/aly net/minecraft/block/BlockStainedGlass
+	METHOD K canSilkHarvest ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/alz
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/alz rnet/minecraft/block/BlockStainedGlassPane
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/ama net/minecraft/block/BlockStairs
+	METHOD C isCollidable ()Z
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD a onBlockDestroyedByExplosion (Lnone/afk;Lnone/cj;Lnone/afg;)V
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/qa;)V
+	METHOD a modifyAcceleration (Lnone/afk;Lnone/cj;Lnone/qa;Lnone/axe;)Lnone/axe;
+	METHOD a onBlockClicked (Lnone/afk;Lnone/cj;Lnone/xw;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD a canCollideCheck (Lnone/aoi;Z)Z
+	METHOD a getExplosionResistance (Lnone/qa;)F
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getBrightnessForBlock (Lnone/afo;Lnone/cj;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD d onBlockDestroyedByPlayer (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/amb net/minecraft/block/BlockSign
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/amc net/minecraft/block/BlockStaticLiquid
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+CLASS none/amd net/minecraft/block/BlockStem
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD j setBlockBoundsForItemRender ()V
 CLASS none/ame net/minecraft/block/BlockStone
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/amf net/minecraft/block/BlockStoneBrick
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/amg net/minecraft/block/BlockButton
 CLASS none/amh
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+CLASS none/ami net/minecraft/block/BlockStructure
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD b getRenderType ()I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/amj net/minecraft/block/BlockTailGrass
+	METHOD J getBlockColor ()I
+	METHOD T getOffsetType ()Lnone/ahg$b;
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDroppedWithBonus (ILjava/util/Random;)I
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD j getDamageValue (Lnone/afk;Lnone/cj;)I
 CLASS none/amk net/minecraft/block/BlockPanel
+	METHOD K canSilkHarvest ()Z
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/aml net/minecraft/block/BlockTNT
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a canDropFromExplosion (Lnone/afg;)Z
+	METHOD a onBlockDestroyedByExplosion (Lnone/afk;Lnone/cj;Lnone/afg;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d onBlockDestroyedByPlayer (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/amm net/minecraft/block/BlockTorch
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c randomDisplayTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/amn net/minecraft/block/base/BlockLeavesBase
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+CLASS none/amo net/minecraft/block/BlockTrapDoor
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD b getSelectedBoundingBox (Lnone/afk;Lnone/cj;)Lnone/axc;
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/amp net/minecraft/block/BlockTripWire
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/amq net/minecraft/block/BlockTripWireHook
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a randomTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD b isProvidingStrongPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD i canProvidePower ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/amr net/minecraft/block/BlockVine
+	METHOD J getBlockColor ()I
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a isReplaceable (Lnone/afk;Lnone/cj;)Z
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b updateTick (Lnone/afk;Lnone/cj;Lnone/aoi;Ljava/util/Random;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD h getRenderColor (Lnone/aoi;)I
+	METHOD j setBlockBoundsForItemRender ()V
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/ams net/minecraft/block/BlockWall
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getActualState (Lnone/aoi;Lnone/afo;Lnone/cj;)Lnone/aoi;
+	METHOD b isPassable (Lnone/afo;Lnone/cj;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD f getLocalizedName ()Ljava/lang/String;
 CLASS none/amt net/minecraft/block/BlockWallSign
-CLASS none/amu
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/amu net/minecraft/block/BlockLilyPad
+	METHOD J getBlockColor ()I
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a colorMultiplier (Lnone/afo;Lnone/cj;I)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD h getRenderColor (Lnone/aoi;)I
 CLASS none/amv net/minecraft/block/BlockWeb
+	METHOD K canSilkHarvest ()Z
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onEntityCollidedWithBlock (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qa;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c isOpaqueCube ()Z
+	METHOD d isFullCube ()Z
+	METHOD m getBlockLayer ()Lnone/afd;
+CLASS none/amw net/minecraft/block/BlockPressurePlateWeighted
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a tickRate (Lnone/afk;)I
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+CLASS none/amx net/minecraft/block/BlockButtonWood
 CLASS none/amy
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/amz
+CLASS none/amz net/minecraft/block/BlockCarpet
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD a damageDropped (Lnone/aoi;)I
+	METHOD c isOpaqueCube ()Z
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
+	METHOD j setBlockBoundsForItemRender ()V
 CLASS none/ana net/minecraft/block/BlockYellowFlower
+CLASS none/and net/minecraft/tileentity/TileEntity
 CLASS none/ang
 	CLASS none/ang$1
 		METHOD c getPosition ()Lnone/cj;
@@ -738,19 +2544,99 @@ CLASS none/anu
 		METHOD a sendMessage (Lnone/eu;)V
 		METHOD c getPosition ()Lnone/cj;
 CLASS none/aob net/minecraft/block/BlockPiston
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a onBlockEventReceived (Lnone/afk;Lnone/cj;Lnone/aoi;II)Z
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockPlacedBy (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/qj;Lnone/abp;)V
+	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD b getStateForEntityRender (Lnone/aoi;)Lnone/aoi;
+	METHOD c isOpaqueCube ()Z
+	METHOD c onBlockAdded (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
+	METHOD j setBlockBoundsForItemRender ()V
 CLASS none/aoc net/minecraft/block/BlockPistonExtension
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a quantityDropped (Ljava/util/Random;)I
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
 	METHOD a addCollisionBoxesToList (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/axc;Ljava/util/List;Lnone/qa;)V
+	METHOD a onBlockHarvested (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;)V
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a shouldSideBeRendered (Lnone/afo;Lnone/cj;Lnone/cq;)Z
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aoe net/minecraft/block/BlockPistonMoving
+	METHOD a getStateFromMeta (I)Lnone/aoi;
+	METHOD a getCollisionBoundingBox (Lnone/afk;Lnone/cj;Lnone/aoi;)Lnone/axc;
+	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
+	METHOD a onNeighborBlockChange (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/ahg;)V
+	METHOD a onBlockActivated (Lnone/afk;Lnone/cj;Lnone/aoi;Lnone/xw;Lnone/ox;Lnone/abp;Lnone/cq;FFF)Z
+	METHOD a collisionRayTrace (Lnone/afk;Lnone/cj;Lnone/axe;Lnone/axe;)Lnone/axd;
+	METHOD a setBlockBoundsBasedOnState (Lnone/afo;Lnone/cj;)V
+	METHOD a getItemDropped (Lnone/aoi;Ljava/util/Random;I)Lnone/abo;
+	METHOD b breakBlock (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD b canPlaceBlockOnSide (Lnone/afk;Lnone/cj;Lnone/cq;)Z
+	METHOD c isOpaqueCube ()Z
+	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
+	METHOD c getMetaFromState (Lnone/aoi;)I
+	METHOD d isFullCube ()Z
+	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
+	METHOD d onBlockDestroyedByPlayer (Lnone/afk;Lnone/cj;Lnone/aoi;)V
+	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/aoi net/minecraft/block/state/BlockState
+	METHOD a getPropertyNames ()Ljava/util/Collection;
+	METHOD a withProperty (Lnone/aox;Ljava/lang/Comparable;)Lnone/aoi;
+	METHOD c getBlock ()Lnone/ahg;
 CLASS none/aoj net/minecraft/block/state/BlockStateDefinition
+	CLASS none/aoj$a
+		METHOD a getPropertyNames ()Ljava/util/Collection;
+		METHOD a withProperty (Lnone/aox;Ljava/lang/Comparable;)Lnone/aoi;
+		METHOD c getBlock ()Lnone/ahg;
+	METHOD b getBaseState ()Lnone/aoi;
+CLASS none/aos
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b getValueClass ()Ljava/lang/Class;
+CLASS none/aot
+	METHOD c getAllowedValues ()Ljava/util/Collection;
+CLASS none/aov
+	METHOD c getAllowedValues ()Ljava/util/Collection;
+CLASS none/aow
+	METHOD c getAllowedValues ()Ljava/util/Collection;
+CLASS none/aox net/minecraft/block/state/IProperty
+	METHOD a getName ()Ljava/lang/String;
+	METHOD b getValueClass ()Ljava/lang/Class;
+	METHOD c getAllowedValues ()Ljava/util/Collection;
 CLASS none/apv net/minecraft/level/LevelProvider
 	METHOD a calculateCelestialAngle (JF)F
 CLASS none/apx
 	METHOD a calculateCelestialAngle (JF)F
 CLASS none/aqa
 	METHOD a calculateCelestialAngle (JF)F
+CLASS none/aue
+	METHOD a isSolid ()Z
+	METHOD b blocksLight ()Z
+	METHOD c blocksMovement ()Z
+CLASS none/auf
+	METHOD a isSolid ()Z
+	METHOD b blocksLight ()Z
+	METHOD c blocksMovement ()Z
+CLASS none/aug
+	METHOD a isSolid ()Z
+	METHOD c blocksMovement ()Z
 CLASS none/auh net/minecraft/material/Material
+	CLASS none/auh$1
+		METHOD c blocksMovement ()Z
+	FIELD E portal Lnone/auh;
 	FIELD M materialMapColor Lnone/aui;
 	FIELD a air Lnone/auh;
 	FIELD b grass Lnone/auh;
@@ -771,6 +2657,12 @@ CLASS none/auh net/minecraft/material/Material
 	FIELD q circuits Lnone/auh;
 	FIELD r carpet Lnone/auh;
 	FIELD s glass Lnone/auh;
+	METHOD a isSolid ()Z
+	METHOD b blocksLight ()Z
+	METHOD c blocksMovement ()Z
+	METHOD j isReplaceable ()Z
+	METHOD k isOpaque ()Z
+	METHOD m getMaterialMobility ()I
 	METHOD r getMaterialMapColor ()Lnone/aui;
 CLASS none/aui net/minecraft/material/MapColor
 	FIELD D brickColor Lnone/aui;
@@ -788,6 +2680,10 @@ CLASS none/aui net/minecraft/material/MapColor
 	METHOD <init> (II)V
 		ARG 0 id
 		ARG 1 color
+CLASS none/auj
+	METHOD a isSolid ()Z
+	METHOD b blocksLight ()Z
+	METHOD c blocksMovement ()Z
 CLASS none/awh
 	METHOD b setTotalTime (J)V
 	METHOD c setLevelTime (J)V
@@ -801,7 +2697,19 @@ CLASS none/awk net/minecraft/level/storage/LevelInfo
 	METHOD e getTotalTime ()J
 	METHOD f getLevelTime ()J
 CLASS none/axc net/minecraft/utils/AxisAlignedBB
+	METHOD b intersectsWith (Lnone/axc;)Z
+CLASS none/axd net/minecraft/util/MovingObjectPosition
+CLASS none/axe net/minecraft/util/Vec3
+	FIELD a xCoord D
+	FIELD b yCoord D
+	FIELD c zCoord D
+	METHOD a getIntermediateWithXValue (Lnone/axe;D)Lnone/axe;
+	METHOD b addVector (DDD)Lnone/axe;
+	METHOD b getIntermediateWithYValue (Lnone/axe;D)Lnone/axe;
+	METHOD c getIntermediateWithZValue (Lnone/axe;D)Lnone/axe;
+	METHOD g squareDistanceTo (Lnone/axe;)D
 CLASS none/bfy net/minecraft/client/multiplayer/LevelClient
+	METHOD a spawnEntityInWorld (Lnone/qa;)Z
 	METHOD b setLevelTime (J)V
 	METHOD d tick ()V
 CLASS none/bgi
@@ -873,6 +2781,9 @@ CLASS none/bhx
 	METHOD a sendMessage (Lnone/eu;)V
 	METHOD c getPosition ()Lnone/cj;
 	METHOD t_ onUpdate ()V
+CLASS none/bie
+	METHOD b getCombinedLight (Lnone/cj;I)I
+	METHOD p getBlockState (Lnone/cj;)Lnone/aoi;
 CLASS none/bme net/minecraft/client/entity/EntityEnderDragon
 CLASS none/bno net/minecraft/client/entity/EntitySnowman
 CLASS net/minecraft/server/MinecraftServer
