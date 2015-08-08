@@ -628,7 +628,7 @@ CLASS none/agy
 	METHOD d isFullCube ()Z
 	METHOD d canPlaceBlockAt (Lnone/afk;Lnone/cj;)Z
 	METHOD f getLocalizedName ()Ljava/lang/String;
-CLASS none/agz rnet/minecraft/block/BlockBarrier
+CLASS none/agz net/minecraft/block/BlockBarrier
 	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
@@ -1861,7 +1861,7 @@ CLASS none/akd net/minecraft/block/BlockMobSpawner
 	METHOD c isOpaqueCube ()Z
 	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
 	METHOD m getBlockLayer ()Lnone/afd;
-CLASS none/ake rnet/minecraft/block/BlockSilverfish
+CLASS none/ake net/minecraft/block/BlockSilverfish
 	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a quantityDropped (Ljava/util/Random;)I
 	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
@@ -1893,7 +1893,7 @@ CLASS none/aki net/minecraft/block/BlockNetherWart
 	METHOD e createBlockStateDefinition ()Lnone/aoj;
 CLASS none/akj net/minecraft/block/BlockNetherrack
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
-CLASS none/akk rnet/minecraft/block/BlockNewLeaf
+CLASS none/akk net/minecraft/block/BlockNewLeaf
 	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
 	METHOD a harvestBlock (Lnone/afk;Lnone/xw;Lnone/cj;Lnone/aoi;Lnone/and;Lnone/abp;)V
@@ -1987,7 +1987,7 @@ CLASS none/aku net/minecraft/block/BlockNetherPortal
 	METHOD m getBlockLayer ()Lnone/afd;
 CLASS none/akv net/minecraft/block/BlockPotato
 	METHOD a dropBlockAsItemWithChance (Lnone/afk;Lnone/cj;Lnone/aoi;FI)V
-CLASS none/akw rnet/minecraft/block/BlockCompressedPowered
+CLASS none/akw net/minecraft/block/BlockCompressedPowered
 	METHOD a isProvidingWeakPower (Lnone/afo;Lnone/cj;Lnone/aoi;Lnone/cq;)I
 	METHOD i canProvidePower ()Z
 CLASS none/akx net/minecraft/block/BlockRailPowered
@@ -2024,7 +2024,7 @@ CLASS none/alb
 	METHOD c getItem (Lnone/afk;Lnone/cj;)Lnone/abo;
 	METHOD c getMetaFromState (Lnone/aoi;)I
 	METHOD e createBlockStateDefinition ()Lnone/aoj;
-CLASS none/alc rnet/minecraft/block/BlockQuartz
+CLASS none/alc net/minecraft/block/BlockQuartz
 	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
 	METHOD a onBlockPlaced (Lnone/afk;Lnone/cj;Lnone/cq;FFFILnone/qj;)Lnone/aoi;
@@ -2238,7 +2238,7 @@ CLASS none/aly net/minecraft/block/BlockStainedGlass
 	METHOD e createBlockStateDefinition ()Lnone/aoj;
 	METHOD g getMapColor (Lnone/aoi;)Lnone/aui;
 	METHOD m getBlockLayer ()Lnone/afd;
-CLASS none/alz rnet/minecraft/block/BlockStainedGlassPane
+CLASS none/alz net/minecraft/block/BlockStainedGlassPane
 	METHOD a getStateFromMeta (I)Lnone/aoi;
 	METHOD a getSubBlocks (Lnone/abo;Lnone/aar;Ljava/util/List;)V
 	METHOD a damageDropped (Lnone/aoi;)I
