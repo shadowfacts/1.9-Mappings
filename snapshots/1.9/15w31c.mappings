@@ -382,7 +382,7 @@ CLASS none/bx net/minecraft/command/CommandLevelBorder
 	METHOD a performCommand (Lnone/m;[Ljava/lang/String;)V
 	METHOD c getName ()Ljava/lang/String;
 	METHOD c getUsage (Lnone/m;)Ljava/lang/String;
-CLASS none/cj net/minecraft/util/BlockPos
+CLASS none/cj net/minecraft/level/BlockPos
 	CLASS none/cj$a MutableBlockPos
 		FIELD c x I
 		FIELD d y I
@@ -446,7 +446,7 @@ CLASS none/dm net/minecraft/nbt/TagByte
 	METHOD f getByte ()B
 	METHOD g getDouble ()D
 	METHOD h getFloat ()F
-CLASS none/dn net/minecraft/nbt/TagCompound
+CLASS none/dn net/minecraft/nbt/TagComponent
 	FIELD b values Ljava/util/Map;
 	METHOD a asByte ()B
 	METHOD a load (BLjava/lang/String;Ljava/io/DataInput;ILnone/dw;)Lnone/eb;
@@ -781,7 +781,7 @@ CLASS none/of net/minecraft/util/IThreadListener
 	METHOD aJ isCallingFromMinecraftThread ()Z
 CLASS none/po net/minecraft/entity/EntityAgeable
 CLASS none/pr net/minecraft/entity/Entity
-	FIELD C OnGround Z
+	FIELD C onGround Z
 	FIELD D isCollidedHorizontally Z
 	FIELD O FallDistance F
 	FIELD V rand Ljava/util/Random;
@@ -799,7 +799,7 @@ CLASS none/pr net/minecraft/entity/Entity
 	FIELD w motionY D
 	FIELD x motionZ D
 	FIELD y rotationX F
-	FIELD z RotationY F
+	FIELD z rotationY F
 	METHOD <init> (Lnone/aeo;)V
 		ARG 0 level
 	METHOD P getSwimSound ()Ljava/lang/String;
@@ -826,11 +826,15 @@ CLASS none/qa net/minecraft/entity/EntityLivingBase
 	METHOD t_ onUpdate ()V
 CLASS none/qb net/minecraft/entity/EntityLiving
 	METHOD t_ onUpdate ()V
-CLASS none/qg net/minecraft/entity/passiveIAnimals
+CLASS none/qg net/minecraft/entity/EntityOwnable
+	METHOD b getOwnerId ()Ljava/lang/String;
+	METHOD m_ getOwner ()Lnone/pr;
 CLASS none/qh net/minecraft/entity/EntityCreature
 	FIELD bq FleeingSpeedBonusModifierUUID Ljava/util/UUID;
 	FIELD br FleeingSpeedBonusModifier Lnone/qm;
 CLASS none/qj net/minecraft/entity/passive/EntityTameable
+	METHOD b getOwnerId ()Ljava/lang/String;
+	METHOD m_ getOwner ()Lnone/pr;
 CLASS none/qm net/minecraft/entity/attribute/AttributeModifier
 	METHOD a setSaved (Z)Lnone/qm;
 CLASS none/ru net/minecraft/entity/AI/EntityAIAttackOnCollide
@@ -1028,7 +1032,7 @@ CLASS none/zm net/minecraft/item/ItemBow
 CLASS none/zo net/minecraft/item/ItemBucket
 CLASS none/zp net/minecraft/item/ItemCarrotOnAStick
 CLASS none/zs net/minecraft/item/ItemCoal
-CLASS none/zv net/minecraft/creativetab/CreativeTabs
+CLASS none/zv net/minecraft/inventory/CreativeTabs
 	CLASS none/zv$1
 		METHOD e getItem ()Lnone/aas;
 	CLASS none/zv$2
@@ -1340,9 +1344,9 @@ CLASS none/aeo net/minecraft/level/Level
 	METHOD b setLevelTime (J)V
 	METHOD d tick ()V
 CLASS none/aeq net/minecraft/level/ILevelAccess
-CLASS none/aes net/minecraft/level/IBlockAccess
+CLASS none/aes net/minecraft/level/ILevel
 CLASS none/aga net/minecraft/block/BlockAir
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 CLASS none/agb net/minecraft/block/BlockAnvil
@@ -1350,8 +1354,8 @@ CLASS none/agb net/minecraft/block/BlockAnvil
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agc
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agd net/minecraft/block/BlockBarrier
@@ -1362,12 +1366,12 @@ CLASS none/age net/minecraft/block/base/BlockContainer
 		ARG 0 material
 	METHOD b getRenderType ()I
 CLASS none/agf
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agg
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agh net/minecraft/block/BlockBeacon
@@ -1406,7 +1410,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	FIELD H sound Lnone/agk$d;
 	FIELD I blockParticleGravity F
 	FIELD J blockMaterial Lnone/atl;
-	FIELD K mapColour Lnone/atm;
+	FIELD K mapColor Lnone/atm;
 	FIELD L slipperiness F
 	FIELD O unlocalizedName Ljava/lang/String;
 	FIELD a airTexture Lnone/jz;
@@ -1425,7 +1429,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	FIELD p soundTypeAnvil Lnone/agk$d;
 	FIELD q soundTypeSlime Lnone/agk$d;
 	FIELD r opaque Z
-	FIELD s lightOpacity I
+	FIELD s opacity I
 	FIELD t canBlockGrass Z
 	FIELD u lightValue I
 	FIELD v useNeighborBrightness Z
@@ -1444,7 +1448,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	METHOD a tileUnlocalizedName ()Ljava/lang/String;
 	METHOD a setLightLevel (F)Lnone/agk;
 		ARG 0 lightValue
-	METHOD a setBoundingBox (FFFFFF)V
+	METHOD a setBounds (FFFFFF)V
 		ARG 0 minX
 		ARG 1 minY
 		ARG 2 minZ
@@ -1453,7 +1457,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 5 maxZ
 	METHOD a (Ljava/util/Random;)I
 		ARG 0 random
-	METHOD a getblock (Lnone/aas;)Lnone/agk;
+	METHOD a getBlock (Lnone/aas;)Lnone/agk;
 		ARG 0 item
 	METHOD a (Lnone/aeo;)I
 		ARG 0 level
@@ -1466,7 +1470,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	METHOD a (Lnone/aeo;Lnone/cj;Lnone/aek;)V
 		ARG 0 level
 		ARG 1 pos
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;FI)V
 		ARG 0 level
 		ARG 1 pos
@@ -1487,7 +1491,7 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 2 stack
 		ARG 3 bounds
 		ARG 5 entity
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD a (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/xa;Lnone/oo;Lnone/aat;Lnone/cq;FFF)Z
 		ARG 0 level
 		ARG 1 pos
@@ -1521,7 +1525,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	METHOD a (Lnone/aes;Lnone/cj;Lnone/cq;)Z
 		ARG 0 level
 		ARG 1 pos
-	METHOD a setStepSound (Lnone/agk$d;)Lnone/agk;
+	METHOD a setSound (Lnone/agk$d;)Lnone/agk;
 		ARG 0 sound
 	METHOD a (Lnone/anm;)I
 		ARG 0 stack
@@ -1549,7 +1553,7 @@ CLASS none/agk net/minecraft/block/base/Block
 	METHOD b getRenderType ()I
 	METHOD b setResistance (F)Lnone/agk;
 		ARG 0 resistance
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 		ARG 0 level
 		ARG 1 pos
 	METHOD b (Lnone/aeo;Lnone/cj;I)V
@@ -1599,12 +1603,12 @@ CLASS none/agk net/minecraft/block/base/Block
 		ARG 0 level
 		ARG 1 pos
 		ARG 2 stack
-	METHOD e setLightOpacity (I)Lnone/agk;
+	METHOD e setOpacity (I)Lnone/agk;
 		ARG 0 opacity
 	METHOD g getHardness (Lnone/aeo;Lnone/cj;)F
 		ARG 0 level
 		ARG 1 pos
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 		ARG 0 stack
 	METHOD r getLightOpacity ()I
 	METHOD t getLightValue ()I
@@ -1824,7 +1828,7 @@ CLASS none/agl net/minecraft/init/Blocks
 	FIELD x lapisOre Lnone/agk;
 	FIELD y lapisBlock Lnone/agk;
 	FIELD z dispenser Lnone/agk;
-	METHOD a getBlock (Ljava/lang/String;)Lnone/agk;
+	METHOD a addBlock (Ljava/lang/String;)Lnone/agk;
 		ARG 0 name
 CLASS none/agn net/minecraft/block/BlockBookshelf
 CLASS none/ago net/minecraft/block/BlockBrewingStand
@@ -1833,28 +1837,28 @@ CLASS none/ago net/minecraft/block/BlockBrewingStand
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agp net/minecraft/block/BlockBush
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/agq
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+CLASS none/agq net/minecraft/block/BlockButton
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agr net/minecraft/block/BlockCactus
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ags net/minecraft/block/BlockCake
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agt net/minecraft/block/BlockCarrot
 CLASS none/agu net/minecraft/block/BlockCauldron
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agv net/minecraft/block/BlockChest
@@ -1866,22 +1870,22 @@ CLASS none/agw net/minecraft/block/BlockChorusFlower
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agx net/minecraft/block/BlockChorusPlant
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/agy net/minecraft/block/BlockClay
 CLASS none/agz net/minecraft/block/BlockCocoa
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aha net/minecraft/block/BlockColored
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ahb net/minecraft/block/BlockCommandBlock
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
-CLASS none/ahc net/minecraft/block/BlockComparator
+CLASS none/ahc net/minecraft/block/BlockRedstoneComparator
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 CLASS none/ahd net/minecraft/block/BlockWorkbench
 CLASS none/ahe net/minecraft/block/BlockCrops
@@ -1891,20 +1895,20 @@ CLASS none/ahf net/minecraft/block/BlockDaylightDetector
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahg net/minecraft/block/BlockDeadBush
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ahh net/minecraft/block/BlockRailDetector
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 CLASS none/ahi
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahk net/minecraft/block/BlockDirt
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ahl net/minecraft/block/BlockDispenser
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
 CLASS none/ahm net/minecraft/block/BlockDoor
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahn net/minecraft/block/BlockDoublePlant
@@ -1913,7 +1917,7 @@ CLASS none/aho net/minecraft/block/BlockDragonEgg
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahp net/minecraft/block/BlockDropper
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-CLASS none/ahq net/minecraft/block/BlockDynamicLiquid
+CLASS none/ahq net/minecraft/block/BlockFlowingLiquid
 CLASS none/ahr net/minecraft/block/BlockEnchantingTable
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
@@ -1921,20 +1925,20 @@ CLASS none/ahr net/minecraft/block/BlockEnchantingTable
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahs net/minecraft/block/BlockEndGateway
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/aht net/minecraft/block/BlockEndPortal
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
+CLASS none/aht net/minecraft/block/BlockPortalEnd
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ahu net/minecraft/block/BlockEndPortalBlock
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
+CLASS none/ahu net/minecraft/block/BlockPortalFrameEnd
 	METHOD c isOpaqueCube ()Z
 CLASS none/ahv net/minecraft/block/BlockEndRod
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ahw net/minecraft/block/BlockEnderChest
@@ -1948,21 +1952,21 @@ CLASS none/ahx net/minecraft/tileentity/base/TileEntityProvider
 		ARG 0 level
 		ARG 1 blockMeta
 CLASS none/ahz net/minecraft/block/BlockFarmland
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aia net/minecraft/block/BlockFence
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aib net/minecraft/block/BlockFenceGate
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aic net/minecraft/block/BlockFire
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/aid net/minecraft/block/BlockFlower
 CLASS none/aie net/minecraft/block/BlockFlowerPot
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
@@ -1977,14 +1981,14 @@ CLASS none/aij net/minecraft/block/BlockGlass
 	METHOD K canSilkHarvest ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aik net/minecraft/block/BlockGlowstone
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ail net/minecraft/block/BlockGrass
 CLASS none/aim net/minecraft/block/BlockGrassPath
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ain net/minecraft/block/BlockGravel
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/aip net/minecraft/block/BlockSlab
 	METHOD K canSilkHarvest ()Z
 	METHOD c isOpaqueCube ()Z
@@ -1996,7 +2000,7 @@ CLASS none/air
 		ARG 1 pos
 	METHOD c isOpaqueCube ()Z
 CLASS none/ait net/minecraft/block/BlockHardenedClay
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/aiu net/minecraft/block/BlockHay
 CLASS none/aiv net/minecraft/block/BlockHopper
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
@@ -2004,7 +2008,7 @@ CLASS none/aiv net/minecraft/block/BlockHopper
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aix net/minecraft/block/BlockHugeMushroom
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/aiy net/minecraft/block/BlockIce
 CLASS none/aiz net/minecraft/block/BlockJukebox
 	CLASS none/aiz$a TileEntityJukeBox
@@ -2015,18 +2019,18 @@ CLASS none/aiz net/minecraft/block/BlockJukebox
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
 CLASS none/aja net/minecraft/block/BlockLadder
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ajb net/minecraft/block/BlockLeaves
 	METHOD c isOpaqueCube ()Z
 CLASS none/ajd net/minecraft/block/BlockLever
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aje
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
@@ -2035,106 +2039,106 @@ CLASS none/ajh net/minecraft/block/BlockMobSpawner
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
 	METHOD c isOpaqueCube ()Z
-CLASS none/aji net/minecraft/block/BlockSilverFish
+CLASS none/aji net/minecraft/block/BlockSilverfish
 CLASS none/ajj net/minecraft/block/BlockMushroom
 CLASS none/ajk net/minecraft/block/BlockMycelium
 CLASS none/ajl
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajm net/minecraft/block/BlockNetherWart
 CLASS none/ajn net/minecraft/block/BlockNetherrack
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajo net/minecraft/block/BlockNewLeaf
 CLASS none/ajp net/minecraft/block/BlockNewLog
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajq
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajr net/minecraft/block/BlockNote
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
 CLASS none/ajs net/minecraft/block/BlockObsidian
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajt net/minecraft/block/BlockOldLeaves
 CLASS none/aju net/minecraft/block/BlockOldLog
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ajv net/minecraft/block/BlockOre
 CLASS none/ajw net/minecraft/block/BlockPackedIce
 CLASS none/ajx net/minecraft/block/BlockWood
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
-CLASS none/ajy net/minecraft/block/BlockNetherPortal
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
+CLASS none/ajy net/minecraft/block/BlockPortalNether
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/ajz net/minecraft/block/BlockPotatoe
+CLASS none/ajz net/minecraft/block/BlockPotato
 CLASS none/aka net/minecraft/block/BlockCompressedPowered
 CLASS none/akb net/minecraft/block/BlockRailPowered
 CLASS none/akc net/minecraft/block/BlockPreassurePlate
 CLASS none/akd net/minecraft/block/BlockPrismarine
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ake net/minecraft/block/BlockPumpkin
 CLASS none/akg net/minecraft/block/BlockQuartz
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/akh net/minecraft/block/BlockRail
 CLASS none/aki net/minecraft/block/BlockRedFlower
 CLASS none/akk net/minecraft/block/BlockRedstoneOre
 CLASS none/akl net/minecraft/block/BlockRedstoneWire
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/akm net/minecraft/block/BlockRedsonteLight
+CLASS none/akm net/minecraft/block/BlockRedstoneLight
 CLASS none/akn net/minecraft/block/BlockRedstoneTorch
-CLASS none/ako net/minecraft/block/BlockReeds
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+CLASS none/ako net/minecraft/block/BlockReed
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/akp net/minecraft/block/BlockRepeater
+CLASS none/akp net/minecraft/block/BlockRedstoneRepeater
 CLASS none/akr net/minecraft/block/BlockSand
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/aks net/minecraft/block/BlockSandstone
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/akt net/minecraft/block/BlockSapling
 CLASS none/aku net/minecraft/block/BlockSeaLantern
 	METHOD K canSilkHarvest ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/akv
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/akw net/minecraft/block/BlockSkull
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/aky net/minecraft/block/BlockSnow
 CLASS none/akz
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ala net/minecraft/block/BlockSoulSand
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 CLASS none/alb net/minecraft/block/BlockSponge
 CLASS none/alc net/minecraft/block/BlockStainedGlass
 	METHOD K canSilkHarvest ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ald net/minecraft/block/BlockStainedGlassPane
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ale net/minecraft/block/BlockStairs
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/alf net/minecraft/block/BlockSign
 CLASS none/alg net/minecraft/block/BlockStaticLiquid
 CLASS none/alh net/minecraft/block/BlockStem
 CLASS none/ali net/minecraft/block/BlockStone
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/alj net/minecraft/block/BlockStoneBrick
-CLASS none/alk net/minecraft/block/BlockStoneButton
+CLASS none/alk net/minecraft/block/BlockButtonStone
 CLASS none/all
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/alm
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
 	METHOD b getRenderType ()I
@@ -2144,52 +2148,52 @@ CLASS none/alo net/minecraft/block/BlockPane
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alp net/minecraft/block/BlockTNT
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 CLASS none/alq net/minecraft/block/BlockTorch
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alr net/minecraft/block/base/BlockLeavesBase
 	METHOD c isOpaqueCube ()Z
 CLASS none/als net/minecraft/block/BlockTrapDoor
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD b getBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD b getSelectedBoundingBox (Lnone/aeo;Lnone/cj;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alt net/minecraft/block/BlockTripwire
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alu net/minecraft/block/BlockTripwireHook
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alv net/minecraft/block/BlockVine
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alw net/minecraft/block/BlockWall
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/alx
 CLASS none/aly net/minecraft/block/BlockLilyPad
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 CLASS none/alz net/minecraft/block/BlockWeb
 	METHOD K canSilkHarvest ()Z
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
-	METHOD a onEntityCollided (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a onEntityCollidedWithBlock (Lnone/aeo;Lnone/cj;Lnone/anm;Lnone/pr;)V
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ama net/minecraft/block/BlockPressurePlateWeighted
-CLASS none/amb net/minecraft/block/BlockButton
+CLASS none/amb net/minecraft/block/BlockButtonWood
 CLASS none/amc
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/amd net/minecraft/block/BlockCarpet
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-	METHOD g getMapColour (Lnone/anm;)Lnone/atm;
+	METHOD g getMapColor (Lnone/anm;)Lnone/atm;
 CLASS none/ame net/minecraft/block/BlockYellowFlower
 CLASS none/amf net/minecraft/tileentity/TileEntityBanner
 	METHOD a readFromNBT (Lnone/dn;)V
@@ -2291,11 +2295,11 @@ CLASS none/anb net/minecraft/tileentity/TileEntityEndGateway
 	METHOD a readFromNBT (Lnone/dn;)V
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/anc net/minecraft/tileentity/TileEntityAirPortal
-CLASS none/anf net/minecraft/block/BlockPistonBase
+CLASS none/anf net/minecraft/block/BlockPiston
 	FIELD N isSticky Z
 	METHOD <init> (Z)V
 		ARG 0 isSticky
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
 CLASS none/ang net/minecraft/block/BlockPistonExtension
@@ -2306,10 +2310,10 @@ CLASS none/anh net/minecraft/tileentity/TileEntityPiston
 	METHOD b writeToNBT (Lnone/dn;)V
 CLASS none/ani net/minecraft/block/BlockPistonMoving
 	METHOD a createNewTileEntity (Lnone/aeo;I)Lnone/amh;
-	METHOD a getBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
+	METHOD a getCollisionBoundingBox (Lnone/aeo;Lnone/cj;Lnone/anm;)Lnone/awg;
 	METHOD c isOpaqueCube ()Z
 	METHOD d renderAsNormalBlock ()Z
-CLASS none/anm net/minecraft/item/ItemStack
+CLASS none/anm net/minecraft/block/state/BlockState
 CLASS none/aoi net/minecraft/level/chunk/IChunkProvider
 	METHOD a chunkExists (II)Z
 	METHOD a getStrongholdGen (Lnone/aeo;Ljava/lang/String;Lnone/cj;)Lnone/cj;
@@ -2402,11 +2406,11 @@ CLASS none/atj net/minecraft/block/material/MaterialTransparent
 	METHOD b getCanBlockGrass ()Z
 CLASS none/atk net/minecraft/block/material/MaterialLiquid
 CLASS none/atl net/minecraft/block/material/Material
-	FIELD M MaterialMapColour Lnone/atm;
+	FIELD M materialMapColor Lnone/atm;
 	FIELD a air Lnone/atl;
 	FIELD b grass Lnone/atl;
 	FIELD c ground Lnone/atl;
-	FIELD d Wood Lnone/atl;
+	FIELD d wood Lnone/atl;
 	FIELD e rock Lnone/atl;
 	FIELD f iron Lnone/atl;
 	FIELD g anvil Lnone/atl;
@@ -2424,14 +2428,14 @@ CLASS none/atl net/minecraft/block/material/Material
 	FIELD s glass Lnone/atl;
 	METHOD b getCanBlockGrass ()Z
 	METHOD r getMaterialMapColor ()Lnone/atm;
-CLASS none/atm net/minecraft/block/material/MapColour
+CLASS none/atm net/minecraft/block/material/MapColor
 	FIELD D brickColor Lnone/atm;
 	FIELD F goldColor Lnone/atm;
 	FIELD G diamondColor Lnone/atm;
 	FIELD H lapisColor Lnone/atm;
-	FIELD L colour I
+	FIELD L color I
 	FIELD M id I
-	FIELD a colours [Lnone/atm;
+	FIELD a colors [Lnone/atm;
 	FIELD b invisible Lnone/atm;
 	FIELD f lava Lnone/atm;
 	FIELD h ironColor Lnone/atm;
@@ -2439,7 +2443,7 @@ CLASS none/atm net/minecraft/block/material/MapColour
 	FIELD n water Lnone/atm;
 	METHOD <init> (II)V
 		ARG 0 id
-		ARG 1 colour
+		ARG 1 color
 CLASS none/atn
 	METHOD b getCanBlockGrass ()Z
 CLASS none/avl
@@ -2456,7 +2460,7 @@ CLASS none/avo net/minecraft/level/storage/LevelInfo
 	METHOD g getLevelTime ()J
 CLASS none/avp net/minecraft/level/storage/ISaveHandler
 CLASS none/awg net/minecraft/util/AxisAlignedBB
-CLASS none/awh net/minecraft/util/Vec3d
+CLASS none/awh net/minecraft/util/MovingObjectPosition
 CLASS none/axc
 CLASS none/axd net/minecraft/client/Minecraft
 	FIELD K logger Lorg/apache/logging/log4j/Logger;
