@@ -1054,7 +1054,7 @@ CLASS none/afk net/minecraft/level/Level
 	FIELD D isClient Z
 	FIELD s rand Ljava/util/Random;
 	FIELD t provider Lnone/apv;
-	FIELD u levelAcesses Ljava/util/List;
+	FIELD u levelAccesses Ljava/util/List;
 	FIELD v chunkProvider Lnone/ape;
 	FIELD w saveHandler Lnone/awl;
 	FIELD x levelInfo Lnone/awk;
